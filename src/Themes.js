@@ -1,28 +1,33 @@
 
-import {lightBlue, red, teal, yellow, brown, blueGrey, grey, green, lightGreen} from '@mui/material/colors';
+import {lightBlue, red, teal, brown, blueGrey, grey, green, lightGreen, deepPurple, indigo} from '@mui/material/colors';
 
-export const cobraKai = {
-  name: 'Cobra Kai',
-  palette: {
-    type: "light",
-    primary: { main: yellow[600] },
-    secondary: { main: red[900] },
-  },
-};
+export const themeComponents = {
+  MuiTooltip:{
+    defaultProps:{
+      enterDelay: 1000
+    }
+  }
+}
+
+export const midnight ={
+  name: 'Midnight',
+  palette:{
+    primary: {main: deepPurple[800]},
+    secondary: { main: indigo[500] },
+  }
+}
 
 export const  hawaii ={
   name: 'Hawaii',
   palette: {
-    type: "light",
-    primary: { main: lightBlue[400] },
-    secondary: { main: teal[900] },
+    primary: { main: teal[900]  },
+    secondary: { main: lightBlue[400] },
   },
 }
 
 export const  arizona = {
   name: 'Arizona',
   palette: {
-    type: "light",
     primary: { main: brown[400] },
     secondary: { main: teal[300] },
   },
@@ -31,7 +36,6 @@ export const  arizona = {
 export const  pirate = {
   name: 'Pirate',
   palette: {
-    type: "light",
     primary: { main: grey[900] },
     secondary: { main: red[900] },
   },
@@ -40,7 +44,6 @@ export const  pirate = {
 export const  lush ={
   name: 'Lush',
   palette: {
-    type: "light",
     primary: { main: green[800] },
     secondary: { main: lightGreen[300] },
   },
@@ -49,10 +52,9 @@ export const  lush ={
 export const  corporate = {
   name: 'Corporate',
   palette: {
-    type: "light",
     primary: { main: blueGrey[500] },
     secondary: { main: grey[400] },
   },
 }
 
-export const themes = [ cobraKai, hawaii, arizona, pirate, lush, corporate]
+export const themes = [ midnight, hawaii, arizona, pirate, lush, corporate]

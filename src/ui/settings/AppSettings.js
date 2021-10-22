@@ -1,4 +1,5 @@
-import {IconButton, ListItem, Tooltip} from "@mui/material"
+import ListItem from "@mui/material/ListItem"
+import Tooltip from "@mui/material/Tooltip"
 import {themes} from "../../Themes"
 import NightsStayIcon from "@mui/icons-material/NightsStay"
 import WbSunnyIcon from "@mui/icons-material/WbSunny"
@@ -32,14 +33,12 @@ export default function AppSettings(props){
                       onClick={() => props.updateTheme(t.name, 'dark')}
                       sx={{':hover':{  opacity: '0.75' }}}
                       style={{
-
                         color: theme.palette.primary.contrastText,
                         background:
                           `linear-gradient(
                             -45deg, 
                             ${t.palette.primary.main} 35%, 
-                            ${t.palette.secondary.main} 100%)`,
-
+                            ${t.palette.secondary.main} 100%)`
                       }}>
                     {
                       t.palette.mode === 'light' ?

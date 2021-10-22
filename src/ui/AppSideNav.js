@@ -3,7 +3,6 @@ import { styled } from '@mui/material/styles';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import Fab from "@mui/material/Fab";
 import StainedGlassButton from "./buttons/StainedGlassButton";
 
 const drawerWidth = 225;

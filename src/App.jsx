@@ -87,7 +87,7 @@ export default function App() {
         <AppSideNav appConfig={appConfig} />
       </Box>
 
-      <SettingsDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen}>
+      <SettingsDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App">
         <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
       </SettingsDialog>
 

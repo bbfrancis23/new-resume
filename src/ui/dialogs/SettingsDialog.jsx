@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Draggable from 'react-draggable'
+import PropTypes from 'prop-types'
 
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
@@ -8,7 +9,6 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogTitle from '@mui/material/DialogTitle'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
 import Paper from '@mui/material/Paper'
-import PropTypes from 'prop-types'
 
 function PaperComponent(props) {
   return (
@@ -19,7 +19,9 @@ function PaperComponent(props) {
 }
 
 export default function SettingsDialog(props) {
-  const { open, close, children } = props
+  const {
+    open, close, label, children,
+  } = props
 
   return (
     <Dialog
@@ -30,7 +32,10 @@ export default function SettingsDialog(props) {
     >
       <DialogTitle style={{ cursor: 'move' }} id="app-settings-dialog-title">
         <div style={{ display: 'flex' }}>
-          <div>Settings</div>
+          <div>
+            {`${label} `}
+            Settings
+          </div>
           <div style={{ flexGrow: '1' }} />
           <div>
             <DragHandleIcon />
@@ -50,5 +55,6 @@ export default function SettingsDialog(props) {
 SettingsDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired,
+  label: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
 }

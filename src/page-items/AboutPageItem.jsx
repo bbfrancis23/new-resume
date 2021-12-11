@@ -59,7 +59,7 @@ export default function AboutPageItem(props) {
             color: theme.palette.secondary.main,
           }}
         >
-          BRIAN FRANCIS
+          BRIAN DAVID FRANCIS
         </Typography>
         <br />
         <Typography variant="h2" sx={{ fontSize: '35px' }}>Full Stack Web Developer</Typography>

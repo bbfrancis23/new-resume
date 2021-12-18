@@ -9,15 +9,16 @@ import TimelineDot from '@mui/lab/TimelineDot'
 import Typography from '@mui/material/Typography'
 import DirectionsBoatFilledIcon from '@mui/icons-material/DirectionsBoatFilled'
 import AddIcon from '@mui/icons-material/Add'
-import { Card, CardContent, CardHeader } from '@mui/material'
+import {
+  Card, CardContent, CardHeader, Chip,
+} from '@mui/material'
 import CodeIcon from '@mui/icons-material/Code'
 import BadgeIcon from '@mui/icons-material/Badge'
-import { alpha, useTheme } from '@mui/material/styles'
+import { useTheme } from '@mui/material/styles'
 import PropTypes from 'prop-types'
 import Box from '@mui/material/Box'
 import Avatar from '@mui/material/Avatar'
-import Paper from '@mui/material/Paper'
-import { SkillChip } from './PageItems'
+import PageItem from './PageItems'
 
 const plusOneCard = (
   <Card>
@@ -32,20 +33,20 @@ const plusOneCard = (
     />
     <CardContent>
 
-      <SkillChip label="CSS" size="small" color="primary" />
-      <SkillChip label="GoJS" size="small" color="primary" />
-      <SkillChip label="GIT" size="small" color="primary" />
-      <SkillChip label="HighCharts" size="small" color="primary" />
-      <SkillChip label="HTML" size="small" color="primary" />
-      <SkillChip label="JavaScript" size="small" color="primary" />
-      <SkillChip label="NPM" size="small" color="primary" />
-      <SkillChip label="SCSS" size="small" color="primary" />
-      <SkillChip label="TSLint" size="small" color="primary" />
-      <SkillChip label="TypeScript" size="small" color="primary" />
-      <SkillChip label="UNIX" size="small" color="primary" />
-      <SkillChip label="WebStorm" size="small" color="primary" />
+      <Chip variant="skill" label="CSS" size="small" color="primary" />
+      <Chip variant="skill" label="GoJS" size="small" color="primary" />
+      <Chip variant="skill" label="GIT" size="small" color="primary" />
+      <Chip variant="skill" label="HighCharts" size="small" color="primary" />
+      <Chip variant="skill" label="HTML" size="small" color="primary" />
+      <Chip variant="skill" label="JavaScript" size="small" color="primary" />
+      <Chip variant="skill" label="NPM" size="small" color="primary" />
+      <Chip variant="skill" label="SCSS" size="small" color="primary" />
+      <Chip variant="skill" label="TSLint" size="small" color="primary" />
+      <Chip variant="skill" label="TypeScript" size="small" color="primary" />
+      <Chip variant="skill" label="UNIX" size="small" color="primary" />
+      <Chip variant="skill" label="WebStorm" size="small" color="primary" />
       <br />
-      <SkillChip label="Angular" size="small" color="secondary" />
+      <Chip variant="skill" label="Angular" size="small" color="secondary" />
     </CardContent>
   </Card>
 )
@@ -58,20 +59,20 @@ const azdeqCard = (
         Front End Specialist
       </Typography>
 
-      <SkillChip label="CSS" size="small" color="primary" />
-      <SkillChip label="ESLint" size="small" color="primary" />
-      <SkillChip label="GIT" size="small" color="primary" />
-      <SkillChip label="HTML" size="small" color="primary" />
-      <SkillChip label="JavaScript" size="small" color="primary" />
-      <SkillChip label="NPM" size="small" color="primary" />
-      <SkillChip label="SCSS" size="small" color="primary" />
-      <SkillChip label="TypeScript" size="small" color="primary" />
-      <SkillChip label="UNIX" size="small" color="primary" />
+      <Chip variant="skill" label="CSS" size="small" color="primary" />
+      <Chip variant="skill" label="ESLint" size="small" color="primary" />
+      <Chip variant="skill" label="GIT" size="small" color="primary" />
+      <Chip variant="skill" label="HTML" size="small" color="primary" />
+      <Chip variant="skill" label="JavaScript" size="small" color="primary" />
+      <Chip variant="skill" label="NPM" size="small" color="primary" />
+      <Chip variant="skill" label="SCSS" size="small" color="primary" />
+      <Chip variant="skill" label="TypeScript" size="small" color="primary" />
+      <Chip variant="skill" label="UNIX" size="small" color="primary" />
       <br />
-      <SkillChip label="Angular" size="small" color="secondary" />
-      <SkillChip label="Java" size="small" color="secondary" />
-      <SkillChip label="Spring" size="small" color="secondary" />
-      <SkillChip label="NgBootstrap" size="small" color="secondary" />
+      <Chip variant="skill" label="Angular" size="small" color="secondary" />
+      <Chip variant="skill" label="Java" size="small" color="secondary" />
+      <Chip variant="skill" label="Spring" size="small" color="secondary" />
+      <Chip variant="skill" label="NgBootstrap" size="small" color="secondary" />
     </CardContent>
 
   </Card>
@@ -85,36 +86,36 @@ const freeLanceCard = (
         Full Stack Web Developer
       </Typography>
 
-      <SkillChip label="CSS" size="small" color="primary" />
-      <SkillChip label="ESLint" size="small" color="primary" />
-      <SkillChip label="GIT" size="small" color="primary" />
-      <SkillChip label="HTML" size="small" color="primary" />
-      <SkillChip label="JavaScript" size="small" color="primary" />
-      <SkillChip label="Material UI 4 & 5" size="small" color="primary" />
-      <SkillChip label="NPM" size="small" color="primary" />
-      <SkillChip label="React" size="small" color="primary" />
-      <SkillChip label="SCSS" size="small" color="primary" />
-      <SkillChip label="SEO" size="small" color="primary" />
-      <SkillChip label="TypeScript" size="small" color="primary" />
-      <SkillChip label="UNIX" size="small" color="primary" />
+      <Chip variant="skill" label="CSS" size="small" color="primary" />
+      <Chip variant="skill" label="ESLint" size="small" color="primary" />
+      <Chip variant="skill" label="GIT" size="small" color="primary" />
+      <Chip variant="skill" label="HTML" size="small" color="primary" />
+      <Chip variant="skill" label="JavaScript" size="small" color="primary" />
+      <Chip variant="skill" label="Material UI 4 & 5" size="small" color="primary" />
+      <Chip variant="skill" label="NPM" size="small" color="primary" />
+      <Chip variant="skill" label="React" size="small" color="primary" />
+      <Chip variant="skill" label="SCSS" size="small" color="primary" />
+      <Chip variant="skill" label="SEO" size="small" color="primary" />
+      <Chip variant="skill" label="TypeScript" size="small" color="primary" />
+      <Chip variant="skill" label="UNIX" size="small" color="primary" />
       <br />
-      <SkillChip label="Angular" size="small" color="secondary" />
-      <SkillChip label="AngularJS" size="small" color="secondary" />
-      <SkillChip label="Angular Material" size="small" color="secondary" />
-      <SkillChip label="Bootstrap" size="small" color="secondary" />
-      <SkillChip label="Express" size="small" color="secondary" />
-      <SkillChip label="Illustrator" size="small" color="secondary" />
-      <SkillChip label="JQuery" size="small" color="secondary" />
-      <SkillChip label="LESS" size="small" color="secondary" />
-      <SkillChip label="MongoDB" size="small" color="secondary" />
-      <SkillChip label="MySQL" size="small" color="secondary" />
-      <SkillChip label="NodeJS" size="small" color="secondary" />
-      <SkillChip label="Perl" size="small" color="secondary" />
-      <SkillChip label="Photoshop" size="small" color="secondary" />
-      <SkillChip label="PHP" size="small" color="secondary" />
-      <SkillChip label="PostgreSQL" size="small" color="secondary" />
-      <SkillChip label="SASS" size="small" color="secondary" />
-      <SkillChip label="SQL" size="small" color="secondary" />
+      <Chip variant="skill" label="Angular" size="small" color="secondary" />
+      <Chip variant="skill" label="AngularJS" size="small" color="secondary" />
+      <Chip variant="skill" label="Angular Material" size="small" color="secondary" />
+      <Chip variant="skill" label="Bootstrap" size="small" color="secondary" />
+      <Chip variant="skill" label="Express" size="small" color="secondary" />
+      <Chip variant="skill" label="Illustrator" size="small" color="secondary" />
+      <Chip variant="skill" label="JQuery" size="small" color="secondary" />
+      <Chip variant="skill" label="LESS" size="small" color="secondary" />
+      <Chip variant="skill" label="MongoDB" size="small" color="secondary" />
+      <Chip variant="skill" label="MySQL" size="small" color="secondary" />
+      <Chip variant="skill" label="NodeJS" size="small" color="secondary" />
+      <Chip variant="skill" label="Perl" size="small" color="secondary" />
+      <Chip variant="skill" label="Photoshop" size="small" color="secondary" />
+      <Chip variant="skill" label="PHP" size="small" color="secondary" />
+      <Chip variant="skill" label="PostgreSQL" size="small" color="secondary" />
+      <Chip variant="skill" label="SASS" size="small" color="secondary" />
+      <Chip variant="skill" label="SQL" size="small" color="secondary" />
     </CardContent>
 
   </Card>
@@ -127,16 +128,16 @@ const iboatsCard = (
       <Typography variant="h4" component="h4">
         Full Stack Web Developer
       </Typography>
-      <SkillChip label="CSS" size="small" color="primary" />
-      <SkillChip label="GIT" size="small" color="primary" />
-      <SkillChip label="HTML" size="small" color="primary" />
-      <SkillChip label="JavaScript" size="small" color="primary" />
-      <SkillChip label="UNIX" size="small" color="primary" />
+      <Chip variant="skill" label="CSS" size="small" color="primary" />
+      <Chip variant="skill" label="GIT" size="small" color="primary" />
+      <Chip variant="skill" label="HTML" size="small" color="primary" />
+      <Chip variant="skill" label="JavaScript" size="small" color="primary" />
+      <Chip variant="skill" label="UNIX" size="small" color="primary" />
       <br />
-      <SkillChip label="JQuery" size="small" color="secondary" />
-      <SkillChip label="Perl" size="small" color="secondary" />
-      <SkillChip label="PostgreSQL" size="small" color="secondary" />
-      <SkillChip label="SQL" size="small" color="secondary" />
+      <Chip variant="skill" label="JQuery" size="small" color="secondary" />
+      <Chip variant="skill" label="Perl" size="small" color="secondary" />
+      <Chip variant="skill" label="PostgreSQL" size="small" color="secondary" />
+      <Chip variant="skill" label="SQL" size="small" color="secondary" />
     </CardContent>
 
   </Card>
@@ -147,20 +148,7 @@ export default function ExperiencePageItem(props) {
   const { id } = props
 
   return (
-    <Paper
-      id={id}
-      elevation={12}
-      style={{
-        margin: 'auto', marginTop: theme.spacing(25), paddingTop: theme.spacing(1),
-      }}
-      sx={{
-        width: {
-          xs: '90%', md: '70%', lg: '70%', xl: '60%',
-        },
-        backgroundColor: alpha(theme.palette.background.default, 0.75),
-        backdropFilter: 'blur(10px)',
-      }}
-    >
+    <PageItem id={id}>
       <div style={{ margin: 'auto', textAlign: 'center' }}>
         <h4 style={{ fontSize: '35px', fontWeight: 'normal' }}>EXPERIENCE</h4>
       </div>
@@ -278,7 +266,7 @@ export default function ExperiencePageItem(props) {
 
         </TimelineItem>
       </Timeline>
-    </Paper>
+    </PageItem>
 
   )
 }

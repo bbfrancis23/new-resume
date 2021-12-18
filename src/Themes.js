@@ -11,18 +11,33 @@ export function createGlobalTheme(themeOptions) {
       MuiTooltip: { defaultProps: { enterDelay: 1000 } },
       MuiCssBaseline: { styleOverrides: { body: { transition: 'all 0.375s linear' } } },
       Timeline: { backgroundColor: '#FF0000', color: '#FF0000' },
-      MuiFab: {
-        variants: [
-          {
-            props: { variant: 'stainedGlass' },
-            style: {
-              color: theme.palette.secondary.contrastText,
-              backgroundColor: alpha(theme.palette.secondary.main, 0.25),
-              backdropFilter: 'blur(2px)',
-              ':hover': { background: alpha(theme.palette.secondary.main, 0.50) },
-            },
+      MuiPaper: {
+        variants: [{
+          props: { variant: 'stainedGlass' },
+          style: {
+            backgroundColor: alpha(theme.palette.background.default, 0.75),
+            backdropFilter: 'blur(10px)',
+            boxShadow:
+                '0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)',
           },
-        ],
+        }],
+      },
+      MuiChip: {
+        variants: [{
+          props: { variant: 'skill' },
+          style: { margin: `0 0 ${theme.spacing(1)} ${theme.spacing(1)}`, height: '20px' },
+        }],
+      },
+      MuiFab: {
+        variants: [{
+          props: { variant: 'stainedGlass' },
+          style: {
+            color: theme.palette.secondary.contrastText,
+            backgroundColor: alpha(theme.palette.secondary.main, 0.25),
+            backdropFilter: 'blur(2px)',
+            ':hover': { background: alpha(theme.palette.secondary.main, 0.50) },
+          },
+        }],
       },
     },
   }
@@ -80,3 +95,7 @@ export const corporate = {
 }
 
 export const themes = [midnight, hawaii, arizona, pirate, lush, corporate]
+
+/*
+Quality Checked: Brian Francis - 12/18/2021
+ */

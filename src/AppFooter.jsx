@@ -11,7 +11,6 @@ export default function AppFooter() {
       margin: 'auto',
       textAlign: 'center',
       height: theme.spacing(5),
-      marginTop: theme.spacing(25),
     }}
     >
       <span style={{ color: theme.palette.primary.contrastText }}>By: Brian Francis</span>
@@ -63,5 +62,5 @@ export default function AppFooter() {
 }
 
 /*
-Quality Checked: Brian Francis - 12/9/2021
+Quality Checked: Brian Francis - 12/18/2021
  */

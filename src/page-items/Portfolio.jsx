@@ -11,7 +11,7 @@ import NextIcon from '@mui/icons-material/ArrowForwardIos'
 
 import PrevIcon from '@mui/icons-material/ArrowBackIosNew'
 
-import { alpha, styled, useTheme } from '@mui/material/styles'
+import { styled, useTheme } from '@mui/material/styles'
 import Paper from '@mui/material/Paper'
 import IconButton from '@mui/material/IconButton'
 import InfoIcon from '@mui/icons-material/Info'
@@ -43,6 +43,7 @@ import flProduct from '../img/portfolio/freelance/product.jpg'
 import flTestimonials from '../img/portfolio/freelance/testimonials.jpg'
 import flContact from '../img/portfolio/freelance/contact.jpg'
 import StainedGlassButton from '../ui/buttons/StainedGlassButton'
+import PageItem from './PageItems'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
 
@@ -229,7 +230,6 @@ PortfolioItemSwiper.propTypes = {
 }
 
 export default function PortfolioPageItem(props) {
-  const theme = useTheme()
   const { id } = props
 
   const [portfolioDialogOpen, setPortfolioDialogOpen] = React.useState(false)
@@ -244,26 +244,7 @@ export default function PortfolioPageItem(props) {
 
   return (
 
-    <Paper
-      elevation={12}
-      id={id}
-      sx={{
-
-        margin: 'auto',
-        width: {
-          xs: '90%', md: '70%', lg: '70%', xl: '60%',
-        },
-        marginTop: theme.spacing(25),
-        paddingX: theme.spacing(5),
-
-        backgroundColor: alpha(theme.palette.background.default, 0.75),
-        backdropFilter: 'blur(10px)',
-        // color: theme.palette.getContrastText(theme.palette.background.paper),
-        color: theme.palette.getContrastText(theme.palette.background.paper),
-        border: `1px solid ${theme.palette.divider}`,
-
-      }}
-    >
+    <PageItem id={id}>
       <div style={{ margin: 'auto', textAlign: 'center' }}>
         <h4 style={{ fontSize: '35px', fontWeight: 'normal', paddingBottom: '25px' }}>PORTFOLIO</h4>
       </div>
@@ -296,7 +277,7 @@ export default function PortfolioPageItem(props) {
       <SettingsDialog close={() => handlePortfolioDialogClose()} open={portfolioDialogOpen}>
         <PortfolioItemSwiper portIndex={portIndex} />
       </SettingsDialog>
-    </Paper>
+    </PageItem>
 
   )
 }

@@ -11,6 +11,7 @@ import { appConfig } from './AppConfig'
 
 import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
+
 import SettingsDialog from './ui/dialogs/SettingsDialog'
 import AppSettings from './ui/settings/AppSettings'
 
@@ -68,9 +69,11 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
       <HeroContainer>
         <img src={themeHeroes[theme.name]} alt="Theme Hero" />
       </HeroContainer>
+
       <Box sx={{ display: { xs: 'block', md: 'none' } }}>
         <AppToolBar appConfig={appConfig} settingsDialogOpen={handleSettingsDialogOpen} />
       </Box>
@@ -91,7 +94,7 @@ export default function App() {
         <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
       </SettingsDialog>
 
-      <Box sx={{ width: '100%', paddingTop: theme.spacing(25) }}>
+      <Box sx={{ width: '100%', paddingTop: theme.spacing(1) }}>
         { appConfig.pageItems.map((item) => item.pageComponent) }
       </Box>
 
@@ -101,5 +104,5 @@ export default function App() {
 }
 
 /*
-Quality Checked: Brian Francis - 12/9/2021
+Quality Checked: Brian Francis - 12/18/2021
  */

@@ -1,18 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  ImageList, ImageListItem, ImageListItemBar, MobileStepper,
+  ImageList, ImageListItem, ImageListItemBar, MobileStepper, styled, useTheme, Paper, Box, Typography,
 } from '@mui/material'
+
 import NextIcon from '@mui/icons-material/ArrowForwardIos'
-
 import PrevIcon from '@mui/icons-material/ArrowBackIosNew'
-
-import { styled, useTheme } from '@mui/material/styles'
-import Paper from '@mui/material/Paper'
 import IconButton from '@mui/material/IconButton'
 import InfoIcon from '@mui/icons-material/Info'
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import SwipeableViews from 'react-swipeable-views'
 import { autoPlay } from 'react-swipeable-views-utils'
 import SettingsDialog from '../ui/dialogs/SettingsDialog'

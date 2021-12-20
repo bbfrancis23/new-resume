@@ -6,7 +6,7 @@ import {
 
 import PropTypes from 'prop-types'
 
-import PageItem from './PageItems'
+import PageItem from '../ui/PageItems'
 import BrianFrancis from '../img/portraits/brian-francis.jpg'
 
 export default function AboutPageItem(props) {
@@ -82,9 +82,7 @@ export default function AboutPageItem(props) {
           <Chip variant="skill" label="SQL" size="small" color="secondary" />
         </Grid>
       </Grid>
-
     </PageItem>
-
   )
 }
 AboutPageItem.propTypes = {

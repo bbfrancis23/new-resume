@@ -1,17 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
-import ListItemAvatar from '@mui/material/ListItemAvatar'
-import Avatar from '@mui/material/Avatar'
-import { styled, useTheme } from '@mui/material/styles'
-import Drawer from '@mui/material/Drawer'
+import {
+  List, ListItem, ListItemText, ListItemAvatar, Avatar, styled, useTheme, Drawer, Tooltip, Fab,
+} from '@mui/material'
+
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
-import Tooltip from '@mui/material/Tooltip'
-import Fab from '@mui/material/Fab'
+
 import { appConfigPropType } from './AppConfig'
 
 const drawerWidth = 225
@@ -91,5 +87,5 @@ export default function AppSideNav(props) {
 AppSideNav.propTypes = { appConfig: PropTypes.shape(appConfigPropType).isRequired }
 
 /*
-Quality Checked: Brian Francis - 12/9/2021
+Quality Checked: Brian Francis - 12/18/2021
  */

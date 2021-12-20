@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles'
 import Fab from '@mui/material/Fab'
 import Stack from '@mui/material/Stack'
 import PropTypes from 'prop-types'
-import { themes } from '../../Themes'
+import { themes } from '../Themes'
 
 export default function AppSettings(props) {
   const theme = useTheme()

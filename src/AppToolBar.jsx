@@ -1,15 +1,12 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
 
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
+import {
+  AppBar, Box, Toolbar, Typography, Tooltip, styled, useTheme,
+} from '@mui/material'
+
 import IconButton from '@mui/material/IconButton'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
 import SettingsIcon from '@mui/icons-material/Settings'
-import Tooltip from '@mui/material/Tooltip'
-import styled from '@mui/material/styles/styled'
-import { useTheme } from '@mui/material/styles'
 
 import { appConfigPropType } from './AppConfig'
 
@@ -69,5 +66,5 @@ AppToolBar.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/9/2021
+Quality Checked: Brian Francis - 12/18/2021
  */

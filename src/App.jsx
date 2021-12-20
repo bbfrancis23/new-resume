@@ -1,10 +1,10 @@
 import React from 'react'
-import { styled, ThemeProvider } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
+
+import {
+  styled, ThemeProvider, CssBaseline, Box, Tooltip, Fab,
+} from '@mui/material'
+
 import SettingsIcon from '@mui/icons-material/Settings'
-import Box from '@mui/material/Box'
-import Tooltip from '@mui/material/Tooltip'
-import Fab from '@mui/material/Fab'
 
 import { themes, createGlobalTheme } from './Themes'
 import { appConfig } from './AppConfig'
@@ -13,7 +13,7 @@ import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
 
 import SettingsDialog from './ui/dialogs/SettingsDialog'
-import AppSettings from './ui/settings/AppSettings'
+import AppSettings from './settings/AppSettings'
 
 import MidnightHero from './img/heroes/midnight.jpg'
 import HawaiiHero from './img/heroes/hawaii.jpg'
@@ -89,7 +89,6 @@ export default function App() {
         </Tooltip>
         <AppSideNav appConfig={appConfig} />
       </Box>
-
       <SettingsDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App">
         <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
       </SettingsDialog>

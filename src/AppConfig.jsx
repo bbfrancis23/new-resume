@@ -5,6 +5,7 @@ import ExperienceIcon from '@mui/icons-material/Work'
 import PortfolioIcon from '@mui/icons-material/Collections'
 
 import PropTypes from 'prop-types'
+
 import AboutPageItem from './page-items/AboutPageItem'
 import ExperiencePageItem from './page-items/ExperiencePageItem'
 import PortfolioPageItem from './page-items/Portfolio'
@@ -57,5 +58,5 @@ export const appConfigPropType = {
 export default appConfig
 
 /*
-Quality Checked: Brian Francis - 12/9/2021
+Quality Checked: Brian Francis - 12/18/2021
  */

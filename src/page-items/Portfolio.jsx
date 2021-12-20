@@ -29,6 +29,9 @@ export function PortfolioItemSwiper(props) {
   const [activeStep, setActiveStep] = React.useState(0)
   const maxSteps = experience[portIndex].imgs.length
 
+  /**
+   * next button handler
+   */
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1)
   }

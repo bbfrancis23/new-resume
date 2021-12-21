@@ -11,7 +11,6 @@ import InfoIcon from '@mui/icons-material/Info'
 import SwipeableViews from 'react-swipeable-views'
 import { autoPlay } from 'react-swipeable-views-utils'
 import SettingsDialog from '../ui/dialogs/SettingsDialog'
-import StainedGlassButton from '../ui/buttons/StainedGlassButton'
 import PageItem from '../ui/PageItems'
 
 import experience from './data'
@@ -94,37 +93,15 @@ export function PortfolioItemSwiper(props) {
         }}
         activeStep={activeStep}
         nextButton={(
-
-          <StainedGlassButton
-            tooltip="Next"
-            onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
-            style={{
-              position: 'absolute',
-              bottom: '50%',
-              left: '89%',
-
-            }}
-          >
-            <NextIcon size="large" />
-          </StainedGlassButton>
-
-            )}
+          <IconButton aria-label="Next Images" disabled={activeStep === maxSteps - 1}>
+            <NextIcon onClick={handleNext} size="small" fontSize="12px" />
+          </IconButton>
+        )}
         backButton={(
-          <StainedGlassButton
-            tooltip="Previous"
-            onClick={handleBack}
-            disabled={activeStep === 0}
-            style={{
-              position: 'absolute',
-              bottom: '50%',
-              right: '89%',
-
-            }}
-          >
-            <PrevIcon size="large" />
-          </StainedGlassButton>
-            )}
+          <IconButton aria-label="Previous Image" disabled={activeStep === 0}>
+            <PrevIcon onClick={handleBack} size="small" fontSize="12px" />
+          </IconButton>
+        )}
       />
     </Box>
   )

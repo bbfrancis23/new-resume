@@ -12,7 +12,7 @@ import { appConfig } from './AppConfig'
 import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
 
-import SettingsDialog from './ui/dialogs/SettingsDialog'
+import AppDialog from './ui/AppDialog'
 import AppSettings from './settings/AppSettings'
 
 import MidnightHero from './img/heroes/midnight.jpg'
@@ -89,9 +89,9 @@ export default function App() {
         </Tooltip>
         <AppSideNav appConfig={appConfig} />
       </Box>
-      <SettingsDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App">
+      <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App">
         <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
-      </SettingsDialog>
+      </AppDialog>
 
       <Box sx={{ width: '100%', paddingTop: theme.spacing(1) }}>
         { appConfig.pageItems.map((item) => item.pageComponent) }
@@ -103,5 +103,5 @@ export default function App() {
 }
 
 /*
-Quality Checked: Brian Francis - 12/18/2021
+Quality Checked: Brian Francis - 12/22/2021
  */

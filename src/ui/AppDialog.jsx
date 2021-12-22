@@ -18,7 +18,7 @@ function PaperComponent(props) {
   )
 }
 
-export default function SettingsDialog(props) {
+export default function AppDialog(props) {
   const {
     open, close, label, children,
   } = props
@@ -52,9 +52,12 @@ export default function SettingsDialog(props) {
   )
 }
 
-SettingsDialog.propTypes = {
+AppDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
 }
+/*
+Quality Checked: Brian Francis - 12/22/2021
+ */

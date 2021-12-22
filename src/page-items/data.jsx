@@ -24,6 +24,18 @@ import iboatsRecord from '../img/portfolio/iboats/record.jpg'
 import iboatsResearch from '../img/portfolio/iboats/research.jpg'
 import iboatsType from '../img/portfolio/iboats/type-listings.jpg'
 import iboatsResearchType from '../img/portfolio/iboats/research-type-listing.jpg'
+import plusOneDash from '../img/portfolio/plueone/dashboard.png'
+import plusOneDate from '../img/portfolio/plueone/datepicker.png'
+import plusOneLogin from '../img/portfolio/plueone/login.png'
+import plusOneStyle from '../img/portfolio/plueone/styleguide.png'
+import plusOneTable from '../img/portfolio/plueone/table.png'
+import plusOneWorkFlow from '../img/portfolio/plueone/work-flow-1.png'
+import azdeqForm from '../img/portfolio/azdeq/form.png'
+import azdeqInfo from '../img/portfolio/azdeq/Info.png'
+import azdeqLog from '../img/portfolio/azdeq/log.png'
+import azdeqReg from '../img/portfolio/azdeq/register.png'
+import azdeqStart from '../img/portfolio/azdeq/start.png'
+import azdeqStepper from '../img/portfolio/azdeq/Stepper.png'
 
 const experience = [
   {
@@ -37,6 +49,14 @@ const experience = [
     otherSkills: ['Angular'],
     icon: <AddIcon fontSize="large" />,
     cover: PlusOneCover,
+    imgs: [
+      { img: plusOneDash, label: 'Dashboard' },
+      { img: plusOneDate, label: 'Date Picker' },
+      { img: plusOneLogin, label: 'Login' },
+      { img: plusOneStyle, label: 'Style Guide' },
+      { img: plusOneTable, label: 'Table' },
+      { img: plusOneWorkFlow, label: 'Work Flow' },
+    ],
   },
   {
     id: 'azdeq',
@@ -46,6 +66,14 @@ const experience = [
     otherSkills: ['Angular', 'Java', 'Spring', 'NgBootstrap'],
     yearsActive: '2017 - 2020',
     icon: <BadgeIcon fontSize="large" />,
+    imgs: [
+      { img: azdeqForm, label: 'Form' },
+      { img: azdeqInfo, label: 'Info' },
+      { img: azdeqLog, label: 'Log' },
+      { img: azdeqReg, label: 'Register' },
+      { img: azdeqStart, label: 'Start' },
+      { img: azdeqStepper, label: 'Stepper' },
+    ],
     cover: AZDEQCover,
   },
   {
@@ -100,3 +128,6 @@ const experience = [
 ]
 
 export default experience
+/*
+Quality Checked: Brian Francis - 12/22/2021
+ */

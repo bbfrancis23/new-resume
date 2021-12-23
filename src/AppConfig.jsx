@@ -3,12 +3,14 @@ import React from 'react'
 import AboutIcon from '@mui/icons-material/AccountCircle'
 import ExperienceIcon from '@mui/icons-material/Work'
 import PortfolioIcon from '@mui/icons-material/Collections'
+import TestimonialsIcon from '@mui/icons-material/StarOutline'
 
 import PropTypes from 'prop-types'
 
 import About from './content/page-items/About'
 import Experience from './content/page-items/Experience'
 import Portfolio from './content/page-items/Portfolio'
+import Testimonials from './content/page-items/Testimonials'
 
 export const appConfig = {
   pageItems: [
@@ -33,12 +35,13 @@ export const appConfig = {
       description: 'Portfolio for Brian Francis',
       pageComponent: <Portfolio key="portfolio" id="portfolio" />,
     },
-    // {
-    //   id: 'testimonials',
-    //   label: 'Testimonials',
-    //   icon: <TestimonialIcon />,
-    //   description: 'Testimonials for Brian Francis',
-    // },
+    {
+      id: 'testimonials',
+      label: 'Testimonials',
+      icon: <TestimonialsIcon />,
+      description: 'Testimonials for Brian Francis',
+      pageComponent: <Testimonials key="testimonials" id="testimonials" />,
+    },
 
   ],
 }

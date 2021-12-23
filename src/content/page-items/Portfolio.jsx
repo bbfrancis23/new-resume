@@ -7,13 +7,13 @@ import {
 import IconButton from '@mui/material/IconButton'
 import InfoIcon from '@mui/icons-material/Info'
 
-import AppDialog from '../ui/AppDialog'
-import PageItem from '../ui/PageItems'
+import AppDialog from '../../ui/AppDialog'
+import PageItem from '../../ui/PageItems'
 
 import experience from './data'
-import Carousel from '../ui/Carousel'
+import Carousel from '../../ui/Carousel'
 
-export default function PortfolioPageItem(props) {
+export default function Portfolio(props) {
   const { id } = props
 
   const [portfolioDialogOpen, setPortfolioDialogOpen] = React.useState(false)
@@ -63,7 +63,7 @@ export default function PortfolioPageItem(props) {
 
   )
 }
-PortfolioPageItem.propTypes = {
+Portfolio.propTypes = {
   id: PropTypes.string.isRequired,
 }
 /*

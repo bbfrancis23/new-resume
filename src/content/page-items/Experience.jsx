@@ -9,10 +9,10 @@ import {
 } from '@mui/material'
 
 import PropTypes from 'prop-types'
-import PageItem from '../ui/PageItems'
+import PageItem from '../../ui/PageItems'
 import experience from './data'
 
-export default function ExperiencePageItem(props) {
+export default function Experience(props) {
   const { id } = props
 
   return (
@@ -65,7 +65,7 @@ export default function ExperiencePageItem(props) {
     </PageItem>
   )
 }
-ExperiencePageItem.propTypes = {
+Experience.propTypes = {
   id: PropTypes.string.isRequired,
 }
 

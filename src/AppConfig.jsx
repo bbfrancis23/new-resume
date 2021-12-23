@@ -6,9 +6,9 @@ import PortfolioIcon from '@mui/icons-material/Collections'
 
 import PropTypes from 'prop-types'
 
-import AboutPageItem from './page-items/AboutPageItem'
-import ExperiencePageItem from './page-items/ExperiencePageItem'
-import PortfolioPageItem from './page-items/Portfolio'
+import About from './content/page-items/About'
+import Experience from './content/page-items/Experience'
+import Portfolio from './content/page-items/Portfolio'
 
 export const appConfig = {
   pageItems: [
@@ -17,21 +17,21 @@ export const appConfig = {
       label: 'About',
       icon: <AboutIcon />,
       description: 'About Brian Francis',
-      pageComponent: <AboutPageItem key="about" id="about" />,
+      pageComponent: <About key="about" id="about" />,
     },
     {
       id: 'experience',
       label: 'Experience',
       icon: <ExperienceIcon />,
       description: 'Work timeline for Brian Francis',
-      pageComponent: <ExperiencePageItem key="experience" id="experience" />,
+      pageComponent: <Experience key="experience" id="experience" />,
     },
     {
       id: 'portfolio',
       label: 'Portfolio',
       icon: <PortfolioIcon />,
       description: 'Portfolio for Brian Francis',
-      pageComponent: <PortfolioPageItem key="portfolio" id="portfolio" />,
+      pageComponent: <Portfolio key="portfolio" id="portfolio" />,
     },
     // {
     //   id: 'testimonials',

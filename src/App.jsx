@@ -13,7 +13,7 @@ import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
 
 import AppDialog from './ui/AppDialog'
-import AppSettings from './settings/AppSettings'
+import AppSettings from './content/settings/AppSettings'
 
 import MidnightHero from './img/heroes/midnight.jpg'
 import HawaiiHero from './img/heroes/hawaii.jpg'

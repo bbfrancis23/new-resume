@@ -14,17 +14,13 @@ import AppToolBar from './AppToolBar'
 
 import AppDialog from './ui/AppDialog'
 import AppSettings from './content/settings/AppSettings'
-
-import MidnightHero from './img/heroes/midnight.jpg'
-import HawaiiHero from './img/heroes/hawaii.jpg'
-import ArizonaHero from './img/heroes/arizona.jpg'
-import LushHero from './img/heroes/lush.jpg'
-import PirateHero from './img/heroes/pirate.jpg'
-import corporateHero from './img/heroes/corp.jpg'
 import AppFooter from './AppFooter'
+import {
+  MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero,
+} from './content/imgs'
 
 const themeHeroes = {
-  Corporate: corporateHero,
+  Corporate: CorporateHero,
   Midnight: MidnightHero,
   Hawaii: HawaiiHero,
   Arizona: ArizonaHero,
@@ -55,15 +51,15 @@ export default function App() {
 
   const handleUpdateTheme = (themeName) => {
     const themeOptions = themes.find((t) => t.name === themeName)
-
     if (themeOptions.name === theme.name) {
-      const themeMode = themeOptions.palette.mode === 'light' ? 'dark' : 'light'
-      themeOptions.palette.mode = themeMode
-      localStorage.setItem('themeMode', themeMode)
+      themeOptions.palette.mode = themeOptions.palette.mode === 'light' ? 'dark' : 'light'
+    } else {
+      themeOptions.palette.mode = 'light'
     }
 
     setTheme(createGlobalTheme(themeOptions))
     localStorage.setItem('themeName', themeName)
+    localStorage.setItem('themeMode', themeOptions.palette.mode)
   }
 
   return (

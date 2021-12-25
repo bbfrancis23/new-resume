@@ -10,7 +10,7 @@ import {
 
 import PropTypes from 'prop-types'
 import PageItem from '../../ui/PageItems'
-import experience from './data'
+import experience from '../data'
 
 export default function Experience(props) {
   const { id } = props

@@ -22,5 +22,6 @@ module.exports = {
     'max-len': ['error', { code: 125 }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/jsx-props-no-spreading': 'off',
+    'max-lines': ['error', { max: 100, skipBlankLines: true, skipComments: true }],
   },
 }

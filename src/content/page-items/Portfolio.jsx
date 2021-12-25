@@ -10,7 +10,7 @@ import InfoIcon from '@mui/icons-material/Info'
 import AppDialog from '../../ui/AppDialog'
 import PageItem from '../../ui/PageItems'
 
-import experience from './data'
+import experience from '../data'
 import Carousel from '../../ui/Carousel'
 
 export default function Portfolio(props) {

@@ -35,14 +35,15 @@ export function createGlobalTheme(themeOptions) {
             color: theme.palette.secondary.contrastText,
             backgroundColor: alpha(theme.palette.secondary.main, 0.25),
             backdropFilter: 'blur(2px)',
-            ':hover': { background: alpha(theme.palette.secondary.main, 0.50) },
+            transition: '5s',
+            ':hover': { background: alpha(theme.palette.secondary.main, 1.00), transition: '3s' },
           },
         }],
       },
     },
   }
-
   theme = createTheme(theme, globalTheme)
+
   return theme
 }
 

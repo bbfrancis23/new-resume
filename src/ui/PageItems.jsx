@@ -18,7 +18,7 @@ export default function PageItem(props) {
       sx={{
         margin: 'auto',
         width: {
-          xs: '90%', md: '70%', lg: '70%', xl: '60%',
+          xs: '100%', md: '90%', lg: '70%', xl: '60%',
         },
         marginTop: theme.spacing(25),
         marginBottom: theme.spacing(25),

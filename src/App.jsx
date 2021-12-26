@@ -6,6 +6,7 @@ import {
 
 import SettingsIcon from '@mui/icons-material/Settings'
 
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { themes, createGlobalTheme } from './Themes'
 import { appConfig } from './AppConfig'
 
@@ -18,6 +19,9 @@ import AppFooter from './AppFooter'
 import {
   MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero,
 } from './content/imgs'
+
+import Home from './routes/Home'
+import Settings from './routes/Settings'
 
 const themeHeroes = {
   Corporate: CorporateHero,
@@ -88,11 +92,13 @@ export default function App() {
       <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App">
         <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
       </AppDialog>
-
-      <Box sx={{ width: '100%', paddingTop: theme.spacing(1) }}>
-        { appConfig.pageItems.map((item) => item.pageComponent) }
-      </Box>
-
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
       <AppFooter />
     </ThemeProvider>
   )

@@ -45,7 +45,7 @@ export default function App() {
     let themeOptions = themes[0]
     const themeName = localStorage.getItem('themeName')
     if (themeName) themeOptions = themes.find((t) => t.name === themeName)
-    // themeOptions.palette.mode = !localStorage.getItem('themeMode') ? 'light' : localStorage.getItem('themeMode')
+    themeOptions.palette.mode = !localStorage.getItem('themeMode') ? 'light' : localStorage.getItem('themeMode')
 
     return createGlobalTheme(themeOptions)
   }
@@ -63,7 +63,7 @@ export default function App() {
 
     setTheme(createGlobalTheme(themeOptions))
     localStorage.setItem('themeName', themeName)
-    // localStorage.setItem('themeMode', themeOptions.palette.mode)
+    localStorage.setItem('themeMode', themeOptions.palette.mode)
   }
 
   return (
@@ -90,7 +90,7 @@ export default function App() {
           </Tooltip>
           <AppSideNav appConfig={appConfig} />
         </Box>
-        <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App">
+        <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
           <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
         </AppDialog>
 

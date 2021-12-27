@@ -65,7 +65,7 @@ export default function AppSideNav(props) {
         <List>
           {
             appConfig.pageItems.map((item) => (
-              <a href={`#${item.id}`} style={{ textDecoration: 'none' }} key={item.id}>
+              <a href={`/#${item.id}`} style={{ textDecoration: 'none' }} key={item.id}>
                 <ListItem>
                   <Tooltip title={item.description} placement="right-end">
                     <ListItemAvatar>

@@ -18,7 +18,7 @@ function PaperComponent(props) {
 
 export default function AppDialog(props) {
   const {
-    open, close, label, children,
+    open, close, label, children, moreLink,
   } = props
 
   return (
@@ -44,19 +44,25 @@ export default function AppDialog(props) {
         {children}
       </DialogContent>
       <DialogActions disableSpacing={false}>
-        <Button color="inherit" onClick={close} to="/settings" component={Link} sx={{ mr: 1 }}>More</Button>
-        <Button autoFocus variant="outlined" color="success">Done</Button>
+        { moreLink && <Button color="inherit" onClick={close} to={moreLink} component={Link} sx={{ mr: 1 }}>More</Button>}
+        <Button autoFocus variant={moreLink ? 'outlined' : 'text'} onClick={close} color={moreLink ? 'success' : 'inherit'}>
+          Done
+        </Button>
       </DialogActions>
     </Dialog>
   )
 }
-
+AppDialog.defaultProps = {
+  moreLink: undefined,
+}
 AppDialog.propTypes = {
   open: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
+  moreLink: PropTypes.string,
 }
+
 /*
 Quality Checked: Brian Francis - 12/22/2021
  */

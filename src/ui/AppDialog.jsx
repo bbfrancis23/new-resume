@@ -2,13 +2,11 @@ import * as React from 'react'
 import Draggable from 'react-draggable'
 import PropTypes from 'prop-types'
 
-import Button from '@mui/material/Button'
-import Dialog from '@mui/material/Dialog'
-import DialogActions from '@mui/material/DialogActions'
-import DialogContent from '@mui/material/DialogContent'
-import DialogTitle from '@mui/material/DialogTitle'
+import {
+  Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper,
+} from '@mui/material'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
-import Paper from '@mui/material/Paper'
+import { Link } from 'react-router-dom'
 
 function PaperComponent(props) {
   return (
@@ -45,8 +43,9 @@ export default function AppDialog(props) {
       <DialogContent>
         {children}
       </DialogContent>
-      <DialogActions>
-        <Button autoFocus variant="text" color="inherit" onClick={close}>Done</Button>
+      <DialogActions disableSpacing={false}>
+        <Button color="inherit" onClick={close} to="/settings" component={Link} sx={{ mr: 1 }}>More</Button>
+        <Button autoFocus variant="outlined" color="success">Done</Button>
       </DialogActions>
     </Dialog>
   )

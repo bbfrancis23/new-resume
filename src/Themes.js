@@ -41,6 +41,11 @@ export function createGlobalTheme(themeOptions) {
         }],
       },
     },
+    effects: {
+      stainedGlass: true,
+      density: 'normal',
+      toolTips: true,
+    },
   }
   theme = createTheme(theme, globalTheme)
 

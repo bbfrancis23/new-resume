@@ -46,13 +46,13 @@ export default function Experience(props) {
                   <CardContent>
                     {
                       item.relevantSkills.map((rSkill) => (
-                        <Chip variant="skill" label={rSkill} size="small" color="primary" />
+                        <Chip variant="skill" label={rSkill} size="small" color="primary" key={rSkill} />
                       ))
                     }
                     <br />
                     {
                       item.otherSkills.map((oSkill) => (
-                        <Chip variant="skill" label={oSkill} size="small" color="secondary" />
+                        <Chip variant="skill" label={oSkill} size="small" color="secondary" key={oSkill} />
                       ))
                     }
                   </CardContent>

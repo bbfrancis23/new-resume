@@ -45,7 +45,7 @@ export default function App() {
     let themeOptions = themes[0]
     const themeName = localStorage.getItem('themeName')
     if (themeName) themeOptions = themes.find((t) => t.name === themeName)
-    themeOptions.palette.mode = !localStorage.getItem('themeMode') ? 'light' : localStorage.getItem('themeMode')
+    // themeOptions.palette.mode = !localStorage.getItem('themeMode') ? 'light' : localStorage.getItem('themeMode')
 
     return createGlobalTheme(themeOptions)
   }
@@ -63,43 +63,44 @@ export default function App() {
 
     setTheme(createGlobalTheme(themeOptions))
     localStorage.setItem('themeName', themeName)
-    localStorage.setItem('themeMode', themeOptions.palette.mode)
+    // localStorage.setItem('themeMode', themeOptions.palette.mode)
   }
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-
-      <HeroContainer>
-        <img src={themeHeroes[theme.name]} alt="Theme Hero" />
-      </HeroContainer>
-
-      <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-        <AppToolBar appConfig={appConfig} settingsDialogOpen={handleSettingsDialogOpen} />
-      </Box>
-
-      <Box sx={{
-        display: { xs: 'none', md: 'block' }, position: 'fixed', right: theme.spacing(3), top: theme.spacing(3),
-      }}
-      >
-        <Tooltip title="Settings">
-          <Fab onClick={handleSettingsDialogOpen} size="large" variant="stainedGlass">
-            <SettingsIcon size="large" />
-          </Fab>
-        </Tooltip>
-        <AppSideNav appConfig={appConfig} />
-      </Box>
-      <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App">
-        <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
-      </AppDialog>
       <BrowserRouter>
+
+        <HeroContainer>
+          <img src={themeHeroes[theme.name]} alt="Theme Hero" />
+        </HeroContainer>
+
+        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+          <AppToolBar appConfig={appConfig} settingsDialogOpen={handleSettingsDialogOpen} />
+        </Box>
+
+        <Box sx={{
+          display: { xs: 'none', md: 'block' }, position: 'fixed', right: theme.spacing(3), top: theme.spacing(3),
+        }}
+        >
+          <Tooltip title="Settings">
+            <Fab onClick={handleSettingsDialogOpen} size="large" variant="stainedGlass">
+              <SettingsIcon size="large" />
+            </Fab>
+          </Tooltip>
+          <AppSideNav appConfig={appConfig} />
+        </Box>
+        <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App">
+          <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
+        </AppDialog>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="settings" element={<Settings />} />
           <Route path="*" element={<Home />} />
         </Routes>
+        <AppFooter />
       </BrowserRouter>
-      <AppFooter />
     </ThemeProvider>
   )
 }

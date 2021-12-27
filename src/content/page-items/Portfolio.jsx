@@ -29,9 +29,9 @@ export default function Portfolio(props) {
   return (
 
     <PageItem id={id} label="PORTFOLIO">
-
-      <ImageList gap={40}>
-        {
+      <>
+        <ImageList gap={40}>
+          {
             experience.map((item, index) => (
               <ImageListItem key={item.id} onClick={handlePortfolioDialogOpen(index)}>
                 <img
@@ -55,10 +55,11 @@ export default function Portfolio(props) {
               </ImageListItem>
             ))
           }
-      </ImageList>
-      <AppDialog close={() => handlePortfolioDialogClose()} open={portfolioDialogOpen} label="App">
-        <Carousel imgs={experience[portIndex].imgs} />
-      </AppDialog>
+        </ImageList>
+        <AppDialog close={() => handlePortfolioDialogClose()} open={portfolioDialogOpen} label="App">
+          <Carousel imgs={experience[portIndex].imgs} />
+        </AppDialog>
+      </>
     </PageItem>
 
   )

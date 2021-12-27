@@ -1,5 +1,5 @@
 import React from 'react'
-
+/* eslint-disable */
 import {
   Box, MobileStepper, Paper, Typography,
 } from '@mui/material'
@@ -71,13 +71,13 @@ export default function Carousel(props) {
         sx={{ '& .MuiMobileStepper-dots': { m: 'auto' } }}
         activeStep={activeStep}
         nextButton={(
-          <IconButton aria-label="Next Images">
-            <NextIcon onClick={handleNext} size="small" fontSize="12px" />
+          <IconButton aria-label="Next Images" onClick={handleNext}>
+            <NextIcon  size="small" fontSize="12px" />
           </IconButton>
             )}
         backButton={(
-          <IconButton aria-label="Previous Image">
-            <PrevIcon onClick={handleBack} size="small" fontSize="12px" />
+          <IconButton aria-label="Previous Image" onClick={handleBack}>
+            <PrevIcon size="small" fontSize="12px" />
           </IconButton>
             )}
       />
@@ -87,10 +87,10 @@ export default function Carousel(props) {
 Carousel.propTypes = {
   imgs: PropTypes.arrayOf(
     PropTypes.shape({
-      img: PropTypes.element.isRequired,
+      img: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
     }),
-  ).isRequired,
+  ),
 }
 
 /*

@@ -1,10 +1,16 @@
-import { Box } from '@mui/material'
 import React from 'react'
+import PageItem from '../ui/PageItems'
 
 export default function Settings() {
   return (
-    <Box sx={{ width: '100%' }}>
-      Hello McFly
-    </Box>
+    <PageItem id="settings">
+      <>
+        Hello McFly
+      </>
+    </PageItem>
   )
 }
+
+/*
+Quality Checked: Brian Francis - 12/27/2021
+ */

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import {
   styled, ThemeProvider, CssBaseline, Box, Tooltip, Fab,
 } from '@mui/material'
@@ -33,7 +32,7 @@ const themeHeroes = {
 }
 
 const HeroContainer = styled('div')(() => ({
-  position: 'fixed', zIndex: -1, width: '100%', height: '370px',
+  position: 'fixed', width: '100%', height: '370px',
 }))
 
 export default function App() {
@@ -80,7 +79,11 @@ export default function App() {
         </Box>
 
         <Box sx={{
-          display: { xs: 'none', md: 'block' }, position: 'fixed', right: theme.spacing(3), top: theme.spacing(3),
+          display: { xs: 'none', md: 'block' },
+          position: 'fixed',
+          right: theme.spacing(3),
+          top: theme.spacing(3),
+          zIndex: 'appBar',
         }}
         >
           <Tooltip title="Settings">
@@ -93,12 +96,13 @@ export default function App() {
         <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
           <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
         </AppDialog>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="*" element={<Home />} />
-        </Routes>
+        <Box sx={{ width: '100%' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="settings" element={<Settings />} />
+            <Route path="*" element={<Home />} />
+          </Routes>
+        </Box>
         <AppFooter />
       </BrowserRouter>
     </ThemeProvider>
@@ -106,5 +110,5 @@ export default function App() {
 }
 
 /*
-Quality Checked: Brian Francis - 12/22/2021
+Quality Checked: Brian Francis - 12/27/2021
  */

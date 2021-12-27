@@ -4,7 +4,7 @@ import { useTheme } from '@emotion/react'
 
 import PropTypes from 'prop-types'
 import { alpha } from '@mui/material/styles'
-import { Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 export default function PageItem(props) {
   const theme = useTheme()
@@ -12,30 +12,36 @@ export default function PageItem(props) {
   const { id, children, label } = props
 
   return (
-    <Paper
-      elevation={12}
-      id={id}
-      sx={{
-        margin: 'auto',
-        width: {
-          xs: '100%', md: '90%', lg: '70%', xl: '60%',
-        },
-        marginTop: theme.spacing(25),
-        marginBottom: theme.spacing(25),
-        padding: theme.spacing(5),
-      }}
-      style={{
-        backgroundColor: alpha(theme.palette.background.default, 0.75),
-        backdropFilter: 'blur(10px)',
-      }}
-    >
-      <div style={{ textAlign: 'center', display: label ? 'block' : 'none' }}>
-        <Typography variant="h4" style={{ fontSize: '35px', fontWeight: 'normal' }} sx={{ m: 0, pb: 5 }}>
-          {label}
-        </Typography>
-      </div>
-      {children}
-    </Paper>
+    <Box id={id} sx={{ pt: 1 }}>
+      <Paper
+        elevation={12}
+        sx={{
+          m: 'auto',
+          mt: 10,
+          mb: 10,
+          p: 5,
+          width: {
+            xs: '100%', md: '90%', lg: '70%', xl: '60%',
+          },
+        }}
+        style={{
+          backgroundColor: alpha(theme.palette.background.default, 0.75),
+          backdropFilter: 'blur(10px)',
+        }}
+      >
+        { label
+        && (
+        <div style={{ textAlign: 'center', display: label ? 'block' : 'none' }}>
+          <Typography variant="h4" style={{ fontSize: '35px', fontWeight: 'normal' }} sx={{ m: 0, pb: 5 }}>
+            {label}
+          </Typography>
+        </div>
+        )}
+
+        {children}
+      </Paper>
+    </Box>
+
   )
 }
 PageItem.defaultProps = {
@@ -48,5 +54,5 @@ PageItem.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/17/2021
+Quality Checked: Brian Francis - 12/27/2021
  */

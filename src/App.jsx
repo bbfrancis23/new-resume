@@ -39,11 +39,8 @@ export default function App() {
   const handleSettingsDialogClose = () => setAppSettingsDialogOpen(false)
 
   const initTheme = () => {
-    let themeOptions = themes[0]
-    const themeName = localStorage.getItem('themeName')
-    if (themeName) themeOptions = themes.find((t) => t.name === themeName)
-    themeOptions.palette.mode = !localStorage.getItem('themeMode') ? 'light' : localStorage.getItem('themeMode')
-
+    let themeOptions = JSON.parse(localStorage.getItem('themeOptions'))
+    themeOptions ||= themes[0]
     return createGlobalTheme(themeOptions)
   }
 
@@ -53,21 +50,19 @@ export default function App() {
 
   const handleUpdateTheme = (themeName, options) => {
     const themeOptions = themes.find((t) => t.name === themeName)
-    if (themeOptions.name === theme.name) {
-      themeOptions.palette.mode = themeOptions.palette.mode === 'light' ? 'dark' : 'light'
-    } else {
-      themeOptions.palette.mode = 'light'
-    }
 
     if (options) {
       if (options.stainedGlass === true || options.stainedGlass === false) {
         themeOptions.effects.stainedGlass = options.stainedGlass
       }
+      if (options.mode) {
+        themeOptions.palette.mode = options.mode
+      }
     }
 
     setTheme(createGlobalTheme(themeOptions))
-    localStorage.setItem('themeName', themeName)
-    localStorage.setItem('themeMode', themeOptions.palette.mode)
+
+    localStorage.setItem('themeOptions', JSON.stringify(themeOptions))
   }
 
   return (
@@ -115,5 +110,5 @@ export default function App() {
 }
 
 /*
-Quality Checked: Brian Francis - 12/27/2021
+Quality Checked: Brian Francis - 12/28   /2021
  */

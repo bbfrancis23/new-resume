@@ -19,7 +19,7 @@ export default function Settings(props) {
       <PageItem id="settings">
         <Grid container spacing={5}>
           <Grid item xs={6}>
-            <AppSettings updateTheme={(themeName) => updateTheme(themeName)} />
+            <AppSettings updateTheme={(themeName, options) => updateTheme(themeName, options)} />
           </Grid>
           <Grid item xs={6}>
             <Box>
@@ -65,5 +65,5 @@ Settings.propTypes = {
   updateTheme: PropTypes.func.isRequired,
 }
 /*
-Quality Checked: Brian Francis - 12/27/2021
+Quality Checked: Brian Francis - 12/28/2021
  */

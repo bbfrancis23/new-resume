@@ -25,6 +25,11 @@ export default function AppSettings(props) {
     return themeName
   }
 
+  const updateThemeOptions = (themeName) => {
+    const mode = (themeName === theme.name && theme.palette.mode === 'light') ? 'dark' : 'light'
+    updateTheme(themeName, { mode })
+  }
+
   const getThemeButton = (t) => (
     <Tooltip
       key={t.name}
@@ -36,7 +41,7 @@ export default function AppSettings(props) {
                             ${t.palette.secondary.main} -75%,
                             ${t.palette.primary.main} 100% )
                             `}
-        onClick={() => updateTheme(t.name)}
+        onClick={() => updateThemeOptions(t.name)}
         sx={{ ':hover': { transform: 'scale(1.1)', transition: '.8s' }, transition: '.8s' }}
         style={{
           color: theme.palette.primary.contrastText,
@@ -84,5 +89,5 @@ AppSettings.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/22/2021
+Quality Checked: Brian Francis - 12/28/2021
  */

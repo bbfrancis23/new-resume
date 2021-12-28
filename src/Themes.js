@@ -3,6 +3,12 @@ import {
 } from '@mui/material/colors'
 import { alpha, createTheme } from '@mui/material/styles'
 
+export const effects = {
+  stainedGlass: true,
+  density: 'normal',
+  toolTips: true,
+}
+
 export function createGlobalTheme(themeOptions) {
   let theme = createTheme(themeOptions)
 
@@ -10,7 +16,6 @@ export function createGlobalTheme(themeOptions) {
     components: {
       MuiTooltip: { defaultProps: { enterDelay: 1000 } },
       MuiCssBaseline: { styleOverrides: { body: { transition: 'all 0.375s linear' } } },
-      Timeline: { backgroundColor: '#FF0000', color: '#FF0000' },
       MuiPaper: {
         variants: [{
           props: { variant: 'stainedGlass' },
@@ -41,11 +46,6 @@ export function createGlobalTheme(themeOptions) {
         }],
       },
     },
-    effects: {
-      stainedGlass: true,
-      density: 'normal',
-      toolTips: true,
-    },
   }
   theme = createTheme(theme, globalTheme)
 
@@ -58,6 +58,8 @@ export const midnight = {
     primary: { main: deepPurple[800] },
     secondary: { main: indigo[500], light: indigo[100] },
   },
+
+  effects,
 }
 
 export const hawaii = {
@@ -66,6 +68,7 @@ export const hawaii = {
     primary: { main: teal[900] },
     secondary: { main: lightBlue[400], light: lightBlue[50] },
   },
+  effects,
 }
 
 export const arizona = {
@@ -74,6 +77,7 @@ export const arizona = {
     primary: { main: brown[400] },
     secondary: { main: teal[300] },
   },
+  effects,
 }
 
 export const pirate = {
@@ -82,6 +86,7 @@ export const pirate = {
     primary: { main: grey[900] },
     secondary: { main: red[900] },
   },
+  effects,
 }
 
 export const lush = {
@@ -90,6 +95,7 @@ export const lush = {
     primary: { main: green[800] },
     secondary: { main: lightGreen[300] },
   },
+  effects,
 }
 
 export const corporate = {
@@ -98,6 +104,7 @@ export const corporate = {
     primary: { main: blueGrey[500] },
     secondary: { main: grey[400], light: grey[100] },
   },
+  effects,
 }
 
 export const themes = [midnight, hawaii, arizona, pirate, lush, corporate]

@@ -2,10 +2,9 @@ import React from 'react'
 import {
   styled, ThemeProvider, CssBaseline, Box, Tooltip, Fab,
 } from '@mui/material'
-
 import SettingsIcon from '@mui/icons-material/Settings'
 
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import { themes, createGlobalTheme } from './Themes'
 import { appConfig } from './AppConfig'
 
@@ -19,8 +18,7 @@ import {
   MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero,
 } from './content/imgs'
 
-import Home from './routes/Home'
-import Settings from './routes/Settings'
+import AppRoutes from './AppRoutes'
 
 const themeHeroes = {
   Corporate: CorporateHero,
@@ -51,13 +49,20 @@ export default function App() {
 
   const [theme, setTheme] = React.useState(initTheme())
   theme.name = theme.name || themes[0].name
+  theme.effects = theme.effects || themes[0].effects
 
-  const handleUpdateTheme = (themeName) => {
+  const handleUpdateTheme = (themeName, options) => {
     const themeOptions = themes.find((t) => t.name === themeName)
     if (themeOptions.name === theme.name) {
       themeOptions.palette.mode = themeOptions.palette.mode === 'light' ? 'dark' : 'light'
     } else {
       themeOptions.palette.mode = 'light'
+    }
+
+    if (options) {
+      if (options.stainedGlass === true || options.stainedGlass === false) {
+        themeOptions.effects.stainedGlass = options.stainedGlass
+      }
     }
 
     setTheme(createGlobalTheme(themeOptions))
@@ -87,21 +92,21 @@ export default function App() {
         }}
         >
           <Tooltip title="Settings">
-            <Fab onClick={handleSettingsDialogOpen} size="large" variant="stainedGlass">
+            <Fab
+              onClick={handleSettingsDialogOpen}
+              size="large"
+              variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
+            >
               <SettingsIcon size="large" />
             </Fab>
           </Tooltip>
           <AppSideNav appConfig={appConfig} />
         </Box>
         <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
-          <AppSettings updateTheme={(themeName) => handleUpdateTheme(themeName)} theme={theme} />
+          <AppSettings updateTheme={(themeName, options) => handleUpdateTheme(themeName, options)} />
         </AppDialog>
         <Box sx={{ width: '100%' }}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="settings" element={<Settings />} />
-            <Route path="*" element={<Home />} />
-          </Routes>
+          <AppRoutes updateTheme={(themeName, options) => handleUpdateTheme(themeName, options)} />
         </Box>
         <AppFooter />
       </BrowserRouter>

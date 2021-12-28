@@ -31,6 +31,11 @@ export default function AppSettings(props) {
       title={getTooltipTitle(t.name)}
     >
       <Fab
+        color={`linear-gradient(
+                            -45deg, 
+                            ${t.palette.secondary.main} -75%,
+                            ${t.palette.primary.main} 100% )
+                            `}
         onClick={() => updateTheme(t.name)}
         sx={{ ':hover': { transform: 'scale(1.1)', transition: '.8s' }, transition: '.8s' }}
         style={{

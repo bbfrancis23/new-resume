@@ -20,7 +20,7 @@ import {
 
 import AppRoutes from './AppRoutes'
 
-const themeHeroes = {
+export const themeHeroes = {
   Corporate: CorporateHero,
   Midnight: MidnightHero,
   Hawaii: HawaiiHero,
@@ -39,8 +39,8 @@ export default function App() {
   const handleSettingsDialogClose = () => setAppSettingsDialogOpen(false)
 
   const initTheme = () => {
-    let themeOptions = JSON.parse(localStorage.getItem('themeOptions'))
-    themeOptions ||= themes[0]
+    let themeOptions = localStorage.getItem('themeOptions')
+    themeOptions = themeOptions ? (JSON.parse(themeOptions)) : themes[0]
     return createGlobalTheme(themeOptions)
   }
 
@@ -69,11 +69,9 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-
         <HeroContainer>
           <img src={themeHeroes[theme.name]} alt="Theme Hero" />
         </HeroContainer>
-
         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
           <AppToolBar appConfig={appConfig} settingsDialogOpen={handleSettingsDialogOpen} />
         </Box>
@@ -90,6 +88,7 @@ export default function App() {
             <Fab
               onClick={handleSettingsDialogOpen}
               size="large"
+              color="secondary"
               variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
             >
               <SettingsIcon size="large" />

@@ -7,10 +7,22 @@ import {
 import PageItem from '../ui/PageItems'
 import AppSettings from '../content/settings/AppSettings'
 
-import { ArizonaHero } from '../content/imgs'
+import {
+  MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero,
+} from '../content/imgs'
+
+const themeHeroes = {
+  Corporate: CorporateHero,
+  Midnight: MidnightHero,
+  Hawaii: HawaiiHero,
+  Arizona: ArizonaHero,
+  Pirate: PirateHero,
+  Lush: LushHero,
+}
 
 export default function Settings(props) {
   const theme = useTheme()
+  theme.name = theme.name ? theme.name : ''
   theme.effects = theme.effects ? theme.effects : ''
   const { updateTheme } = props
 
@@ -30,29 +42,30 @@ export default function Settings(props) {
               >
                 <span>Effects</span>
               </Tooltip>
-              <br />
-              <Tooltip title="Stained Glass Effect">
+              <Box sx={{ pt: 2 }}>
+                <Tooltip title="Stained Glass Effect">
+                  <Fab
+                    color="secondary"
+                    variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
+                    onClick={() => updateTheme(theme.name, { stainedGlass: !theme.effects.stainedGlass })}
+
+                  />
+                </Tooltip>
+
                 <Fab
-                  color="secondary"
-                  variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
-                  onClick={() => updateTheme('Arizona', { stainedGlass: false })}
-
+                  variant="stainedGlass"
+                  sx={{
+                    position: 'relative',
+                    right: '56px',
+                    zIndex: -1,
+                    backgroundImage:
+                          `url(${themeHeroes[theme.name]})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                  }}
                 />
-              </Tooltip>
+              </Box>
 
-              <Fab
-                variant="stainedGlass"
-                onClick={() => updateTheme('Arizona', { stainedGlass: false })}
-                sx={{
-                  position: 'relative',
-                  right: '56px',
-                  zIndex: -1,
-                  backgroundImage:
-                      `url("${ArizonaHero}")`,
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                }}
-              />
             </Box>
           </Grid>
 

@@ -55,7 +55,12 @@ export default function AppSideNav(props) {
     <div>
       <SideNavButton open={open}>
         <Tooltip title="Menu">
-          <Fab onClick={handleToggleSideNav} size="large" variant="stainedGlass">
+          <Fab
+            onClick={handleToggleSideNav}
+            size="large"
+            color="secondary"
+            variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
+          >
             {open ? <CloseIcon /> : <MenuIcon />}
           </Fab>
         </Tooltip>

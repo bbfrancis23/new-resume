@@ -4,12 +4,12 @@ import Tooltip from '@mui/material/Tooltip'
 import {
   Box, Fab, Grid, useTheme,
 } from '@mui/material'
-import PageItem from '../ui/PageItems'
-import AppSettings from '../content/settings/AppSettings'
+import PageItem from '../../ui/PageItems'
+import AppSettings from '../../AppSettings'
 
 import {
   MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero,
-} from '../content/imgs'
+} from '../imgs'
 
 const themeHeroes = {
   Corporate: CorporateHero,
@@ -78,5 +78,5 @@ Settings.propTypes = {
   updateTheme: PropTypes.func.isRequired,
 }
 /*
-Quality Checked: Brian Francis - 12/28/2021
+Quality Checked: Brian Francis - 12/29/2021
  */

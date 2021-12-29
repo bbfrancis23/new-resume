@@ -1,5 +1,5 @@
 import React from 'react'
-import { appConfig } from '../AppConfig'
+import { appConfig } from '../../AppConfig'
 
 export default function Home() {
   return (

@@ -64,5 +64,5 @@ AppDialog.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/22/2021
+Quality Checked: Brian Francis - 12/29/2021
  */

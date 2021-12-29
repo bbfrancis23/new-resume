@@ -46,3 +46,12 @@ export {
   IboatsCreateBoat, IboatsOptions, IboatsResearchType, AzdeqReg, AzdeqStepper, AzdeqLog, PlusOneWorkFlow, AzdeqStart,
   PlusOneTable, AzdeqInfo, PlusOneDate, AzdeqForm, PlusOneLogin, PlusOneStyle, PlusOneDash,
 }
+
+export const themeHeroes = {
+  Corporate: CorporateHero,
+  Midnight: MidnightHero,
+  Hawaii: HawaiiHero,
+  Arizona: ArizonaHero,
+  Pirate: PirateHero,
+  Lush: LushHero,
+}

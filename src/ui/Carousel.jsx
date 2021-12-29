@@ -1,11 +1,10 @@
 import React from 'react'
-/* eslint-disable */
+
 import {
-  Box, MobileStepper, Paper, Typography,
+  Box, MobileStepper, Paper, Typography, IconButton,
 } from '@mui/material'
-import IconButton from '@mui/material/IconButton'
-import NextIcon from '@mui/icons-material/ArrowForwardIos'
-import PrevIcon from '@mui/icons-material/ArrowBackIosNew'
+
+import { ArrowForwardIos as NextIcon, ArrowBackIosNew as PrevIcon } from '@mui/icons-material'
 
 import PropTypes from 'prop-types'
 import SwipeableViews from 'react-swipeable-views'
@@ -72,7 +71,7 @@ export default function Carousel(props) {
         activeStep={activeStep}
         nextButton={(
           <IconButton aria-label="Next Images" onClick={handleNext}>
-            <NextIcon  size="small" fontSize="12px" />
+            <NextIcon size="small" fontSize="12px" />
           </IconButton>
             )}
         backButton={(
@@ -90,9 +89,9 @@ Carousel.propTypes = {
       img: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
     }),
-  ),
+  ).isRequired,
 }
 
 /*
-Quality Checked: Brian Francis - 12/22/2021
+Quality Checked: Brian Francis - 12/29/2021
  */

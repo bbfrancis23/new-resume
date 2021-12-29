@@ -1,16 +1,12 @@
 import React from 'react'
-import Tooltip from '@mui/material/Tooltip'
-
-import {
-  useTheme, Fab, Stack, Box,
-} from '@mui/material'
-
-import DarkModeIcon from '@mui/icons-material/NightsStay'
-import LightModeIcon from '@mui/icons-material/WbSunny'
-
 import PropTypes from 'prop-types'
 
-import { themes } from '../../Themes'
+import {
+  useTheme, Fab, Stack, Box, Tooltip,
+} from '@mui/material'
+
+import { NightsStay as DarkModeIcon, WbSunny as LightModeIcon } from '@mui/icons-material'
+import { themes } from './Themes'
 
 export default function AppSettings(props) {
   const theme = useTheme()
@@ -31,33 +27,21 @@ export default function AppSettings(props) {
   }
 
   const getThemeButton = (t) => (
-    <Tooltip
-      key={t.name}
-      title={getTooltipTitle(t.name)}
-    >
+    <Tooltip key={t.name} title={getTooltipTitle(t.name)}>
       <Fab
-        color={`linear-gradient(
-                            -45deg, 
-                            ${t.palette.secondary.main} -75%,
-                            ${t.palette.primary.main} 100% )
-                            `}
+        color={`linear-gradient( -45deg, ${t.palette.secondary.main} -75%, ${t.palette.primary.main} 100% )`}
         onClick={() => updateThemeOptions(t.name)}
         sx={{ ':hover': { transform: 'scale(1.1)', transition: '.8s' }, transition: '.8s' }}
         style={{
           color: theme.palette.primary.contrastText,
-          background:
-                    `linear-gradient(
-                            -45deg, 
-                            ${t.palette.secondary.main} -75%,
-                            ${t.palette.primary.main} 100% )
-                            `,
+          background: `linear-gradient( -45deg, ${t.palette.secondary.main} -75%, ${t.palette.primary.main} 100% )`,
         }}
       >
         {
-              t.palette.mode === 'light'
-                ? <DarkModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }} />
-                : <LightModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }} />
-            }
+        t.palette.mode === 'light'
+          ? <DarkModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }} />
+          : <LightModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }} />
+        }
       </Fab>
     </Tooltip>
   )
@@ -89,5 +73,5 @@ AppSettings.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/28/2021
+Quality Checked: Brian Francis - 12/29/2021
  */

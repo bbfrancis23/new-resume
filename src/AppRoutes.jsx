@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Settings from './routes/Settings'
-import Home from './routes/Home'
+import Settings from './content/routes/Settings'
+import Home from './content/routes/Home'
 
 export default function AppRoutes(props) {
   const { updateTheme } = props

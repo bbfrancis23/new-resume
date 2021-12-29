@@ -5,29 +5,17 @@ import {
 import SettingsIcon from '@mui/icons-material/Settings'
 
 import { BrowserRouter } from 'react-router-dom'
-import { themes, createGlobalTheme } from './Themes'
+import { themes, createGlobalTheme, effects } from './Themes'
 import { appConfig } from './AppConfig'
 
 import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
-
-import AppDialog from './ui/AppDialog'
-import AppSettings from './content/settings/AppSettings'
+import AppDialog from './AppDialog'
+import AppSettings from './AppSettings'
 import AppFooter from './AppFooter'
-import {
-  MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero,
-} from './content/imgs'
-
 import AppRoutes from './AppRoutes'
 
-export const themeHeroes = {
-  Corporate: CorporateHero,
-  Midnight: MidnightHero,
-  Hawaii: HawaiiHero,
-  Arizona: ArizonaHero,
-  Pirate: PirateHero,
-  Lush: LushHero,
-}
+import { themeHeroes } from './content/imgs'
 
 const HeroContainer = styled('div')(() => ({
   position: 'fixed', width: '100%', height: '370px',
@@ -46,10 +34,12 @@ export default function App() {
 
   const [theme, setTheme] = React.useState(initTheme())
   theme.name = theme.name || themes[0].name
-  theme.effects = theme.effects || themes[0].effects
+  theme.effects ||= effects
 
   const handleUpdateTheme = (themeName, options) => {
     const themeOptions = themes.find((t) => t.name === themeName)
+
+    themeOptions.effects = theme.effects
 
     if (options) {
       if (options.stainedGlass === true || options.stainedGlass === false) {
@@ -69,13 +59,12 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <BrowserRouter>
-        <HeroContainer>
+        <HeroContainer style={{ zIndex: -1 }}>
           <img src={themeHeroes[theme.name]} alt="Theme Hero" />
         </HeroContainer>
         <Box sx={{ display: { xs: 'block', md: 'none' } }}>
           <AppToolBar appConfig={appConfig} settingsDialogOpen={handleSettingsDialogOpen} />
         </Box>
-
         <Box sx={{
           display: { xs: 'none', md: 'block' },
           position: 'fixed',
@@ -85,14 +74,17 @@ export default function App() {
         }}
         >
           <Tooltip title="Settings">
-            <Fab
-              onClick={handleSettingsDialogOpen}
-              size="large"
-              color="secondary"
-              variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
-            >
-              <SettingsIcon size="large" />
-            </Fab>
+            <span>
+              <Fab
+                onClick={handleSettingsDialogOpen}
+                size="large"
+                color="secondary"
+                variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
+                disabled={window.location.pathname === '/settings'}
+              >
+                <SettingsIcon size="large" />
+              </Fab>
+            </span>
           </Tooltip>
           <AppSideNav appConfig={appConfig} />
         </Box>
@@ -109,5 +101,5 @@ export default function App() {
 }
 
 /*
-Quality Checked: Brian Francis - 12/28   /2021
+Quality Checked: Brian Francis - 12/29/2021
  */

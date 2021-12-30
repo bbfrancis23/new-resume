@@ -1,9 +1,8 @@
 import React from 'react'
 import {
-  styled, ThemeProvider, CssBaseline, Box, Tooltip, Fab,
+  styled, ThemeProvider, CssBaseline, Box, Fab,
 } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
-
 import { BrowserRouter } from 'react-router-dom'
 import { themes, createGlobalTheme, effects } from './Themes'
 import { appConfig } from './AppConfig'
@@ -16,6 +15,7 @@ import AppFooter from './AppFooter'
 import AppRoutes from './AppRoutes'
 
 import { themeHeroes } from './content/imgs'
+import AqTooltip from './ui/AqTooltip'
 
 const HeroContainer = styled('div')(() => ({
   position: 'fixed', width: '100%', height: '370px',
@@ -73,7 +73,7 @@ export default function App() {
           zIndex: 'appBar',
         }}
         >
-          <Tooltip title="Settings">
+          <AqTooltip title="Settings">
             <span>
               <Fab
                 onClick={handleSettingsDialogOpen}
@@ -85,7 +85,7 @@ export default function App() {
                 <SettingsIcon size="large" />
               </Fab>
             </span>
-          </Tooltip>
+          </AqTooltip>
           <AppSideNav appConfig={appConfig} />
         </Box>
         <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
@@ -101,5 +101,5 @@ export default function App() {
 }
 
 /*
-Quality Checked: Brian Francis - 12/29/2021
+Quality Checked: Brian Francis - 12/30/2021
  */

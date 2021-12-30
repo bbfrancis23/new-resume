@@ -2,13 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import {
-  List, ListItem, ListItemText, ListItemAvatar, Avatar, styled, useTheme, Drawer, Tooltip, Fab,
+  List, ListItem, ListItemText, ListItemAvatar, Avatar, styled, useTheme, Drawer, Fab,
 } from '@mui/material'
 
-import MenuIcon from '@mui/icons-material/Menu'
-import CloseIcon from '@mui/icons-material/Close'
+import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
 
 import { appConfigPropType } from './AppConfig'
+import AqTooltip from './ui/AqTooltip'
 
 const drawerWidth = 225
 
@@ -45,6 +45,7 @@ const SideNavButton = styled('div', { shouldForwardProp: (prop) => prop !== 'ope
 
 export default function AppSideNav(props) {
   const theme = useTheme()
+  theme.effects ||= ''
 
   const [open, setOpen] = React.useState(false)
   const handleToggleSideNav = () => { setOpen((!open)) }
@@ -54,7 +55,7 @@ export default function AppSideNav(props) {
   return (
     <div>
       <SideNavButton open={open}>
-        <Tooltip title="Menu">
+        <AqTooltip title="Menu">
           <Fab
             onClick={handleToggleSideNav}
             size="large"
@@ -63,7 +64,7 @@ export default function AppSideNav(props) {
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </Fab>
-        </Tooltip>
+        </AqTooltip>
       </SideNavButton>
       <Drawer variant="persistent" open={open} transitionDuration={theme.transitions.duration.standard}>
         <div><Monogram>BF</Monogram></div>
@@ -72,13 +73,13 @@ export default function AppSideNav(props) {
             appConfig.pageItems.map((item) => (
               <a href={`/#${item.id}`} style={{ textDecoration: 'none' }} key={item.id}>
                 <ListItem>
-                  <Tooltip title={item.description} placement="right-end">
+                  <AqTooltip title={item.description} placement="right-end">
                     <ListItemAvatar>
                       <Avatar>
                         {item.icon}
                       </Avatar>
                     </ListItemAvatar>
-                  </Tooltip>
+                  </AqTooltip>
                   <ListItemText primary={item.label} />
                 </ListItem>
               </a>
@@ -92,5 +93,5 @@ export default function AppSideNav(props) {
 AppSideNav.propTypes = { appConfig: PropTypes.shape(appConfigPropType).isRequired }
 
 /*
-Quality Checked: Brian Francis - 12/18/2021
+Quality Checked: Brian Francis - 12/30/2021
  */

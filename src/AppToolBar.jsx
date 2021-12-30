@@ -2,13 +2,13 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 
 import {
-  AppBar, Box, Toolbar, Typography, Tooltip, styled, useTheme,
+  AppBar, Box, Toolbar, Typography, styled, useTheme, IconButton,
 } from '@mui/material'
 
-import IconButton from '@mui/material/IconButton'
 import SettingsIcon from '@mui/icons-material/Settings'
 
 import { appConfigPropType } from './AppConfig'
+import AqTooltip from './ui/AqTooltip'
 
 const ToolbarContent = styled('div')(({ theme }) => (
   { width: '90vw', maxWidth: theme.breakpoints.values.lg, display: 'flex' }))
@@ -26,19 +26,19 @@ export default function AppToolBar(props) {
               appConfig.pageItems.map((item) => (
                 <a href={`#${item.id}`} style={{ textDecoration: 'none' }} key={item.id}>
                   <Box sx={{ display: { xs: 'none', sm: 'block' }, paddingRight: theme.spacing(1) }}>
-                    <Tooltip title={item.description} placement="right-end">
+                    <AqTooltip title={item.description} placement="right-end">
                       <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ lineHeight: 3, color: theme.palette.primary.contrastText }}
+                        sx={{ lineHeight: 3, color: 'primary.contrastText' }}
                       >
                         {item.label}
                       </Typography>
-                    </Tooltip>
+                    </AqTooltip>
                   </Box>
                   <Box
-                    sx={{ display: { xs: 'block', sm: 'none' }, lineHeight: 3, color: theme.palette.primary.contrastText }}
+                    sx={{ display: { xs: 'block', sm: 'none' }, lineHeight: 3, color: 'primary.contrastText' }}
                   >
                     <IconButton size="large" color="inherit">
                       {item.icon}

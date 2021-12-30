@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Tooltip from '@mui/material/Tooltip'
 import {
   Box, Fab, Grid, useTheme,
 } from '@mui/material'
@@ -10,6 +9,7 @@ import AppSettings from '../../AppSettings'
 import {
   MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero,
 } from '../imgs'
+import AqTooltip from '../../ui/AqTooltip'
 
 const themeHeroes = {
   Corporate: CorporateHero,
@@ -35,22 +35,22 @@ export default function Settings(props) {
           </Grid>
           <Grid item xs={6}>
             <Box>
-              <Tooltip
+              <AqTooltip
                 title="Toggle Effects Off and On"
                 placement="right"
                 style={{ cursor: 'help' }}
               >
                 <span>Effects</span>
-              </Tooltip>
+              </AqTooltip>
               <Box sx={{ pt: 2 }}>
-                <Tooltip title="Stained Glass Effect">
+                <AqTooltip title="Stained Glass Effect">
                   <Fab
                     color="secondary"
                     variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
                     onClick={() => updateTheme(theme.name, { stainedGlass: !theme.effects.stainedGlass })}
 
                   />
-                </Tooltip>
+                </AqTooltip>
 
                 <Fab
                   variant="stainedGlass"
@@ -77,6 +77,7 @@ export default function Settings(props) {
 Settings.propTypes = {
   updateTheme: PropTypes.func.isRequired,
 }
+
 /*
-Quality Checked: Brian Francis - 12/29/2021
+Quality Checked: Brian Francis - 12/30/2021
  */

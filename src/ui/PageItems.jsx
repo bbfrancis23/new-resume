@@ -1,8 +1,8 @@
 import React from 'react'
-import Paper from '@mui/material/Paper'
-import { useTheme } from '@emotion/react'
 import PropTypes from 'prop-types'
-import { Box, Typography } from '@mui/material'
+import {
+  Box, Typography, useTheme, Paper,
+} from '@mui/material'
 
 export default function PageItem(props) {
   const theme = useTheme()
@@ -24,9 +24,6 @@ export default function PageItem(props) {
 
         }}
         variant={theme.effects.stainedGlass ? 'stainedGlass' : 'outlined'}
-        style={{
-          //
-        }}
       >
         { label
         && (
@@ -53,5 +50,5 @@ PageItem.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/27/2021
+Quality Checked: Brian Francis - 12/30/2021
  */

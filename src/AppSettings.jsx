@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import {
-  useTheme, Fab, Stack, Box, Tooltip,
+  useTheme, Fab, Stack, Box,
 } from '@mui/material'
 
 import { NightsStay as DarkModeIcon, WbSunny as LightModeIcon } from '@mui/icons-material'
 import { themes } from './Themes'
+import AqTooltip from './ui/AqTooltip'
 
 export default function AppSettings(props) {
   const theme = useTheme()
@@ -27,7 +28,7 @@ export default function AppSettings(props) {
   }
 
   const getThemeButton = (t) => (
-    <Tooltip key={t.name} title={getTooltipTitle(t.name)}>
+    <AqTooltip key={t.name} title={getTooltipTitle(t.name)}>
       <Fab
         color={`linear-gradient( -45deg, ${t.palette.secondary.main} -75%, ${t.palette.primary.main} 100% )`}
         onClick={() => updateThemeOptions(t.name)}
@@ -43,18 +44,18 @@ export default function AppSettings(props) {
           : <LightModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }} />
         }
       </Fab>
-    </Tooltip>
+    </AqTooltip>
   )
 
   return (
     <Box>
-      <Tooltip
+      <AqTooltip
         title="Select multiple times to toggle between light and dark modes."
         placement="right"
         style={{ cursor: 'help' }}
       >
         <span>Select Theme</span>
-      </Tooltip>
+      </AqTooltip>
       <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         {
           themes.slice(0, 3).map((t) => getThemeButton(t))
@@ -73,5 +74,5 @@ AppSettings.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/29/2021
+Quality Checked: Brian Francis - 12/30/2021
  */

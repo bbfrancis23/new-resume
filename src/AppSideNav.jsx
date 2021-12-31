@@ -8,7 +8,7 @@ import {
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
 
 import { appConfigPropType } from './AppConfig'
-import AqTooltip from './ui/AqTooltip'
+import EfTooltip from './ui/effects-components/EfTooltip'
 
 const drawerWidth = 225
 
@@ -55,7 +55,7 @@ export default function AppSideNav(props) {
   return (
     <div>
       <SideNavButton open={open}>
-        <AqTooltip title="Menu">
+        <EfTooltip title="Menu">
           <Fab
             onClick={handleToggleSideNav}
             size="large"
@@ -64,7 +64,7 @@ export default function AppSideNav(props) {
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </Fab>
-        </AqTooltip>
+        </EfTooltip>
       </SideNavButton>
       <Drawer variant="persistent" open={open} transitionDuration={theme.transitions.duration.standard}>
         <div><Monogram>BF</Monogram></div>
@@ -73,13 +73,13 @@ export default function AppSideNav(props) {
             appConfig.pageItems.map((item) => (
               <a href={`/#${item.id}`} style={{ textDecoration: 'none' }} key={item.id}>
                 <ListItem>
-                  <AqTooltip title={item.description} placement="right-end">
+                  <EfTooltip title={item.description} placement="right-end">
                     <ListItemAvatar>
                       <Avatar>
                         {item.icon}
                       </Avatar>
                     </ListItemAvatar>
-                  </AqTooltip>
+                  </EfTooltip>
                   <ListItemText primary={item.label} />
                 </ListItem>
               </a>

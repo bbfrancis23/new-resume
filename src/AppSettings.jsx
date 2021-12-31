@@ -6,11 +6,12 @@ import {
 } from '@mui/material'
 
 import { NightsStay as DarkModeIcon, WbSunny as LightModeIcon } from '@mui/icons-material'
-import { themes } from './Themes'
-import AqTooltip from './ui/AqTooltip'
+import { themes, effects } from './Themes'
+import EfTooltip from './ui/effects-components/EfTooltip'
 
 export default function AppSettings(props) {
   const theme = useTheme()
+  theme.effects ||= effects
   theme.name = theme.name || ''
 
   const { updateTheme } = props
@@ -28,14 +29,19 @@ export default function AppSettings(props) {
   }
 
   const getThemeButton = (t) => (
-    <AqTooltip key={t.name} title={getTooltipTitle(t.name)}>
+    <EfTooltip key={t.name} title={getTooltipTitle(t.name)}>
       <Fab
-        color={`linear-gradient( -45deg, ${t.palette.secondary.main} -75%, ${t.palette.primary.main} 100% )`}
         onClick={() => updateThemeOptions(t.name)}
-        sx={{ ':hover': { transform: 'scale(1.1)', transition: '.8s' }, transition: '.8s' }}
+        sx={{
+          background: `linear-gradient( -25deg, ${t.palette.secondary.main} -50%, ${t.palette.primary.main} 100% )`,
+          ':hover':
+              {
+                background: `linear-gradient( -25deg, ${t.palette.secondary.main} -5%, ${t.palette.primary.main} 100% )`,
+              },
+        }}
         style={{
           color: theme.palette.primary.contrastText,
-          background: `linear-gradient( -45deg, ${t.palette.secondary.main} -75%, ${t.palette.primary.main} 100% )`,
+
         }}
       >
         {
@@ -44,18 +50,18 @@ export default function AppSettings(props) {
           : <LightModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }} />
         }
       </Fab>
-    </AqTooltip>
+    </EfTooltip>
   )
 
   return (
     <Box>
-      <AqTooltip
+      <EfTooltip
         title="Select multiple times to toggle between light and dark modes."
         placement="right"
-        style={{ cursor: 'help' }}
+        style={{ cursor: theme.effects.tooltips ? 'help' : 'default' }}
       >
         <span>Select Theme</span>
-      </AqTooltip>
+      </EfTooltip>
       <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         {
           themes.slice(0, 3).map((t) => getThemeButton(t))

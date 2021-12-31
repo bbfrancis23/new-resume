@@ -1,15 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  Box, Fab, Grid, useTheme,
+  Box, Fab, Grid, Stack, useTheme,
 } from '@mui/material'
+import HelpIcon from '@mui/icons-material/Help'
 import PageItem from '../../ui/PageItems'
 import AppSettings from '../../AppSettings'
 
 import {
   MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero,
 } from '../imgs'
-import AqTooltip from '../../ui/AqTooltip'
+import EfTooltip from '../../ui/effects-components/EfTooltip'
 
 const themeHeroes = {
   Corporate: CorporateHero,
@@ -35,28 +36,41 @@ export default function Settings(props) {
           </Grid>
           <Grid item xs={6}>
             <Box>
-              <AqTooltip
+              <EfTooltip
                 title="Toggle Effects Off and On"
                 placement="right"
-                style={{ cursor: 'help' }}
+                style={{ cursor: theme.effects.tooltips ? 'help' : 'default' }}
               >
                 <span>Effects</span>
-              </AqTooltip>
+              </EfTooltip>
+
               <Box sx={{ pt: 2 }}>
-                <AqTooltip title="Stained Glass Effect">
-                  <Fab
-                    color="secondary"
-                    variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
-                    onClick={() => updateTheme(theme.name, { stainedGlass: !theme.effects.stainedGlass })}
 
-                  />
-                </AqTooltip>
+                <Stack direction="row" spacing={2} sx={{ p: 2 }}>
+                  <EfTooltip title="Stained Glass Effect">
+                    <Fab
+                      color="secondary"
+                      variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
+                      onClick={() => updateTheme(theme.name, { stainedGlass: !theme.effects.stainedGlass })}
+                    />
+                  </EfTooltip>
 
+                  <EfTooltip title="Tooltips">
+                    <Fab
+                      color="secondary"
+                      variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
+                      onClick={() => updateTheme(theme.name, { tooltips: !theme.effects.tooltips })}
+                    >
+                      { theme.effects.tooltips && <HelpIcon size="large" />}
+                    </Fab>
+                  </EfTooltip>
+                </Stack>
                 <Fab
                   variant="stainedGlass"
                   sx={{
                     position: 'relative',
-                    right: '56px',
+                    left: '16px',
+                    bottom: '72px',
                     zIndex: -1,
                     backgroundImage:
                           `url(${themeHeroes[theme.name]})`,

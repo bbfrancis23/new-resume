@@ -6,7 +6,7 @@ import { alpha, createTheme } from '@mui/material/styles'
 export const effects = {
   stainedGlass: true,
   density: 'normal',
-  toolTips: true,
+  tooltips: false,
 }
 export function createGlobalTheme(themeOptions) {
   let theme = createTheme(themeOptions)

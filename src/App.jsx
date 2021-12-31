@@ -15,7 +15,7 @@ import AppFooter from './AppFooter'
 import AppRoutes from './AppRoutes'
 
 import { themeHeroes } from './content/imgs'
-import AqTooltip from './ui/AqTooltip'
+import EfTooltip from './ui/effects-components/EfTooltip'
 
 const HeroContainer = styled('div')(() => ({
   position: 'fixed', width: '100%', height: '370px',
@@ -45,6 +45,9 @@ export default function App() {
       if (options.stainedGlass === true || options.stainedGlass === false) {
         themeOptions.effects.stainedGlass = options.stainedGlass
       }
+      if (options.tooltips === true || options.tooltips === false) {
+        themeOptions.effects.tooltips = options.tooltips
+      }
       if (options.mode) {
         themeOptions.palette.mode = options.mode
       }
@@ -73,7 +76,7 @@ export default function App() {
           zIndex: 'appBar',
         }}
         >
-          <AqTooltip title="Settings">
+          <EfTooltip title="Settings">
             <span>
               <Fab
                 onClick={handleSettingsDialogOpen}
@@ -85,7 +88,7 @@ export default function App() {
                 <SettingsIcon size="large" />
               </Fab>
             </span>
-          </AqTooltip>
+          </EfTooltip>
           <AppSideNav appConfig={appConfig} />
         </Box>
         <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">

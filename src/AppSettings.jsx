@@ -1,13 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+/* eslint-disable */
+
 import {
   useTheme, Fab, Stack, Box,
 } from '@mui/material'
 
 import { NightsStay as DarkModeIcon, WbSunny as LightModeIcon } from '@mui/icons-material'
-import { themes, effects } from './Themes'
+import { appThemes, effects } from './AppThemes'
 import EfTooltip from './ui/effects-components/EfTooltip'
+
+import {themeHeroes} from "./content/imgs";
 
 export default function AppSettings(props) {
   const theme = useTheme()
@@ -23,40 +27,37 @@ export default function AppSettings(props) {
     return themeName
   }
 
-  const updateThemeOptions = (themeName) => {
-    const mode = (themeName === theme.name && theme.palette.mode === 'light') ? 'dark' : 'light'
-    updateTheme(themeName, { mode })
-  }
+  // const updateThemeOptions = (themeName) => {
+  //   const mode = (themeName === theme.name && theme.palette.mode === 'light') ? 'dark' : 'light'
+  //   updateTheme(themeName, { mode })
+  // }
 
   const getThemeButton = (t) => (
     <EfTooltip key={t.name} title={getTooltipTitle(t.name)}>
-      <Fab
-        onClick={() => updateThemeOptions(t.name)}
-        sx={{
-          background: `linear-gradient( -25deg, ${t.palette.secondary.main} -50%, ${t.palette.primary.main} 100% )`,
-          ':hover':
-              {
-                background: `linear-gradient( -25deg, ${t.palette.secondary.main} -5%, ${t.palette.primary.main} 100% )`,
-              },
-        }}
-        style={{
-          color: theme.palette.primary.contrastText,
 
-        }}
+      <Fab
+          onClick={() => updateTheme({name: t.name})}
+          sx={{
+
+            backgroundImage:
+                `url(${themeHeroes[t.name]})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
       >
-        {
+      {
         t.palette.mode === 'light'
-          ? <DarkModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }} />
-          : <LightModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }} />
+          ? <DarkModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }}  />
+          : <LightModeIcon style={{ visibility: t.name === theme.name ? 'visible' : 'hidden' }}  />
         }
-      </Fab>
+       </Fab>
     </EfTooltip>
   )
 
   return (
     <Box>
       <EfTooltip
-        title="Select multiple times to toggle between light and dark modes."
+        title=""
         placement="right"
         style={{ cursor: theme.effects.tooltips ? 'help' : 'default' }}
       >
@@ -64,12 +65,12 @@ export default function AppSettings(props) {
       </EfTooltip>
       <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         {
-          themes.slice(0, 3).map((t) => getThemeButton(t))
+          appThemes.slice(0, 2).map((t) => getThemeButton(t))
         }
       </Stack>
       <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         {
-          themes.slice(3, 6).map((t) => getThemeButton(t))
+          appThemes.slice(2, 4).map((t) => getThemeButton(t))
         }
       </Stack>
     </Box>

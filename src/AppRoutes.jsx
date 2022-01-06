@@ -1,19 +1,19 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import Settings from './content/routes/Settings'
-import Home from './content/routes/Home'
+import AppSettingsRoute from './AppSettingsRoute'
+import AppRoute from './AppRoute'
 
 export default function AppRoutes(props) {
   const { updateTheme } = props
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<AppRoute />} />
       <Route
         path="settings"
-        element={<Settings updateTheme={(themeName, options) => updateTheme(themeName, options)} />}
+        element={<AppSettingsRoute updateTheme={(themeName, options) => updateTheme(themeName, options)} />}
       />
-      <Route path="*" element={<Home />} />
+      <Route path="*" element={<AppRoute />} />
     </Routes>
   )
 }

@@ -4,7 +4,7 @@ import {
 } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
 import { BrowserRouter } from 'react-router-dom'
-import { themes, createGlobalTheme, effects } from './Themes'
+import { appThemes, createGlobalTheme, effects } from './AppThemes'
 import { appConfig } from './AppConfig'
 
 import AppSideNav from './AppSideNav'
@@ -28,20 +28,28 @@ export default function App() {
 
   const initTheme = () => {
     let themeOptions = localStorage.getItem('themeOptions')
-    themeOptions = themeOptions ? (JSON.parse(themeOptions)) : themes[0]
+    themeOptions = themeOptions ? (JSON.parse(themeOptions)) : appThemes[0]
     return createGlobalTheme(themeOptions)
   }
 
   const [theme, setTheme] = React.useState(initTheme())
-  theme.name = theme.name || themes[0].name
+  theme.name = theme.name || appThemes[0].name
   theme.effects ||= effects
 
-  const handleUpdateTheme = (themeName, options) => {
-    const themeOptions = themes.find((t) => t.name === themeName)
+  const handleUpdateTheme = (options) => {
+    let themeOptions = {}
 
-    themeOptions.effects = theme.effects
+    console.log(options)
 
     if (options) {
+      if (options.name) {
+        themeOptions = appThemes.find((t) => t.name === options.name)
+        themeOptions.effects = theme.effects
+      } else {
+        themeOptions = localStorage.getItem('themeOptions')
+        themeOptions = themeOptions ? (JSON.parse(themeOptions)) : appThemes[0]
+      }
+
       if (options.stainedGlass === true || options.stainedGlass === false) {
         themeOptions.effects.stainedGlass = options.stainedGlass
       }
@@ -51,6 +59,8 @@ export default function App() {
       if (options.mode) {
         themeOptions.palette.mode = options.mode
       }
+
+      if (options.palette) { themeOptions.palette = options.palette }
     }
 
     setTheme(createGlobalTheme(themeOptions))
@@ -92,10 +102,10 @@ export default function App() {
           <AppSideNav appConfig={appConfig} />
         </Box>
         <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
-          <AppSettings updateTheme={(themeName, options) => handleUpdateTheme(themeName, options)} />
+          <AppSettings updateTheme={(options) => handleUpdateTheme(options)} />
         </AppDialog>
         <Box sx={{ width: '100%' }}>
-          <AppRoutes updateTheme={(themeName, options) => handleUpdateTheme(themeName, options)} />
+          <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />
         </Box>
         <AppFooter />
       </BrowserRouter>

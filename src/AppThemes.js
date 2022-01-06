@@ -8,6 +8,16 @@ export const effects = {
   density: 'normal',
   tooltips: false,
 }
+
+export const palettes = [
+  { name: 'Hawaii', primary: { main: teal[900] }, secondary: { main: lightBlue[400], light: lightBlue[50] } },
+  { name: 'Midnight', primary: { main: deepPurple[800] }, secondary: { main: indigo[500], light: indigo[100] } },
+  { name: 'Arizona', primary: { main: brown[400] }, secondary: { main: teal[300] } },
+  { name: 'Pirate', primary: { main: grey[900] }, secondary: { main: red[900] } },
+  { name: 'Lush', primary: { main: green[800] }, secondary: { main: lightGreen[300] } },
+  { name: 'Corporate', primary: { main: blueGrey[500] }, secondary: { main: grey[400], light: grey[100] } },
+]
+
 export function createGlobalTheme(themeOptions) {
   let theme = createTheme(themeOptions)
 
@@ -59,55 +69,27 @@ export function createGlobalTheme(themeOptions) {
   return theme
 }
 
-export const midnight = {
-  name: 'Midnight',
-  palette: {
-    primary: { main: deepPurple[800] },
-    secondary: { main: indigo[500], light: indigo[100] },
-  },
-}
-
-export const hawaii = {
-  name: 'Hawaii',
-  palette: {
-    primary: { main: teal[900] },
-    secondary: { main: lightBlue[400], light: lightBlue[50] },
-  },
-}
-
 export const arizona = {
   name: 'Arizona',
-  palette: {
-    primary: { main: brown[400] },
-    secondary: { main: teal[300] },
-  },
+  palette: palettes[2],
 }
 
 export const pirate = {
   name: 'Pirate',
-  palette: {
-    primary: { main: grey[900] },
-    secondary: { main: red[900] },
-  },
+  palette: palettes[3],
 }
 
 export const lush = {
   name: 'Lush',
-  palette: {
-    primary: { main: green[800] },
-    secondary: { main: lightGreen[300] },
-  },
+  palette: palettes[4],
 }
 
 export const corporate = {
   name: 'Corporate',
-  palette: {
-    primary: { main: blueGrey[500] },
-    secondary: { main: grey[400], light: grey[100] },
-  },
+  palette: palettes[5],
 }
 
-export const themes = [midnight, hawaii, arizona, pirate, lush, corporate]
+export const appThemes = [arizona, pirate, lush, corporate]
 
 /*
 Quality Checked: Brian Francis - 12/18/2021

@@ -1,7 +1,7 @@
 import React from 'react'
-import { appConfig } from '../../AppConfig'
+import { appConfig } from './AppConfig'
 
-export default function Home() {
+export default function AppRoute() {
   return (
     <>
       { appConfig.pageItems.map((item) => item.pageComponent) }

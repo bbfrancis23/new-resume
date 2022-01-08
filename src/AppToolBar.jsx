@@ -19,7 +19,7 @@ export default function AppToolBar(props) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" color="primary">
+      <AppBar position="fixed" color="primary" enableColorOnDark>
         <Toolbar sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
           <ToolbarContent>
             {

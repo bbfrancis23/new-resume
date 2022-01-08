@@ -1,19 +1,18 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import {
   styled, ThemeProvider, CssBaseline, Box, Fab,
 } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
-import { BrowserRouter } from 'react-router-dom'
+
 import { appThemes, createGlobalTheme, effects } from './AppThemes'
 import { appConfig } from './AppConfig'
-
 import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
 import AppDialog from './AppDialog'
 import AppSettings from './AppSettings'
 import AppFooter from './AppFooter'
 import AppRoutes from './AppRoutes'
-
 import { themeHeroes } from './content/imgs'
 import EfTooltip from './ui/effects-components/EfTooltip'
 
@@ -29,6 +28,7 @@ export default function App() {
   const initTheme = () => {
     let themeOptions = localStorage.getItem('themeOptions')
     themeOptions = themeOptions ? (JSON.parse(themeOptions)) : appThemes[0]
+    themeOptions.effects ||= effects
     return createGlobalTheme(themeOptions)
   }
 
@@ -39,16 +39,12 @@ export default function App() {
   const handleUpdateTheme = (options) => {
     let themeOptions = {}
 
-    console.log(options)
-
     if (options) {
-      if (options.name) {
-        themeOptions = appThemes.find((t) => t.name === options.name)
-        themeOptions.effects = theme.effects
-      } else {
-        themeOptions = localStorage.getItem('themeOptions')
-        themeOptions = themeOptions ? (JSON.parse(themeOptions)) : appThemes[0]
-      }
+      themeOptions = localStorage.getItem('themeOptions')
+      themeOptions = themeOptions ? (JSON.parse(themeOptions)) : appThemes[0]
+      themeOptions.effects ||= effects
+
+      if (options.name) { themeOptions.name = options.name }
 
       if (options.stainedGlass === true || options.stainedGlass === false) {
         themeOptions.effects.stainedGlass = options.stainedGlass
@@ -56,11 +52,9 @@ export default function App() {
       if (options.tooltips === true || options.tooltips === false) {
         themeOptions.effects.tooltips = options.tooltips
       }
-      if (options.mode) {
-        themeOptions.palette.mode = options.mode
-      }
-
       if (options.palette) { themeOptions.palette = options.palette }
+
+      if (options.mode) { themeOptions.palette.mode = options.mode }
     }
 
     setTheme(createGlobalTheme(themeOptions))
@@ -114,5 +108,5 @@ export default function App() {
 }
 
 /*
-Quality Checked: Brian Francis - 12/30/2021
+Quality Checked: Brian Francis - 01/05/2021
  */

@@ -65,12 +65,12 @@ export default function AppSettings(props) {
       </EfTooltip>
       <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         {
-          appThemes.slice(0, 2).map((t) => getThemeButton(t))
+          appThemes.slice(0, 3).map((t) => getThemeButton(t))
         }
       </Stack>
       <Stack direction="row" spacing={2} sx={{ p: 2 }}>
         {
-          appThemes.slice(2, 4).map((t) => getThemeButton(t))
+          appThemes.slice(3, 6).map((t) => getThemeButton(t))
         }
       </Stack>
     </Box>

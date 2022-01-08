@@ -6,7 +6,7 @@ import { alpha, createTheme } from '@mui/material/styles'
 export const effects = {
   stainedGlass: true,
   density: 'normal',
-  tooltips: false,
+  tooltips: true,
 }
 
 export const palettes = [
@@ -44,6 +44,18 @@ export function createGlobalTheme(themeOptions) {
           },
         ],
       },
+      MuiCard: {
+        variants: [{
+          props: { variant: 'stainedGlass' },
+          style: {
+            backgroundColor:
+                alpha(theme.palette.mode === 'light' ? theme.palette.grey['50'] : theme.palette.grey['800'], 0.75),
+            backdropFilter: 'blur(10px)',
+            boxShadow:
+    '0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)',
+          },
+        }],
+      },
       MuiChip: {
         variants: [{
           props: { variant: 'skill' },
@@ -68,28 +80,14 @@ export function createGlobalTheme(themeOptions) {
 
   return theme
 }
+export const hawaii = { name: 'Hawaii', palette: palettes[0] }
+export const midnight = { name: 'Midnight', palette: palettes[1] }
+export const arizona = { name: 'Arizona', palette: palettes[2] }
+export const pirate = { name: 'Pirate', palette: palettes[3] }
+export const lush = { name: 'Lush', palette: palettes[4] }
+export const corporate = { name: 'Corporate', palette: palettes[5] }
 
-export const arizona = {
-  name: 'Arizona',
-  palette: palettes[2],
-}
-
-export const pirate = {
-  name: 'Pirate',
-  palette: palettes[3],
-}
-
-export const lush = {
-  name: 'Lush',
-  palette: palettes[4],
-}
-
-export const corporate = {
-  name: 'Corporate',
-  palette: palettes[5],
-}
-
-export const appThemes = [arizona, pirate, lush, corporate]
+export const appThemes = [hawaii, midnight, arizona, pirate, lush, corporate]
 
 /*
 Quality Checked: Brian Francis - 12/18/2021

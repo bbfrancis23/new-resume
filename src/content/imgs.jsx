@@ -1,9 +1,9 @@
-import MidnightHero from '../img/heroes/midnight.jpg'
-import HawaiiHero from '../img/heroes/hawaii.jpg'
-import ArizonaHero from '../img/heroes/arizona.jpg'
-import LushHero from '../img/heroes/lush.jpg'
-import PirateHero from '../img/heroes/pirate.jpg'
-import CorporateHero from '../img/heroes/corp.jpg'
+import MidnightHero from '../img/theme/heroes/Midnight.jpg'
+import HawaiiHero from '../img/theme/heroes/Hawaii.jpg'
+import ArizonaHero from '../img/theme/heroes/Arizona.jpg'
+import LushHero from '../img/theme/heroes/Lush.jpg'
+import PirateHero from '../img/theme/heroes/Pirate.jpg'
+import CorporateHero from '../img/theme/heroes/Corporation.jpg'
 
 import PlusOneCover from '../img/portfolio/plueone/cover.png'
 import AZDEQCover from '../img/portfolio/azdeq/cover.png'
@@ -38,13 +38,31 @@ import AzdeqLog from '../img/portfolio/azdeq/log.png'
 import AzdeqReg from '../img/portfolio/azdeq/register.png'
 import AzdeqStart from '../img/portfolio/azdeq/start.png'
 import AzdeqStepper from '../img/portfolio/azdeq/Stepper.png'
+import ArizonaMountains from '../img/theme/viewport-backgrounds/Arizona-Mountains.jpg'
+import ArizonaCathedralRock from '../img/theme/viewport-backgrounds/Arizona-Sedona-CathedralRock.jpg'
+import ArizonaSedona from '../img/theme/viewport-backgrounds/Arizona-Sedona-Mountains.jpg'
+import CorporateBuildings from '../img/theme/viewport-backgrounds/Corporate-Buildings.jpg'
+import CorporateLaptop from '../img/theme/viewport-backgrounds/Corporate-Laptop.jpg'
+import CorporateStrategies from '../img/theme/viewport-backgrounds/Corporate-Strategies.jpg'
+import LushHike from '../img/theme/viewport-backgrounds/Lush-Hike.jpg'
+import LushLeaves from '../img/theme/viewport-backgrounds/Lush-Leaves.jpg'
+import LushVegetation from '../img/theme/viewport-backgrounds/Lush-Vegitation.jpg'
+import PirateAffects from '../img/theme/viewport-backgrounds/Pirate-Affects.jpg'
+import PirateSkull from '../img/theme/viewport-backgrounds/Pirate-Skull.jpg'
+import PirateShips from '../img/theme/viewport-backgrounds/Pirate-Ships.jpg'
+import MidnightForest from '../img/theme/viewport-backgrounds/Midnight-Forest.jpg'
+import MidnightFullMoon from '../img/theme/viewport-backgrounds/Midnight-FullMoon.jpg'
+import HawaiiSunset from '../img/theme/viewport-backgrounds/Hawaii-Sunset.jpg'
+import HawaiiFlower from '../img/theme/viewport-backgrounds/Hawaii-Flower.jpg'
 
 export {
   MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero, PlusOneCover, AZDEQCover, FreelanceCover,
   IboatsCover, FreelanceTestimonials, FreelanceContact, FreelanceHome, FreelanceProduct, IboatsHome, IboatsAccount,
   IboatsAd, IboatsPromo, IboatsType, IboatsSearch, IboatsFeatured, IboatsRecord, IboatsCheckout, IboatsResearch,
   IboatsCreateBoat, IboatsOptions, IboatsResearchType, AzdeqReg, AzdeqStepper, AzdeqLog, PlusOneWorkFlow, AzdeqStart,
-  PlusOneTable, AzdeqInfo, PlusOneDate, AzdeqForm, PlusOneLogin, PlusOneStyle, PlusOneDash,
+  PlusOneTable, AzdeqInfo, PlusOneDate, AzdeqForm, PlusOneLogin, PlusOneStyle, PlusOneDash, ArizonaSedona, ArizonaMountains,
+  ArizonaCathedralRock, CorporateStrategies, CorporateLaptop, CorporateBuildings, LushVegetation, LushLeaves, LushHike,
+  PirateAffects, PirateShips, PirateSkull, MidnightFullMoon, MidnightForest, HawaiiFlower,
 }
 
 export const themeHeroes = {
@@ -54,4 +72,13 @@ export const themeHeroes = {
   Arizona: ArizonaHero,
   Pirate: PirateHero,
   Lush: LushHero,
+}
+
+export const themePreviewBackgrounds = {
+  Hawaii: HawaiiSunset,
+  Midnight: MidnightFullMoon,
+  Arizona: ArizonaMountains,
+  Corporate: CorporateLaptop,
+  Lush: LushVegetation,
+  Pirate: PirateShips,
 }

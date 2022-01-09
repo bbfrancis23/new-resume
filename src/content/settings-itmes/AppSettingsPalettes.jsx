@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {
-  Box, Fab, Grid, useTheme,
-} from '@mui/material'
+import { Box, Fab, useTheme } from '@mui/material'
 import { NightsStay as DarkModeIcon, WbSunny as LightModeIcon } from '@mui/icons-material'
 
 import { palettes } from '../../AppThemes'
@@ -59,23 +57,21 @@ export default function AppSettingsPalettes(props) {
   )
 
   return (
-    <Grid item xs={4}>
-      <Box>
-        <EfTooltip
-          title="Select multiple times to toggle between light and dark modes."
-          placement="right"
-          style={{ cursor: theme.effects.tooltips ? 'help' : 'default' }}
-        >
-          <span>Palettes</span>
-        </EfTooltip>
-        <SettingsStack>
-          { palettes.slice(0, 3).map((t, index) => getPaletteButton(index)) }
-        </SettingsStack>
-        <SettingsStack>
-          { palettes.slice(3, 6).map((t, index) => getPaletteButton((index + 3))) }
-        </SettingsStack>
-      </Box>
-    </Grid>
+    <Box>
+      <EfTooltip
+        title="Select multiple times to toggle between light and dark modes."
+        placement="right"
+        style={{ cursor: theme.effects.tooltips ? 'help' : 'default' }}
+      >
+        <span>Palettes</span>
+      </EfTooltip>
+      <SettingsStack>
+        { palettes.slice(0, 3).map((t, index) => getPaletteButton(index)) }
+      </SettingsStack>
+      <SettingsStack>
+        { palettes.slice(3, 6).map((t, index) => getPaletteButton((index + 3))) }
+      </SettingsStack>
+    </Box>
   )
 }
 AppSettingsPalettes.propTypes = {

@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { useTheme, Fab, Box } from '@mui/material'
+import {
+  useTheme, Fab, Box, Typography,
+} from '@mui/material'
 import { Star as SelectedIcon } from '@mui/icons-material'
 
 import { appThemes, effects } from '../../AppThemes'
@@ -36,7 +38,7 @@ export default function AppSettingsThemes(props) {
 
   return (
     <Box>
-      <span>Select Theme</span>
+      <Typography variant="span" sx={{ cursor: 'default' }}>Select Theme</Typography>
       <SettingsStack>
         { appThemes.slice(0, 3).map((t) => getThemeButton(t)) }
       </SettingsStack>

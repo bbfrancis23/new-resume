@@ -7,5 +7,6 @@
       <group names="y,height,top,bottom" />
       <exclude classes="Math" />
     </inspection_tool>
+    <inspection_tool class="JSUnresolvedVariable" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
   </profile>
 </component>

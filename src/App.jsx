@@ -10,7 +10,7 @@ import { appConfig } from './AppConfig'
 import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
 import AppDialog from './AppDialog'
-import AppSettings from './AppSettings'
+import AppSettingsThemes from './content/settings-itmes/AppSettingsThemes'
 import AppFooter from './AppFooter'
 import AppRoutes from './AppRoutes'
 import { themeHeroes } from './content/imgs'
@@ -96,7 +96,7 @@ export default function App() {
           <AppSideNav appConfig={appConfig} />
         </Box>
         <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
-          <AppSettings updateTheme={(options) => handleUpdateTheme(options)} />
+          <AppSettingsThemes updateTheme={(options) => handleUpdateTheme(options)} />
         </AppDialog>
         <Box sx={{ width: '100%' }}>
           <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />

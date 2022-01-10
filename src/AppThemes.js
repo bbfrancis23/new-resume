@@ -6,6 +6,7 @@ import { alpha, createTheme } from '@mui/material/styles'
 export const effects = {
   stainedGlass: true,
   density: 'normal',
+  threeD: true,
   tooltips: true,
 }
 
@@ -45,14 +46,22 @@ export function createGlobalTheme(themeOptions) {
         ],
       },
       MuiCard: {
+        defaultProps: {
+          style: {
+            boxShadow: theme.effects.threeD ? theme.shadows[5] : 'none',
+            border: `1px solid ${theme.palette.divider}`,
+          },
+        },
         variants: [{
           props: { variant: 'stainedGlass' },
           style: {
             backgroundColor:
                 alpha(theme.palette.mode === 'light' ? theme.palette.grey['50'] : theme.palette.grey['800'], 0.75),
             backdropFilter: 'blur(10px)',
-            boxShadow:
-    '0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)',
+            boxShadow: theme.effects.threeD
+              ? theme.shadows[5]
+              : 'none',
+            border: `1px solid ${theme.palette.divider}`,
           },
         }],
       },

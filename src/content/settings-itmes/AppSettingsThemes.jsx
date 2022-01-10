@@ -6,7 +6,7 @@ import {
 } from '@mui/material'
 import { Star as SelectedIcon } from '@mui/icons-material'
 
-import { appThemes, effects } from '../../AppThemes'
+import { appThemes } from '../../AppThemes'
 
 import EfTooltip from '../../ui/effects-components/EfTooltip'
 
@@ -15,8 +15,6 @@ import SettingsStack from './components/core'
 
 export default function AppSettingsThemes(props) {
   const theme = useTheme()
-  theme.effects ||= effects
-  theme.name = theme.name || ''
 
   const { updateTheme } = props
 

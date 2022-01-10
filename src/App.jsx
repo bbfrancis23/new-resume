@@ -4,8 +4,9 @@ import {
   styled, ThemeProvider, CssBaseline, Box, Fab,
 } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
-
-import { appThemes, createGlobalTheme, effects } from './AppThemes'
+import {
+  appThemes, createGlobalTheme, effects, palettes,
+} from './AppThemes'
 import { appConfig } from './AppConfig'
 import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
@@ -33,21 +34,21 @@ export default function App() {
   }
 
   const [theme, setTheme] = React.useState(initTheme())
-  theme.name = theme.name || appThemes[0].name
-  theme.effects ||= effects
-
   const handleUpdateTheme = (options) => {
     let themeOptions = {}
 
     if (options) {
       themeOptions = localStorage.getItem('themeOptions')
-      themeOptions = themeOptions ? (JSON.parse(themeOptions)) : appThemes[0]
+      themeOptions = themeOptions ? (JSON.parse(themeOptions)) : { name: 'Hawaii', palette: palettes[0] }
       themeOptions.effects ||= effects
 
       if (options.name) { themeOptions.name = options.name }
 
       if (options.stainedGlass === true || options.stainedGlass === false) {
         themeOptions.effects.stainedGlass = options.stainedGlass
+      }
+      if (options.threeD === true || options.threeD === false) {
+        themeOptions.effects.threeD = options.threeD
       }
       if (options.tooltips === true || options.tooltips === false) {
         themeOptions.effects.tooltips = options.tooltips
@@ -86,7 +87,7 @@ export default function App() {
                 onClick={handleSettingsDialogOpen}
                 size="large"
                 color="secondary"
-                variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
+                variant={theme.effects.stainedGlass ? 'stainedGlass' : undefined}
                 disabled={window.location.pathname === '/settings'}
               >
                 <SettingsIcon size="large" />

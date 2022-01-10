@@ -16,8 +16,6 @@ import AppSettingsPreview from './content/settings-itmes/AppSettingsPreview'
 
 export default function AppSettingsRoute(props) {
   const theme = useTheme()
-  theme.name = theme.name ? theme.name : ''
-  theme.effects = theme.effects ? theme.effects : ''
   const { updateTheme } = props
 
   return (

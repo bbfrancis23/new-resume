@@ -102,5 +102,5 @@ export default function App() {
 }
 
 /*
-Final Quality Check XL display: Brian Francis - 01/12/2021
+Final QA XL display: Brian Francis - 01/12/2022
  */

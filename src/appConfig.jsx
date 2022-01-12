@@ -1,11 +1,9 @@
 import React from 'react'
-
-import { AccountCircle as AboutIcon } from '@mui/icons-material'
-import ExperienceIcon from '@mui/icons-material/Work'
-import PortfolioIcon from '@mui/icons-material/Collections'
-import TestimonialsIcon from '@mui/icons-material/StarOutline'
-
 import PropTypes from 'prop-types'
+
+import {
+  AccountCircle as AboutIcon, Work as ExperienceIcon, Collections as PortfolioIcon, StarOutline as TestimonialsIcon,
+} from '@mui/icons-material'
 
 import About from './content/page-items/About'
 import Experience from './content/page-items/Experience'
@@ -61,5 +59,5 @@ export const appConfigPropType = {
 export default appConfig
 
 /*
-Quality Checked: Brian Francis - 12/18/2021
+Final QA: Brian Francis - 01/12/2022
  */

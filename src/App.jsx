@@ -16,10 +16,10 @@ import AppToolBar from './AppToolBar'
 import AppDialog from './AppDialog'
 import AppFooter from './AppFooter'
 import AppRoutes from './AppRoutes'
-import EfTooltip from './ui/EfTooltip'
-import { appConfig } from './AppConfig'
-import { themeHeroes } from './content/imgs'
 import AppSettingsThemes from './content/settings-itmes/AppSettingsThemes'
+import EfTooltip from './ui/EfTooltip'
+import { appConfig } from './appConfig'
+import { themeHeroes } from './content/imgs'
 
 const HeroImgContainer = styled(Box)(() => ({
   position: 'fixed', width: '100%', height: '370px', zIndex: -1,
@@ -45,6 +45,7 @@ export default function App() {
   }
 
   const [theme, setTheme] = React.useState(initTheme())
+
   const handleUpdateTheme = (options) => {
     let themeOptions = {}
 
@@ -69,17 +70,12 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-
-      <HeroImgContainer>
-        <img src={themeHeroes[theme.name]} alt="Theme Hero" />
-      </HeroImgContainer>
-
+      <HeroImgContainer><img src={themeHeroes[theme.name]} alt="Theme Hero" /></HeroImgContainer>
       <AppToolBar
         appConfig={appConfig}
         settingsDialogOpen={handleSettingsDialogOpen}
         sx={{ display: { xs: 'block', md: 'none' } }}
       />
-
       <SideNavContainer sx={{ display: { xs: 'none', md: 'block' } }}>
         <EfTooltip title="Settings">
           <span>
@@ -98,9 +94,7 @@ export default function App() {
         <AppSettingsThemes updateTheme={(options) => handleUpdateTheme(options)} />
       </AppDialog>
       <BrowserRouter>
-        <Box sx={{ width: '100%' }}>
-          <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />
-        </Box>
+        <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />
       </BrowserRouter>
       <AppFooter />
     </ThemeProvider>
@@ -108,5 +102,5 @@ export default function App() {
 }
 
 /*
-Quality Checked XL display: Brian Francis - 01/05/2021
+Final Quality Check XL display: Brian Francis - 01/12/2021
  */

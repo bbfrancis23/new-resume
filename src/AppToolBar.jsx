@@ -7,7 +7,7 @@ import {
 
 import SettingsIcon from '@mui/icons-material/Settings'
 
-import { appConfigPropType } from './AppConfig'
+import { appConfigPropType } from './appConfig'
 import EfTooltip from './ui/EfTooltip'
 
 const ToolbarContent = styled('div')(({ theme }) => (

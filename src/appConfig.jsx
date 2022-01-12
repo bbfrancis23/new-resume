@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AboutIcon from '@mui/icons-material/AccountCircle'
+import { AccountCircle as AboutIcon } from '@mui/icons-material'
 import ExperienceIcon from '@mui/icons-material/Work'
 import PortfolioIcon from '@mui/icons-material/Collections'
 import TestimonialsIcon from '@mui/icons-material/StarOutline'

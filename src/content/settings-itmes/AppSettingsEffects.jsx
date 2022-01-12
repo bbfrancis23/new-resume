@@ -4,7 +4,7 @@ import {
 import { Landscape as StainedGlassIcon, Help as HelpIcon, ViewInAr as ThreeDIcon } from '@mui/icons-material'
 import React from 'react'
 import PropTypes from 'prop-types'
-import EfTooltip from '../../ui/effects-components/EfTooltip'
+import EfTooltip from '../../ui/EfTooltip'
 import SettingsStack from './components/core'
 
 export default function AppSettingsEffects(props) {

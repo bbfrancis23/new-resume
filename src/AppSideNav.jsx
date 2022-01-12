@@ -8,7 +8,7 @@ import {
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
 
 import { appConfigPropType } from './AppConfig'
-import EfTooltip from './ui/effects-components/EfTooltip'
+import EfTooltip from './ui/EfTooltip'
 
 const drawerWidth = 225
 

@@ -8,7 +8,7 @@ import { Star as SelectedIcon } from '@mui/icons-material'
 
 import { appThemes } from '../../AppThemes'
 
-import EfTooltip from '../../ui/effects-components/EfTooltip'
+import EfTooltip from '../../ui/EfTooltip'
 
 import { themeHeroes } from '../imgs'
 import SettingsStack from './components/core'

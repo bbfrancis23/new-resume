@@ -6,7 +6,6 @@ import { useTheme } from '@emotion/react'
 export default function EfTooltip(props) {
   const theme = useTheme()
   const { title, children, ...forwardProps } = props
-  theme.effects ||= ''
 
   return (
   /* It would be a waste of code in this case to list all props we want to pass individually to get rid of this warning
@@ -20,3 +19,5 @@ EfTooltip.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
 }
+
+/* Final QA for version 1: Brian Francis - 01/10/2022  */

@@ -1,24 +1,35 @@
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
+
 import {
   styled, ThemeProvider, CssBaseline, Box, Fab,
 } from '@mui/material'
+
 import SettingsIcon from '@mui/icons-material/Settings'
+
 import {
   appThemes, createGlobalTheme, effects, palettes,
 } from './AppThemes'
-import { appConfig } from './AppConfig'
+
 import AppSideNav from './AppSideNav'
 import AppToolBar from './AppToolBar'
 import AppDialog from './AppDialog'
-import AppSettingsThemes from './content/settings-itmes/AppSettingsThemes'
 import AppFooter from './AppFooter'
 import AppRoutes from './AppRoutes'
+import EfTooltip from './ui/EfTooltip'
+import { appConfig } from './AppConfig'
 import { themeHeroes } from './content/imgs'
-import EfTooltip from './ui/effects-components/EfTooltip'
+import AppSettingsThemes from './content/settings-itmes/AppSettingsThemes'
 
-const HeroContainer = styled('div')(() => ({
-  position: 'fixed', width: '100%', height: '370px',
+const HeroImgContainer = styled(Box)(() => ({
+  position: 'fixed', width: '100%', height: '370px', zIndex: -1,
+}))
+
+const SideNavContainer = styled(Box)(({ theme }) => ({
+  position: 'fixed',
+  right: theme.spacing(3),
+  top: theme.spacing(3),
+  zIndex: 'appBar',
 }))
 
 export default function App() {
@@ -40,22 +51,14 @@ export default function App() {
     if (options) {
       themeOptions = localStorage.getItem('themeOptions')
       themeOptions = themeOptions ? (JSON.parse(themeOptions)) : { name: 'Hawaii', palette: palettes[0] }
-      themeOptions.effects ||= effects
 
-      if (options.name) { themeOptions.name = options.name }
+      if (options.name) themeOptions.name = options.name
+      if (options.palette) themeOptions.palette = options.palette
+      if (options.mode) themeOptions.palette.mode = options.mode
 
-      if (options.stainedGlass === true || options.stainedGlass === false) {
-        themeOptions.effects.stainedGlass = options.stainedGlass
-      }
-      if (options.threeD === true || options.threeD === false) {
-        themeOptions.effects.threeD = options.threeD
-      }
-      if (options.tooltips === true || options.tooltips === false) {
-        themeOptions.effects.tooltips = options.tooltips
-      }
-      if (options.palette) { themeOptions.palette = options.palette }
-
-      if (options.mode) { themeOptions.palette.mode = options.mode }
+      if (typeof options.stainedGlass === 'boolean') themeOptions.effects.stainedGlass = options.stainedGlass
+      if (typeof options.threeD === 'boolean') themeOptions.effects.threeD = options.threeD
+      if (typeof options.tooltips === 'boolean') themeOptions.effects.tooltips = options.tooltips
     }
 
     setTheme(createGlobalTheme(themeOptions))
@@ -66,48 +69,44 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+
+      <HeroImgContainer>
+        <img src={themeHeroes[theme.name]} alt="Theme Hero" />
+      </HeroImgContainer>
+
+      <AppToolBar
+        appConfig={appConfig}
+        settingsDialogOpen={handleSettingsDialogOpen}
+        sx={{ display: { xs: 'block', md: 'none' } }}
+      />
+
+      <SideNavContainer sx={{ display: { xs: 'none', md: 'block' } }}>
+        <EfTooltip title="Settings">
+          <span>
+            <Fab
+              onClick={handleSettingsDialogOpen}
+              variant="stainedGlass"
+              disabled={window.location.pathname === '/settings'}
+            >
+              <SettingsIcon />
+            </Fab>
+          </span>
+        </EfTooltip>
+        <AppSideNav appConfig={appConfig} />
+      </SideNavContainer>
+      <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
+        <AppSettingsThemes updateTheme={(options) => handleUpdateTheme(options)} />
+      </AppDialog>
       <BrowserRouter>
-        <HeroContainer style={{ zIndex: -1 }}>
-          <img src={themeHeroes[theme.name]} alt="Theme Hero" />
-        </HeroContainer>
-        <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-          <AppToolBar appConfig={appConfig} settingsDialogOpen={handleSettingsDialogOpen} />
-        </Box>
-        <Box sx={{
-          display: { xs: 'none', md: 'block' },
-          position: 'fixed',
-          right: theme.spacing(3),
-          top: theme.spacing(3),
-          zIndex: 'appBar',
-        }}
-        >
-          <EfTooltip title="Settings">
-            <span>
-              <Fab
-                onClick={handleSettingsDialogOpen}
-                size="large"
-                color="secondary"
-                variant={theme.effects.stainedGlass ? 'stainedGlass' : undefined}
-                disabled={window.location.pathname === '/settings'}
-              >
-                <SettingsIcon size="large" />
-              </Fab>
-            </span>
-          </EfTooltip>
-          <AppSideNav appConfig={appConfig} />
-        </Box>
-        <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
-          <AppSettingsThemes updateTheme={(options) => handleUpdateTheme(options)} />
-        </AppDialog>
         <Box sx={{ width: '100%' }}>
           <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />
         </Box>
-        <AppFooter />
       </BrowserRouter>
+      <AppFooter />
     </ThemeProvider>
   )
 }
 
 /*
-Quality Checked: Brian Francis - 01/05/2021
+Quality Checked XL display: Brian Francis - 01/05/2021
  */

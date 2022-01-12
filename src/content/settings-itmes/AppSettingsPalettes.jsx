@@ -6,7 +6,7 @@ import { NightsStay as DarkModeIcon, WbSunny as LightModeIcon } from '@mui/icons
 
 import { palettes } from '../../AppThemes'
 
-import EfTooltip from '../../ui/effects-components/EfTooltip'
+import EfTooltip from '../../ui/EfTooltip'
 
 import SettingsStack from './components/core'
 

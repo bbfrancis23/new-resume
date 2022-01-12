@@ -8,17 +8,17 @@ import {
 import SettingsIcon from '@mui/icons-material/Settings'
 
 import { appConfigPropType } from './AppConfig'
-import EfTooltip from './ui/effects-components/EfTooltip'
+import EfTooltip from './ui/EfTooltip'
 
 const ToolbarContent = styled('div')(({ theme }) => (
   { width: '90vw', maxWidth: theme.breakpoints.values.lg, display: 'flex' }))
 
 export default function AppToolBar(props) {
-  const { appConfig, settingsDialogOpen } = props
+  const { appConfig, settingsDialogOpen, ...forwardProps } = props
   const theme = useTheme()
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} {...forwardProps}>
       <AppBar position="fixed" color="primary" enableColorOnDark>
         <Toolbar sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
           <ToolbarContent>

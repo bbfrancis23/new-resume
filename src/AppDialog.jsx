@@ -5,6 +5,7 @@ import DragHandleIcon from '@mui/icons-material/DragHandle'
 import {
   Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper,
 } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 function PaperComponent(props) {
   const nodeRef = React.useRef(null)
@@ -42,7 +43,11 @@ export default function AppDialog(props) {
         {children}
       </DialogContent>
       <DialogActions disableSpacing={false}>
-        { moreLink && <Button color="inherit" onClick={close} to={moreLink} href="/settings" sx={{ mr: 1 }}>More</Button>}
+        {
+          moreLink && (
+            <Button color="inherit" onClick={close} sx={{ mr: 1 }} component={Link} to={moreLink}>More</Button>
+          )
+        }
         <Button autoFocus variant={moreLink ? 'outlined' : 'text'} onClick={close} color={moreLink ? 'success' : 'inherit'}>
           Done
         </Button>
@@ -62,5 +67,5 @@ AppDialog.propTypes = {
 }
 
 /*
-  Final QA XL : Brian Francis 01/12/2022
+  Final QA XL : Brian Francis 01/13/2022
  */

@@ -1,8 +1,10 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import { Route, Routes } from 'react-router-dom'
 import AppSettingsRoute from './AppSettingsRoute'
-import AppRoute from './AppRoute'
+import { appConfig } from './appConfig'
+
+function AppRoute() { return (<>{ appConfig.pageItems.map((item) => item.pageComponent) }</>) }
 
 export default function AppRoutes(props) {
   const { updateTheme } = props
@@ -11,7 +13,7 @@ export default function AppRoutes(props) {
       <Route path="/" element={<AppRoute />} />
       <Route
         path="settings"
-        element={<AppSettingsRoute updateTheme={(themeName, options) => updateTheme(themeName, options)} />}
+        element={<AppSettingsRoute updateTheme={(options) => updateTheme(options)} />}
       />
       <Route path="*" element={<AppRoute />} />
     </Routes>
@@ -20,7 +22,6 @@ export default function AppRoutes(props) {
 AppRoutes.propTypes = {
   updateTheme: PropTypes.func.isRequired,
 }
-
 /*
-Quality Checked: Brian Francis - 12/27/2021
+Final QA: Brian Francis - 01/13/2022
  */

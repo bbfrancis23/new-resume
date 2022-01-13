@@ -6,13 +6,7 @@ import { useTheme } from '@mui/material/styles'
 export default function AppFooter() {
   const theme = useTheme()
   return (
-    <Box sx={{
-      background: theme.palette.primary.main,
-      margin: 'auto',
-      textAlign: 'center',
-      height: theme.spacing(5),
-    }}
-    >
+    <Box sx={{ bgcolor: 'primary.main', textAlign: 'center', height: theme.spacing(5) }}>
       <span style={{ color: theme.palette.primary.contrastText }}>By: Brian Francis</span>
       <span style={{ padding: '5px 10px 0 10px' }}>
         <svg
@@ -42,7 +36,6 @@ export default function AppFooter() {
           />
         </svg>
       </span>
-
       <img
         style={{ paddingTop: '10px' }}
         src={
@@ -56,11 +49,10 @@ export default function AppFooter() {
         alt="React"
         height="25"
       />
-
     </Box>
   )
 }
 
 /*
-Quality Checked: Brian Francis - 12/18/2021
+Final QA: Brian Francis - 01/12/2022
  */

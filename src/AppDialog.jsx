@@ -62,5 +62,5 @@ AppDialog.propTypes = {
 }
 
 /*
-  Final QA display XL : Brian Francis 01/12/2022
+  Final QA XL : Brian Francis 01/12/2022
  */

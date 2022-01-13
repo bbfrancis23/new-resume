@@ -1,17 +1,17 @@
 import * as React from 'react'
 import Draggable from 'react-draggable'
 import PropTypes from 'prop-types'
-
-import {
-  Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper,
-} from '@mui/material'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
-// import { Link } from 'react-router-dom'
+import {
+  Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Paper,
+} from '@mui/material'
 
 function PaperComponent(props) {
+  const nodeRef = React.useRef(null)
+
   return (
-    <Draggable handle="#app-settings-dialog-title" cancel='[class*="MuiDialogContent-root"]'>
-      <Paper {...props} />
+    <Draggable nodeRef={nodeRef} handle="#app-settings-dialog-title" cancel='[class*="MuiDialogContent-root"]'>
+      <Paper ref={nodeRef} {...props} />
     </Draggable>
   )
 }
@@ -29,16 +29,14 @@ export default function AppDialog(props) {
       aria-labelledby="app-settings-dialog-title"
     >
       <DialogTitle style={{ cursor: 'move' }} id="app-settings-dialog-title">
-        <div style={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex' }}>
           <div>
             {`${label} `}
             Settings
           </div>
           <div style={{ flexGrow: '1' }} />
-          <div>
-            <DragHandleIcon />
-          </div>
-        </div>
+          <DragHandleIcon />
+        </Box>
       </DialogTitle>
       <DialogContent>
         {children}
@@ -64,5 +62,5 @@ AppDialog.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/29/2021
+  Final QA display XL : Brian Francis 01/12/2022
  */

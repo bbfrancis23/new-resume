@@ -26,7 +26,7 @@ export default function AppSettingsThemes(props) {
           backgroundImage: `url(${themeHeroes[t.name]})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
-          ':hover': { transform: 'scale(1.05)', transition: '.8s' },
+          ':hover': { opacity: 0.85 },
         }}
       >
         { t.name === theme.name && <SelectedIcon sx={{ color: 'white' }} /> }

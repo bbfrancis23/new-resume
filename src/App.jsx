@@ -19,11 +19,8 @@ import AppRoutes from './AppRoutes'
 import AppSettingsThemes from './content/settings-itmes/AppSettingsThemes'
 import EfTooltip from './ui/EfTooltip'
 import { appConfig } from './appConfig'
-import { themeHeroes } from './content/imgs'
-/* eslint-disable */
-const HeroImgContainer = styled(Box)(() => ({
-  position: 'fixed', width: '100%', height: '370px', zIndex: -1,
-}))
+import { heroes } from './content/imgs'
+import ImageCrossFader from './ui/ImageCrossFader'
 
 const SideNavContainer = styled(Box)(({ theme }) => ({
   position: 'fixed',
@@ -70,24 +67,13 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <HeroImgContainer>
-        {
-          Object.keys(themeHeroes).map((key) => (
-            <img
-              key={key}
-              src={themeHeroes[key]}
-              alt={`${key} Hero`}
-              style={{
-                position: 'absolute',
-                transition: 'opacity 1s ease-in-out',
-                opacity: theme.name === key ? 1 : 0,
-                filter: theme.name === key ? 'alpha(opacity=0)' : 'alpha(opacity=0)',
-              }}
-            />
-          ))
-        }
-        <img src={themeHeroes[theme.name]} alt="Theme Hero" />
-      </HeroImgContainer>
+      <ImageCrossFader
+        imgs={heroes}
+        selectedId={theme.name}
+        sx={{
+          position: 'fixed', width: '100%', height: '370px', zIndex: -1,
+        }}
+      />
       <BrowserRouter>
         <AppToolBar
           appConfig={appConfig}
@@ -96,13 +82,13 @@ export default function App() {
         />
         <SideNavContainer sx={{ display: { xs: 'none', md: 'block' } }}>
           <EfTooltip title="Settings">
-              <Fab
-                onClick={handleSettingsDialogOpen}
-                variant="stainedGlass"
-                disabled={window.location.pathname === '/settings'}
-              >
-                <SettingsIcon />
-              </Fab>
+            <Fab
+              onClick={handleSettingsDialogOpen}
+              variant="stainedGlass"
+              disabled={window.location.pathname === '/settings'}
+            >
+              <SettingsIcon />
+            </Fab>
           </EfTooltip>
           <AppSideNav appConfig={appConfig} />
         </SideNavContainer>
@@ -115,7 +101,6 @@ export default function App() {
     </ThemeProvider>
   )
 }
-
 /*
 Final QA XL: Brian Francis - 01/13/2022
  */

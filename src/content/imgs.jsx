@@ -74,6 +74,15 @@ export const themeHeroes = {
   Lush: LushHero,
 }
 
+export const heroes = [
+  { id: 'Corporate', src: CorporateHero, Label: 'Corporate Hero' },
+  { id: 'Midnight', src: MidnightHero, Label: 'Midnight Hero' },
+  { id: 'Hawaii', src: HawaiiHero, Label: 'Hawaii Hero' },
+  { id: 'Arizona', src: ArizonaHero, Label: 'Arizona Hero' },
+  { id: 'Pirate', src: PirateHero, Label: 'Pirate Hero' },
+  { id: 'Lush', src: LushHero, Label: 'Lush Hero' },
+]
+
 export const themePreviewBackgrounds = {
   Hawaii: HawaiiSunset,
   Midnight: MidnightFullMoon,

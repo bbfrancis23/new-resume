@@ -75,12 +75,12 @@ export const themeHeroes = {
 }
 
 export const heroes = [
-  { id: 'Corporate', src: CorporateHero, Label: 'Corporate Hero' },
-  { id: 'Midnight', src: MidnightHero, Label: 'Midnight Hero' },
-  { id: 'Hawaii', src: HawaiiHero, Label: 'Hawaii Hero' },
-  { id: 'Arizona', src: ArizonaHero, Label: 'Arizona Hero' },
-  { id: 'Pirate', src: PirateHero, Label: 'Pirate Hero' },
-  { id: 'Lush', src: LushHero, Label: 'Lush Hero' },
+  { id: 'Corporate', src: CorporateHero, label: 'Corporate Hero' },
+  { id: 'Midnight', src: MidnightHero, label: 'Midnight Hero' },
+  { id: 'Hawaii', src: HawaiiHero, label: 'Hawaii Hero' },
+  { id: 'Arizona', src: ArizonaHero, label: 'Arizona Hero' },
+  { id: 'Pirate', src: PirateHero, label: 'Pirate Hero' },
+  { id: 'Lush', src: LushHero, label: 'Lush Hero' },
 ]
 
 export const themePreviewBackgrounds = {

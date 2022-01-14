@@ -23,6 +23,11 @@ export function createGlobalTheme(themeOptions) {
   let theme = createTheme(themeOptions)
 
   const globalTheme = {
+    contentItems: {
+      width: {
+        xs: '100%', md: '90%', lg: '70%', xl: '60%',
+      },
+    },
     components: {
       MuiTooltip: { defaultProps: { enterDelay: 1000 } },
       MuiCssBaseline: { styleOverrides: { body: { transition: 'all 0.375s linear' } } },

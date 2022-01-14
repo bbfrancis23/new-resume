@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import {
   styled, ThemeProvider, CssBaseline, Box, Fab,
@@ -74,29 +74,27 @@ export default function App() {
           position: 'fixed', width: '100%', height: '370px', zIndex: -1,
         }}
       />
-      <BrowserRouter>
-        <AppToolBar
-          appConfig={appConfig}
-          settingsDialogOpen={handleSettingsDialogOpen}
-          sx={{ display: { xs: 'block', md: 'none' } }}
-        />
-        <SideNavContainer sx={{ display: { xs: 'none', md: 'block' } }}>
-          <EfTooltip title="Settings">
-            <Fab
-              onClick={handleSettingsDialogOpen}
-              variant="stainedGlass"
-              disabled={window.location.pathname === '/settings'}
-            >
-              <SettingsIcon />
-            </Fab>
-          </EfTooltip>
-          <AppSideNav appConfig={appConfig} />
-        </SideNavContainer>
-        <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
-          <AppSettingsThemes updateTheme={(options) => handleUpdateTheme(options)} />
-        </AppDialog>
-        <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />
-      </BrowserRouter>
+      <AppToolBar
+        appConfig={appConfig}
+        settingsDialogOpen={handleSettingsDialogOpen}
+        sx={{ display: { xs: 'block', md: 'none' } }}
+      />
+      <SideNavContainer sx={{ display: { xs: 'none', md: 'block' } }}>
+        <EfTooltip title="Settings">
+          <Fab
+            onClick={handleSettingsDialogOpen}
+            variant="stainedGlass"
+            disabled={useLocation().pathname === '/settings'}
+          >
+            <SettingsIcon />
+          </Fab>
+        </EfTooltip>
+        <AppSideNav appConfig={appConfig} />
+      </SideNavContainer>
+      <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
+        <AppSettingsThemes updateTheme={(options) => handleUpdateTheme(options)} />
+      </AppDialog>
+      <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />
       <AppFooter />
     </ThemeProvider>
   )

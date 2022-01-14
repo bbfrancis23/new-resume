@@ -9,6 +9,7 @@ import {
   ArrowBackIosNew as BackIcon,
 } from '@mui/icons-material'
 
+import { Link } from 'react-router-dom'
 import AppSettingsThemes from './content/settings-itmes/AppSettingsThemes'
 import AppSettingsPalettes from './content/settings-itmes/AppSettingsPalettes'
 import AppSettingsEffects from './content/settings-itmes/AppSettingsEffects'
@@ -26,11 +27,9 @@ export default function AppSettingsRoute(props) {
           mt: 10,
           mb: 10,
           p: 2,
-          width: {
-            xs: '100%', md: '90%', lg: '70%', xl: '60%',
-          },
+          width: theme.contentItems.width,
         }}
-        variant={theme.effects.stainedGlass ? 'stainedGlass' : undefined}
+        variant="stainedGlass"
       >
         <CardHeader title="Application Settings" />
         <CardContent>
@@ -42,7 +41,7 @@ export default function AppSettingsRoute(props) {
           </Grid>
         </CardContent>
         <CardActions>
-          <Button variant="contained" color="success" href="/" startIcon={<BackIcon />}>BACK</Button>
+          <Button variant="contained" color="success" component={Link} to="/" startIcon={<BackIcon />}>BACK</Button>
         </CardActions>
       </Card>
     </Box>

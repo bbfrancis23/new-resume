@@ -29,7 +29,7 @@ export default function AppSettingsRoute(props) {
           p: 2,
           width: theme.contentItems.width,
         }}
-        variant="stainedGlass"
+        variant="effects"
       >
         <CardHeader title="Application Settings" />
         <CardContent>

@@ -3,7 +3,7 @@ import {
 } from '@mui/material/colors'
 import { alpha, createTheme } from '@mui/material/styles'
 
-export const effects = {
+export const themeEffects = {
   stainedGlass: true,
   density: 'normal',
   threeD: true,
@@ -21,6 +21,14 @@ export const palettes = [
 
 export function createGlobalTheme(themeOptions) {
   let theme = createTheme(themeOptions)
+  const { palette, effects } = theme
+  const { mode, secondary } = palette
+  const { threeD, stainedGlass } = effects
+
+  const getEffectsCardBackground = () => {
+    const color = mode === 'light' ? palette.grey['50'] : palette.grey['800']
+    return stainedGlass ? alpha(color, 0.75) : color
+  }
 
   const globalTheme = {
     contentItems: {
@@ -35,14 +43,12 @@ export function createGlobalTheme(themeOptions) {
         variants: [
           {
             props: { variant: 'outlined' },
-            style:
-                { backgroundColor: theme.palette.mode === 'light' ? theme.palette.grey['50'] : theme.palette.grey['800'] },
+            style: { backgroundColor: mode === 'light' ? palette.grey['50'] : palette.grey['800'] },
           },
           {
             props: { variant: 'stainedGlass' },
             style: {
-              backgroundColor:
-                alpha(theme.palette.mode === 'light' ? theme.palette.grey['50'] : theme.palette.grey['800'], 0.75),
+              backgroundColor: alpha(mode === 'light' ? palette.grey['50'] : palette.grey['800'], 0.75),
               backdropFilter: 'blur(10px)',
               boxShadow:
                 '0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)',
@@ -51,22 +57,13 @@ export function createGlobalTheme(themeOptions) {
         ],
       },
       MuiCard: {
-        defaultProps: {
-          style: {
-            boxShadow: theme.effects.threeD ? theme.shadows[5] : 'none',
-            border: `1px solid ${theme.palette.divider}`,
-          },
-        },
         variants: [{
-          props: { variant: 'stainedGlass' },
+          props: { variant: 'effects' },
           style: {
-            backgroundColor:
-                alpha(theme.palette.mode === 'light' ? theme.palette.grey['50'] : theme.palette.grey['800'], 0.75),
-            backdropFilter: 'blur(10px)',
-            boxShadow: theme.effects.threeD
-              ? theme.shadows[5]
-              : 'none',
-            border: `1px solid ${theme.palette.divider}`,
+            backgroundColor: getEffectsCardBackground(),
+            backdropFilter: stainedGlass ? 'blur(10px)' : 'none',
+            boxShadow: threeD ? theme.shadows[5] : 'none',
+            border: `1px solid ${palette.divider}`,
           },
         }],
       },
@@ -80,11 +77,11 @@ export function createGlobalTheme(themeOptions) {
         variants: [{
           props: { variant: 'stainedGlass' },
           style: {
-            color: theme.palette.secondary.contrastText,
-            backgroundColor: alpha(theme.palette.secondary.main, 0.25),
+            color: secondary.contrastText,
+            backgroundColor: stainedGlass ? alpha(secondary.main, 0.25) : secondary.main,
             backdropFilter: 'blur(2px)',
             transition: '5s',
-            ':hover': { background: alpha(theme.palette.secondary.main, 1.00), transition: '3s' },
+            ':hover': { background: alpha(secondary.main, 1.00), transition: '3s' },
           },
         }],
       },

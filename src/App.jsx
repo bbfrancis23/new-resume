@@ -8,7 +8,7 @@ import {
 import SettingsIcon from '@mui/icons-material/Settings'
 
 import {
-  appThemes, createGlobalTheme, effects, palettes,
+  appThemes, createGlobalTheme, themeEffects as effects, palettes,
 } from './AppThemes'
 
 import AppSideNav from './AppSideNav'

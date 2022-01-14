@@ -7,7 +7,7 @@ import {
 import IconButton from '@mui/material/IconButton'
 import InfoIcon from '@mui/icons-material/Info'
 
-import AppDialog from '../../AppDialog'
+import AppDialog from '../../app/AppDialog'
 import PageItem from '../../ui/PageItems'
 
 import experience from '../data'

@@ -10,10 +10,10 @@ import {
 } from '@mui/icons-material'
 
 import { Link } from 'react-router-dom'
-import AppSettingsThemes from './content/settings-itmes/AppSettingsThemes'
-import AppSettingsPalettes from './content/settings-itmes/AppSettingsPalettes'
-import AppSettingsEffects from './content/settings-itmes/AppSettingsEffects'
-import AppSettingsPreview from './content/settings-itmes/AppSettingsPreview'
+import AppSettingsThemes from '../content/settings-itmes/AppSettingsThemes'
+import AppSettingsPalettes from '../content/settings-itmes/AppSettingsPalettes'
+import AppSettingsEffects from '../content/settings-itmes/AppSettingsEffects'
+import AppSettingsPreview from '../content/settings-itmes/AppSettingsPreview'
 
 export default function AppSettingsRoute(props) {
   const theme = useTheme()

@@ -16,11 +16,11 @@ import AppToolBar from './AppToolBar'
 import AppDialog from './AppDialog'
 import AppFooter from './AppFooter'
 import AppRoutes from './AppRoutes'
-import AppSettingsThemes from './content/settings-itmes/AppSettingsThemes'
-import EfTooltip from './ui/EfTooltip'
+import AppSettingsThemes from '../content/settings-itmes/AppSettingsThemes'
+import EfTooltip from '../ui/EfTooltip'
 import { appConfig } from './appConfig'
-import { heroes } from './content/imgs'
-import ImageCrossFader from './ui/ImageCrossFader'
+import { heroes } from '../content/imgs'
+import ImageCrossFader from '../ui/ImageCrossFader'
 
 const SideNavContainer = styled(Box)(({ theme }) => ({
   position: 'fixed',

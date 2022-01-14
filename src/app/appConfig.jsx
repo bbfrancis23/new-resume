@@ -5,10 +5,10 @@ import {
   AccountCircle as AboutIcon, Work as ExperienceIcon, Collections as PortfolioIcon, StarOutline as TestimonialsIcon,
 } from '@mui/icons-material'
 
-import About from './content/page-items/About'
-import Experience from './content/page-items/Experience'
-import Portfolio from './content/page-items/Portfolio'
-import Testimonials from './content/page-items/Testimonials'
+import About from '../content/page-items/About'
+import Experience from '../content/page-items/Experience'
+import Portfolio from '../content/page-items/Portfolio'
+import Testimonials from '../content/page-items/Testimonials'
 
 export const appConfig = {
   pageItems: [

@@ -75,12 +75,12 @@ export function createGlobalTheme(themeOptions) {
       },
       MuiFab: {
         variants: [{
-          props: { variant: 'stainedGlass' },
+          props: { variant: 'effects' },
           style: {
             color: secondary.contrastText,
             backgroundColor: stainedGlass ? alpha(secondary.main, 0.25) : secondary.main,
-            backdropFilter: 'blur(2px)',
-            transition: '5s',
+            backdropFilter: stainedGlass ? 'blur(2px)' : 'none',
+            transition: 'all 5s',
             ':hover': { background: alpha(secondary.main, 1.00), transition: '3s' },
           },
         }],

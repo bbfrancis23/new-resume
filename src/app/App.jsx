@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 import {
-  styled, ThemeProvider, CssBaseline, Box, Fab,
+  styled, ThemeProvider, CssBaseline, Box, Fab, Fade,
 } from '@mui/material'
 
 import SettingsIcon from '@mui/icons-material/Settings'
@@ -80,15 +80,13 @@ export default function App() {
         sx={{ display: { xs: 'block', md: 'none' } }}
       />
       <SideNavContainer sx={{ display: { xs: 'none', md: 'block' } }}>
-        <EfTooltip title="Settings">
-          <Fab
-            onClick={handleSettingsDialogOpen}
-            variant="stainedGlass"
-            disabled={useLocation().pathname === '/settings'}
-          >
-            <SettingsIcon />
-          </Fab>
-        </EfTooltip>
+        <Fade in={useLocation().pathname !== '/settings'} timeout={1000}>
+          <span>
+            <EfTooltip title="Settings">
+              <Fab onClick={handleSettingsDialogOpen} variant="effects"><SettingsIcon /></Fab>
+            </EfTooltip>
+          </span>
+        </Fade>
         <AppSideNav appConfig={appConfig} />
       </SideNavContainer>
       <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">

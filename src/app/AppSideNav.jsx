@@ -1,14 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+/* eslint-disable */
 import {
-  List, ListItem, ListItemText, ListItemAvatar, Avatar, styled, useTheme, Drawer, Fab,
+  List, ListItem, ListItemText, ListItemAvatar, Avatar, styled, useTheme, Drawer, Fab, Box,
 } from '@mui/material'
 
 import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
 
 import { appConfigPropType } from './appConfig'
 import EfTooltip from '../ui/EfTooltip'
+import {themeSidebarBackgrounds} from "../content/imgs";
+import {alpha} from "@mui/material/styles";
+import ImageCrossFader from "../ui/ImageCrossFader";
 
 const drawerWidth = 225
 
@@ -60,32 +64,56 @@ export default function AppSideNav(props) {
             onClick={handleToggleSideNav}
             size="large"
             color="secondary"
-            variant={theme.effects.stainedGlass ? 'stainedGlass' : ''}
+            variant="effects"
           >
             {open ? <CloseIcon /> : <MenuIcon />}
           </Fab>
         </EfTooltip>
       </SideNavButton>
-      <Drawer variant="persistent" open={open} transitionDuration={theme.transitions.duration.standard}>
-        <div><Monogram>BF</Monogram></div>
-        <List>
-          {
-            appConfig.pageItems.map((item) => (
-              <a href={`/#${item.id}`} style={{ textDecoration: 'none' }} key={item.id}>
-                <ListItem>
-                  <EfTooltip title={item.description} placement="right-end">
-                    <ListItemAvatar>
-                      <Avatar>
-                        {item.icon}
-                      </Avatar>
-                    </ListItemAvatar>
-                  </EfTooltip>
-                  <ListItemText primary={item.label} />
-                </ListItem>
-              </a>
-            ))
-          }
-        </List>
+      <Drawer
+        variant="persistent"
+        open={open}
+        transitionDuration={theme.transitions.duration.standard}
+      >
+        <Box sx={{
+            height: '100vh', width: drawerWidth,
+        }}
+        >
+            <Box sx={{ width: drawerWidth, position: 'absolute',  height: '100%', overflow: 'hidden'}}>
+              <div style={{height: drawerWidth}} />
+              <ImageCrossFader
+                  imgs={themeSidebarBackgrounds}
+                  selectedId={theme.name}
+              />
+            </Box>
+
+
+
+
+          <Box sx={{ width: drawerWidth, position: 'absolute', backgroundColor: alpha('#ffffff', 0.00), height: '100%', }} >
+              <div><Monogram>BF</Monogram></div>
+              <List>
+                {
+                  appConfig.pageItems.map((item) => (
+                    <a href={`/#${item.id}`} style={{ textDecoration: 'none' }} key={item.id}>
+                      <ListItem>
+                        <EfTooltip title={item.description} placement="right-end">
+                          <ListItemAvatar>
+                            <Avatar>
+                              {item.icon}
+                            </Avatar>
+                          </ListItemAvatar>
+                        </EfTooltip>
+                        <ListItemText primary={item.label} />
+                      </ListItem>
+                    </a>
+                  ))
+                }
+              </List>
+          </Box>
+        </Box>
+
+
       </Drawer>
     </div>
   )
@@ -93,5 +121,5 @@ export default function AppSideNav(props) {
 AppSideNav.propTypes = { appConfig: PropTypes.shape(appConfigPropType).isRequired }
 
 /*
-Quality Checked: Brian Francis - 12/30/2021
+Final QA: Brian Francis - 01/14/2022
  */

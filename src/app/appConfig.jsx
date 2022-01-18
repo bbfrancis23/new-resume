@@ -59,5 +59,5 @@ export const appConfigPropType = {
 export default appConfig
 
 /*
-Final QA: Brian Francis - 01/12/2022
+Final QA: Brian Francis - 01/14/2022
  */

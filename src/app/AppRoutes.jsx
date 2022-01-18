@@ -23,5 +23,5 @@ AppRoutes.propTypes = {
   updateTheme: PropTypes.func.isRequired,
 }
 /*
-Final QA: Brian Francis - 01/13/2022
+Final QA: Brian Francis - 01/14/2022
  */

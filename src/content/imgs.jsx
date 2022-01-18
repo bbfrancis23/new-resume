@@ -1,10 +1,10 @@
+/* eslint-disable max-lines */
 import MidnightHero from '../img/theme/heroes/Midnight.jpg'
 import HawaiiHero from '../img/theme/heroes/Hawaii.jpg'
 import ArizonaHero from '../img/theme/heroes/Arizona.jpg'
 import LushHero from '../img/theme/heroes/Lush.jpg'
 import PirateHero from '../img/theme/heroes/Pirate.jpg'
 import CorporateHero from '../img/theme/heroes/Corporation.jpg'
-
 import PlusOneCover from '../img/portfolio/plueone/cover.png'
 import AZDEQCover from '../img/portfolio/azdeq/cover.png'
 import FreelanceCover from '../img/portfolio/freelance/cover.jpg'
@@ -54,6 +54,12 @@ import MidnightForest from '../img/theme/viewport-backgrounds/Midnight-Forest.jp
 import MidnightFullMoon from '../img/theme/viewport-backgrounds/Midnight-FullMoon.jpg'
 import HawaiiSunset from '../img/theme/viewport-backgrounds/Hawaii-Sunset.jpg'
 import HawaiiFlower from '../img/theme/viewport-backgrounds/Hawaii-Flower.jpg'
+import ArizonaThemeSidebar from '../img/theme/sidebar-backgrounds/arizona-theme-sidebar.jpg'
+import LushThemeSidebar from '../img/theme/sidebar-backgrounds/lush-theme-sidebar.jpg'
+import HawaiiThemeSidebar from '../img/theme/sidebar-backgrounds/beach-theme-sidebar.jpg'
+import PirateThemeSidebar from '../img/theme/sidebar-backgrounds/pirate-theme-sidebar.jpg'
+import CorporateThemeSidebar from '../img/theme/sidebar-backgrounds/corporation-theme-sidebar.jpg'
+import MidnightThemeSidebar from '../img/theme/sidebar-backgrounds/midnight-theme-sidebar.jpg'
 
 export {
   MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero, PlusOneCover, AZDEQCover, FreelanceCover,
@@ -62,7 +68,8 @@ export {
   IboatsCreateBoat, IboatsOptions, IboatsResearchType, AzdeqReg, AzdeqStepper, AzdeqLog, PlusOneWorkFlow, AzdeqStart,
   PlusOneTable, AzdeqInfo, PlusOneDate, AzdeqForm, PlusOneLogin, PlusOneStyle, PlusOneDash, ArizonaSedona, ArizonaMountains,
   ArizonaCathedralRock, CorporateStrategies, CorporateLaptop, CorporateBuildings, LushVegetation, LushLeaves, LushHike,
-  PirateAffects, PirateShips, PirateSkull, MidnightFullMoon, MidnightForest, HawaiiFlower,
+  PirateAffects, PirateShips, PirateSkull, MidnightFullMoon, MidnightForest, HawaiiFlower, ArizonaThemeSidebar,
+  LushThemeSidebar, HawaiiThemeSidebar, PirateThemeSidebar, CorporateThemeSidebar, MidnightThemeSidebar,
 }
 
 export const themeHeroes = {
@@ -91,3 +98,12 @@ export const themePreviewBackgrounds = {
   Lush: LushVegetation,
   Pirate: PirateShips,
 }
+
+export const themeSidebarBackgrounds = [
+  { id: 'Corporate', src: CorporateThemeSidebar, label: 'Corporate building' },
+  { id: 'Midnight', src: MidnightThemeSidebar, label: 'Midnight Moon' },
+  { id: 'Hawaii', src: HawaiiThemeSidebar, label: 'Beach Hammock' },
+  { id: 'Arizona', src: ArizonaThemeSidebar, label: 'Arizona Home' },
+  { id: 'Pirate', src: PirateThemeSidebar, label: 'Skull in woods' },
+  { id: 'Lush', src: LushThemeSidebar, label: 'Vegetation' },
+]

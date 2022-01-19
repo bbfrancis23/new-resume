@@ -4,12 +4,9 @@ import {
 import { alpha, createTheme } from '@mui/material/styles'
 
 export const themeEffects = {
-  stainedGlass: true,
-  density: 'normal',
-  threeD: true,
-  tooltips: true,
+  stainedGlass: true, density: 'normal', threeD: true, tooltips: true,
 }
-
+/* eslint-disable */
 export const palettes = [
   { name: 'Hawaii', primary: { main: teal[900] }, secondary: { main: lightBlue[400], light: lightBlue[50] } },
   { name: 'Midnight', primary: { main: deepPurple[800] }, secondary: { main: indigo[500], light: indigo[100] } },
@@ -25,9 +22,9 @@ export function createGlobalTheme(themeOptions) {
   const { mode, secondary } = palette
   const { threeD, stainedGlass } = effects
 
-  const getEffectsCardBackground = () => {
+  const getEffectsCardBackground = (alphaValue = 0.75) => {
     const color = mode === 'light' ? palette.grey['50'] : palette.grey['800']
-    return stainedGlass ? alpha(color, 0.75) : color
+    return stainedGlass ? alpha(color, alphaValue) : color
   }
 
   const globalTheme = {
@@ -55,6 +52,20 @@ export function createGlobalTheme(themeOptions) {
             },
           },
         ],
+      },
+      MuiListItemButton: {
+        variants: [{
+          props: { variant: 'effects' },
+          style: {
+            backgroundColor: getEffectsCardBackground(0.65),
+            backdropFilter: stainedGlass ? 'blur(5px)' : 'none',
+            boxShadow: threeD ? theme.shadows[5] : 'none',
+            border: `1px solid ${palette.divider}`,
+            ':hover': {
+              backgroundColor: stainedGlass ? getEffectsCardBackground(0.50) : alpha(getEffectsCardBackground(), 0.96),
+            },
+          },
+        }],
       },
       MuiCard: {
         variants: [{
@@ -101,5 +112,5 @@ export const corporate = { name: 'Corporate', palette: palettes[5] }
 export const appThemes = [hawaii, midnight, arizona, pirate, lush, corporate]
 
 /*
-Quality Checked: Brian Francis - 12/18/2021
+Final R&D: Brian Francis - 01/19/2022
  */

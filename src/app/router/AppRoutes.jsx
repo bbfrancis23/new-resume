@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Route, Routes } from 'react-router-dom'
 import AppSettingsRoute from './AppSettingsRoute'
-import { appConfig } from './appConfig'
+import { appConfig } from '../appConfig'
 
 function AppRoute() { return (<>{ appConfig.pageItems.map((item) => item.pageComponent) }</>) }
 

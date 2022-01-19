@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import {
-  AccountCircle as AboutIcon, Work as ExperienceIcon, Collections as PortfolioIcon, StarOutline as TestimonialsIcon,
+  AccountCircle as AboutIcon, Work as ExperienceIcon, StarOutline as TestimonialsIcon,
 } from '@mui/icons-material'
 
 import About from '../content/page-items/About'
 import Experience from '../content/page-items/Experience'
-import Portfolio from '../content/page-items/Portfolio'
+// import Portfolio from '../content/page-items/Portfolio'
 import Testimonials from '../content/page-items/Testimonials'
 
 export const appConfig = {
@@ -26,13 +26,13 @@ export const appConfig = {
       description: 'Work timeline for Brian Francis',
       pageComponent: <Experience key="experience" id="experience" />,
     },
-    {
-      id: 'portfolio',
-      label: 'Portfolio',
-      icon: <PortfolioIcon />,
-      description: 'Portfolio for Brian Francis',
-      pageComponent: <Portfolio key="portfolio" id="portfolio" />,
-    },
+    // {
+    //   id: 'portfolio',
+    //   label: 'Portfolio',
+    //   icon: <PortfolioIcon />,
+    //   description: 'Portfolio for Brian Francis',
+    //   pageComponent: <Portfolio key="portfolio" id="portfolio" />,
+    // },
     {
       id: 'testimonials',
       label: 'Testimonials',

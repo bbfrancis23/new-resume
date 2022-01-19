@@ -11,11 +11,11 @@ import {
   appThemes, createGlobalTheme, themeEffects as effects, palettes,
 } from './AppThemes'
 
-import AppSideNav from './AppSideNav'
+import AppSideNav from './sidenav/AppSideNav'
 import AppToolBar from './AppToolBar'
 import AppDialog from './AppDialog'
 import AppFooter from './AppFooter'
-import AppRoutes from './AppRoutes'
+import AppRoutes from './router/AppRoutes'
 import AppSettingsThemes from '../content/settings-itmes/AppSettingsThemes'
 import EfTooltip from '../ui/EfTooltip'
 import { appConfig } from './appConfig'

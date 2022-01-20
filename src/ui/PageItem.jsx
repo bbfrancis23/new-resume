@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
-  Box, Typography, useTheme, Paper,
+  Box, Typography, useTheme, Card,
 } from '@mui/material'
 
 export default function PageItem(props) {
@@ -11,19 +11,17 @@ export default function PageItem(props) {
   const { id, children, label } = props
 
   return (
-    <Box id={id} sx={{ pt: 1 }}>
-      <Paper
+    <Box id={id} sx={{ pt: 1, zIndex: -1 }}>
+      <Card
         sx={{
           m: 'auto',
           mt: 10,
           mb: 10,
           p: 5,
-          width: {
-            xs: '100%', md: '90%', lg: '70%', xl: '60%',
-          },
+          width: theme.contentItems.width,
 
         }}
-        variant={theme.effects.stainedGlass ? 'stainedGlass' : 'outlined'}
+        variant="effects"
       >
         { label
         && (
@@ -35,7 +33,7 @@ export default function PageItem(props) {
         )}
 
         {children}
-      </Paper>
+      </Card>
     </Box>
 
   )

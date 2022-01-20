@@ -51,13 +51,12 @@ export default function AppSideNav(props) {
             <List sx={{ margin: '8px 16px 0 16px' }}>
               {
                 appConfig.pageItems.map((item) => (
-                  <EfTooltip title={item.description} placement="right">
+                  <EfTooltip title={item.description} placement="right" key={item.id}>
                     <ListItemButton
                       variant="effects"
                       component={HashLink}
                       smooth
                       to={`/#${item.id}`}
-                      key={item.id}
                     >
                       <ListItemIcon>{item.icon}</ListItemIcon>
                       <ListItemText primary={item.label} />

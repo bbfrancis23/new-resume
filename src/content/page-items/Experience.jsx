@@ -9,7 +9,7 @@ import {
 } from '@mui/material'
 
 import PropTypes from 'prop-types'
-import PageItem from '../../ui/PageItems'
+import PageItem from '../../ui/PageItem'
 import experience from '../data'
 
 export default function Experience(props) {

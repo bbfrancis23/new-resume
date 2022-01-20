@@ -5,7 +5,7 @@ import {
 } from '@mui/material'
 import { Info as InfoIcon, Menu as MenuIcon, Settings as SettingsIcon } from '@mui/icons-material'
 
-import { themePreviewBackgrounds } from '../imgs'
+import { themePreviewBackgrounds } from '../../content/imgs'
 import { themeText } from './themeText'
 
 export default function AppSettingsPreview() {

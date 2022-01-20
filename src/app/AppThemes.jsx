@@ -6,7 +6,6 @@ import { alpha, createTheme } from '@mui/material/styles'
 export const themeEffects = {
   stainedGlass: true, density: 'normal', threeD: true, tooltips: true,
 }
-/* eslint-disable */
 export const palettes = [
   { name: 'Hawaii', primary: { main: teal[900] }, secondary: { main: lightBlue[400], light: lightBlue[50] } },
   { name: 'Midnight', primary: { main: deepPurple[800] }, secondary: { main: indigo[500], light: indigo[100] } },
@@ -30,29 +29,12 @@ export function createGlobalTheme(themeOptions) {
   const globalTheme = {
     contentItems: {
       width: {
-        xs: '100%', md: '90%', lg: '70%', xl: '60%',
+        xs: '1200px',
       },
     },
     components: {
       MuiTooltip: { defaultProps: { enterDelay: 1000 } },
       MuiCssBaseline: { styleOverrides: { body: { transition: 'all 0.375s linear' } } },
-      MuiPaper: {
-        variants: [
-          {
-            props: { variant: 'outlined' },
-            style: { backgroundColor: mode === 'light' ? palette.grey['50'] : palette.grey['800'] },
-          },
-          {
-            props: { variant: 'stainedGlass' },
-            style: {
-              backgroundColor: alpha(mode === 'light' ? palette.grey['50'] : palette.grey['800'], 0.75),
-              backdropFilter: 'blur(10px)',
-              boxShadow:
-                '0px 7px 8px -4px rgba(0,0,0,0.2),0px 12px 17px 2px rgba(0,0,0,0.14),0px 5px 22px 4px rgba(0,0,0,0.12)',
-            },
-          },
-        ],
-      },
       MuiListItemButton: {
         variants: [{
           props: { variant: 'effects' },

@@ -1,21 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import { Link, Route, Routes } from 'react-router-dom'
 import {
-  Box, Button, Card, CardActions, CardContent, CardHeader, Grid,
-  useTheme,
+  Box, Button, Card, CardActions, CardContent, CardHeader, Grid, useTheme,
 } from '@mui/material'
-import {
-  ArrowBackIosNew as BackIcon,
-} from '@mui/icons-material'
+import { ArrowBackIosNew as BackIcon } from '@mui/icons-material'
+import { appConfig } from './appConfig'
+import AppSettingsThemes from './settings/AppSettingsThemes'
+import AppSettingsPalettes from './settings/AppSettingsPalettes'
+import AppSettingsEffects from './settings/AppSettingsEffects'
+import AppSettingsPreview from './settings/AppSettingsPreview'
 
-import { Link } from 'react-router-dom'
-import AppSettingsThemes from '../../content/settings-itmes/AppSettingsThemes'
-import AppSettingsPalettes from '../../content/settings-itmes/AppSettingsPalettes'
-import AppSettingsEffects from '../../content/settings-itmes/AppSettingsEffects'
-import AppSettingsPreview from '../../content/settings-itmes/AppSettingsPreview'
+function AppRoute() { return (<>{ appConfig.pageItems.map((item) => item.pageComponent) }</>) }
 
-export default function AppSettingsRoute(props) {
+export function AppRoutes(props) {
+  const { updateTheme } = props
+  return (
+    <Routes>
+      <Route path="/" element={<AppRoute />} />
+      <Route
+        path="settings"
+        element={<AppSettingsRoute updateTheme={(options) => updateTheme(options)} />}
+      />
+      <Route path="*" element={<AppRoute />} />
+    </Routes>
+  )
+}
+AppRoutes.propTypes = {
+  updateTheme: PropTypes.func.isRequired,
+}
+
+export function AppSettingsRoute(props) {
   const theme = useTheme()
   const { updateTheme } = props
 
@@ -50,7 +65,6 @@ export default function AppSettingsRoute(props) {
 AppSettingsRoute.propTypes = {
   updateTheme: PropTypes.func.isRequired,
 }
-
 /*
 Final QA: Brian Francis - 01/14/2022
  */

@@ -6,11 +6,11 @@ import {
 } from '@mui/material'
 import { Star as SelectedIcon } from '@mui/icons-material'
 
-import { appThemes } from '../../app/AppThemes'
+import { appThemes } from '../AppThemes'
 
 import EfTooltip from '../../ui/EfTooltip'
 
-import { themeHeroes } from '../imgs'
+import { themeHeroes } from '../../content/imgs'
 import SettingsStack from './components/core'
 
 export default function AppSettingsThemes(props) {

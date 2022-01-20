@@ -6,7 +6,7 @@ import {
 
 import PropTypes from 'prop-types'
 
-import PageItem from '../../ui/PageItems'
+import PageItem from '../../ui/PageItem'
 import BrianFrancis from '../../img/portraits/brian-francis.jpg'
 
 export default function About(props) {

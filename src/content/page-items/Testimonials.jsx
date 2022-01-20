@@ -5,7 +5,7 @@ import {
   Box, Grid, styled, Typography,
 } from '@mui/material'
 import Paper from '@mui/material/Paper'
-import PageItem from '../../ui/PageItems'
+import PageItem from '../../ui/PageItem'
 import BrianMelinthin from '../../img/portraits/brian-m.jpg'
 
 import JodyFarnsworthJones from '../../img/portraits/jody-farnsworth-uribe.jpg'

@@ -1,32 +1,24 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-
 import {
   styled, ThemeProvider, CssBaseline, Box, Fab, Fade,
 } from '@mui/material'
-
 import SettingsIcon from '@mui/icons-material/Settings'
-
+import {
+  AppDialog, AppFooter, AppRoutes, AppToolBar, AppSideNav, appConfig,
+} from '.'
 import {
   appThemes, createGlobalTheme, themeEffects as effects, palettes,
 } from './AppThemes'
-
-import AppSideNav from './sidenav/AppSideNav'
-import AppToolBar from './AppToolBar'
-import AppDialog from './AppDialog'
-import AppFooter from './AppFooter'
-import AppRoutes from './router/AppRoutes'
-import AppSettingsThemes from '../content/settings-itmes/AppSettingsThemes'
-import EfTooltip from '../ui/EfTooltip'
-import { appConfig } from './appConfig'
+import AppSettingsThemes from './settings/AppSettingsThemes'
+import { EfTooltip, ImageCrossFader } from '../ui'
 import { heroes } from '../content/imgs'
-import ImageCrossFader from '../ui/ImageCrossFader'
 
 const SideNavContainer = styled(Box)(({ theme }) => ({
   position: 'fixed',
   right: theme.spacing(3),
   top: theme.spacing(3),
-  zIndex: 'appBar',
+  zIndex: theme.zIndex.appBar,
 }))
 
 export default function App() {
@@ -70,9 +62,7 @@ export default function App() {
       <ImageCrossFader
         imgs={heroes}
         selectedId={theme.name}
-        sx={{
-          position: 'fixed', width: '100%', height: '370px', zIndex: -1,
-        }}
+        sx={{ position: 'fixed', width: '100%', height: '370px' }}
       />
       <AppToolBar
         appConfig={appConfig}
@@ -97,6 +87,7 @@ export default function App() {
     </ThemeProvider>
   )
 }
+
 /*
-Final QA : Brian Francis - 01/14/2022
+Final R&D : Brian Francis - 01/14/2022
  */

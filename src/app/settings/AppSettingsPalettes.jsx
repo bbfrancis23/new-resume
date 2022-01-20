@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Box, Fab, useTheme } from '@mui/material'
 import { NightsStay as DarkModeIcon, WbSunny as LightModeIcon } from '@mui/icons-material'
 
-import { palettes } from '../../app/AppThemes'
+import { palettes } from '../AppThemes'
 
 import EfTooltip from '../../ui/EfTooltip'
 

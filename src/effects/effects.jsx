@@ -94,5 +94,5 @@ export const corporate = { name: 'Corporate', palette: palettes[5] }
 export const appThemes = [hawaii, midnight, arizona, pirate, lush, corporate]
 
 /*
-Final R&D: Brian Francis - 01/19/2022
+Final R&D: Brian Francis - 01/27/2022
  */

@@ -9,7 +9,7 @@ import {
 } from '.'
 import {
   appThemes, createGlobalTheme, themeEffects as effects, palettes,
-} from './AppThemes'
+} from '../effects/effects'
 import AppSettingsThemes from './settings/AppSettingsThemes'
 import { EfTooltip, ImageCrossFader } from '../ui'
 import { heroes } from '../content/imgs'

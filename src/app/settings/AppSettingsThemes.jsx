@@ -6,7 +6,7 @@ import {
 } from '@mui/material'
 import { Star as SelectedIcon } from '@mui/icons-material'
 
-import { appThemes } from '../AppThemes'
+import { appThemes } from '../../effects/effects'
 
 import EfTooltip from '../../ui/EfTooltip'
 

@@ -5,25 +5,23 @@ import {
 } from '@mui/lab'
 
 import {
-  Typography, Card, CardContent, CardHeader, Chip,
+  Typography, Card, CardContent, CardHeader, Chip, IconButton,
 } from '@mui/material'
 
 import PropTypes from 'prop-types'
+import { MoreVert } from '@mui/icons-material'
 import PageItem from '../../ui/PageItem'
 import experience from '../data'
+import { EfTooltip } from '../../ui'
 
 export default function Experience(props) {
   const { id } = props
 
   return (
     <PageItem id={id} label="EXPERIENCE">
-
-      {/* <Box sx={{ display: { xs: 'block', md: 'none' } }}> */}
-      {/* */}
-      {/* </Box> */}
       <Timeline position="alternate" sx={{ m: 'auto', p: 0, display: { xs: 'none', md: 'block' } }}>
         {
-          experience.map((item) => (
+          experience.map((item, index) => (
             <TimelineItem key={item.id}>
               <TimelineOppositeContent sx={{ m: 'auto' }}>
                 <Typography
@@ -42,7 +40,20 @@ export default function Experience(props) {
               </TimelineSeparator>
               <TimelineContent>
                 <Card raised>
-                  <CardHeader title={item.label} subheader={item.title} />
+                  <CardHeader
+                    title={item.label}
+                    subheader={item.title}
+                    action={(
+                      <EfTooltip title="More Info" placement="right">
+                        <IconButton>
+                          <MoreVert />
+                        </IconButton>
+                      </EfTooltip>
+                    )}
+                    sx={{
+                      flexDirection: index % 2 === 1 ? 'row-reverse' : 'row',
+                    }}
+                  />
                   <CardContent>
                     {
                       item.relevantSkills.map((rSkill) => (

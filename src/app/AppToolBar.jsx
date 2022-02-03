@@ -8,7 +8,7 @@ import {
 import SettingsIcon from '@mui/icons-material/Settings'
 
 import { appConfigPropType } from './appConfig'
-import EfTooltip from '../ui/EfTooltip'
+import EfTooltip from '../effects/EfTooltip'
 
 const ToolbarContent = styled('div')(({ theme }) => (
   { width: '90vw', maxWidth: theme.breakpoints.values.lg, display: 'flex' }))

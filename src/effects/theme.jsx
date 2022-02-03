@@ -2,6 +2,7 @@ import {
   lightBlue, red, teal, brown, blueGrey, grey, green, lightGreen, deepPurple, indigo,
 } from '@mui/material/colors'
 import { alpha, createTheme } from '@mui/material/styles'
+import MuiFabVariants from './variants/MuiFab'
 
 export const themeEffects = {
   stainedGlass: true, density: 'normal', threeD: true, tooltips: true,
@@ -18,7 +19,7 @@ export const palettes = [
 export function createGlobalTheme(themeOptions) {
   let theme = createTheme(themeOptions)
   const { palette, effects } = theme
-  const { mode, secondary } = palette
+  const { mode } = palette
   const { threeD, stainedGlass } = effects
 
   const getEffectsCardBackground = (alphaValue = 0.75) => {
@@ -67,16 +68,7 @@ export function createGlobalTheme(themeOptions) {
         }],
       },
       MuiFab: {
-        variants: [{
-          props: { variant: 'effects' },
-          style: {
-            color: secondary.contrastText,
-            backgroundColor: stainedGlass ? alpha(secondary.main, 0.25) : secondary.main,
-            backdropFilter: stainedGlass ? 'blur(2px)' : 'none',
-            transition: 'all 5s',
-            ':hover': { background: alpha(secondary.main, 1.00), transition: '3s' },
-          },
-        }],
+        variants: MuiFabVariants(theme),
       },
     },
   }

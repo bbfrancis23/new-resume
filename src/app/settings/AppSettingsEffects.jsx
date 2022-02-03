@@ -4,7 +4,7 @@ import {
 import { Landscape as StainedGlassIcon, Help as HelpIcon, ViewInAr as ThreeDIcon } from '@mui/icons-material'
 import React from 'react'
 import PropTypes from 'prop-types'
-import EfTooltip from '../../ui/EfTooltip'
+import EfTooltip from '../../effects/EfTooltip'
 import SettingsStack from './components/core'
 
 export default function AppSettingsEffects(props) {
@@ -30,7 +30,7 @@ export default function AppSettingsEffects(props) {
           <Box>
 
             <Fab
-              color={theme.effects.stainedGlass ? 'secondary' : 'disabled'}
+              color={theme.effects.stainedGlass ? 'primary' : ''}
               onClick={() => updateTheme({ stainedGlass: !theme.effects.stainedGlass })}
             >
               <StainedGlassIcon size="large" />
@@ -39,7 +39,7 @@ export default function AppSettingsEffects(props) {
           <Box>
 
             <Fab
-              color={theme.effects.tooltips ? 'secondary' : 'disabled'}
+              color={theme.effects.tooltips ? 'primary' : 'default'}
               onClick={() => updateTheme({ tooltips: !theme.effects.tooltips })}
             >
               <HelpIcon size="large" />
@@ -47,7 +47,7 @@ export default function AppSettingsEffects(props) {
           </Box>
           <Box>
             <Fab
-              color={theme.effects.threeD ? 'secondary' : 'disabled'}
+              color={theme.effects.threeD ? 'primary' : undefined}
               onClick={() => updateTheme({ threeD: !theme.effects.threeD })}
             >
               <ThreeDIcon size="large" />

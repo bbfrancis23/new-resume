@@ -1,4 +1,4 @@
-import EfTooltip from './EfTooltip'
+import EfTooltip from '../effects/EfTooltip'
 import ImageCrossFader from './ImageCrossFader'
 
 export { EfTooltip, ImageCrossFader }

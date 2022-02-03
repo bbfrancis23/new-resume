@@ -8,7 +8,7 @@ import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
 import { HashLink } from 'react-router-hash-link'
 import { appConfigPropType } from '../appConfig'
 
-import EfTooltip from '../../ui/EfTooltip'
+import EfTooltip from '../../effects/EfTooltip'
 import ImageCrossFader from '../../ui/ImageCrossFader'
 
 import { themeSidebarBackgrounds } from '../../content/imgs'
@@ -27,7 +27,7 @@ export default function AppSideNav(props) {
     <Box>
       <SideNavButton open={open}>
         <EfTooltip title="Menu">
-          <Fab onClick={handleToggleSideNav} variant="effects">
+          <Fab onClick={handleToggleSideNav} variant="effects" color="primary" fade>
             {open ? <CloseIcon /> : <MenuIcon />}
           </Fab>
         </EfTooltip>

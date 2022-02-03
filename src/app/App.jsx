@@ -9,7 +9,7 @@ import {
 } from '.'
 import {
   appThemes, createGlobalTheme, themeEffects as effects, palettes,
-} from '../effects/effects'
+} from '../effects/theme'
 import AppSettingsThemes from './settings/AppSettingsThemes'
 import { EfTooltip, ImageCrossFader } from '../ui'
 import { heroes } from '../content/imgs'
@@ -62,7 +62,9 @@ export default function App() {
       <ImageCrossFader
         imgs={heroes}
         selectedId={theme.name}
-        sx={{ position: 'fixed', width: '100%', height: '370px' }}
+        sx={{
+          position: 'fixed', width: '100%', height: '370px', zIndex: -1,
+        }}
       />
       <AppToolBar
         appConfig={appConfig}
@@ -73,7 +75,7 @@ export default function App() {
         <Fade in={useLocation().pathname !== '/settings'} timeout={1000}>
           <span>
             <EfTooltip title="Settings">
-              <Fab onClick={handleSettingsDialogOpen} variant="effects"><SettingsIcon /></Fab>
+              <Fab onClick={handleSettingsDialogOpen} variant="effects" color="primary" fade><SettingsIcon /></Fab>
             </EfTooltip>
           </span>
         </Fade>

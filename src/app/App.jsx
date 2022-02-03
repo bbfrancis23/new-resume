@@ -75,13 +75,18 @@ export default function App() {
         <Fade in={useLocation().pathname !== '/settings'} timeout={1000}>
           <span>
             <EfTooltip title="Settings">
-              <Fab onClick={handleSettingsDialogOpen} variant="effects" color="primary" fade><SettingsIcon /></Fab>
+              <Fab onClick={handleSettingsDialogOpen} variant="effects" color="primary" fade="true"><SettingsIcon /></Fab>
             </EfTooltip>
           </span>
         </Fade>
         <AppSideNav appConfig={appConfig} />
       </SideNavContainer>
-      <AppDialog close={() => handleSettingsDialogClose()} open={appSettingsDialogOpen} label="App" moreLink="/settings">
+      <AppDialog
+        close={() => handleSettingsDialogClose()}
+        open={appSettingsDialogOpen}
+        label="App Settings"
+        moreLink="/settings"
+      >
         <AppSettingsThemes updateTheme={(options) => handleUpdateTheme(options)} />
       </AppDialog>
       <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />

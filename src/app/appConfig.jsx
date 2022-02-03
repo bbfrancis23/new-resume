@@ -5,10 +5,10 @@ import {
   AccountCircle as AboutIcon, Work as ExperienceIcon, StarOutline as TestimonialsIcon,
 } from '@mui/icons-material'
 
-import About from '../content/page-items/About'
-import Experience from '../content/page-items/Experience'
+import AboutPageItem from '../content/page-items/About'
 // import Portfolio from '../content/page-items/Portfolio'
-import Testimonials from '../content/page-items/Testimonials'
+import TestimonialsPageItem from '../content/page-items/Testimonials'
+import ExperiencePageItem from '../content/page-items/Experience'
 
 export const appConfig = {
   pageItems: [
@@ -17,14 +17,14 @@ export const appConfig = {
       label: 'About',
       icon: <AboutIcon />,
       description: 'About Brian Francis',
-      pageComponent: <About key="about" id="about" />,
+      pageComponent: <AboutPageItem key="about" id="about" />,
     },
     {
       id: 'experience',
       label: 'Experience',
       icon: <ExperienceIcon />,
       description: 'Work timeline for Brian Francis',
-      pageComponent: <Experience key="experience" id="experience" />,
+      pageComponent: <ExperiencePageItem key="experience" id="experience" />,
     },
     // {
     //   id: 'portfolio',
@@ -38,7 +38,7 @@ export const appConfig = {
       label: 'Testimonials',
       icon: <TestimonialsIcon />,
       description: 'Testimonials for Brian Francis',
-      pageComponent: <Testimonials key="testimonials" id="testimonials" />,
+      pageComponent: <TestimonialsPageItem key="testimonials" id="testimonials" />,
     },
 
   ],

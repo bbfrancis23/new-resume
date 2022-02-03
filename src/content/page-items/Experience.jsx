@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import {
   Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineOppositeContent, TimelineDot,
 } from '@mui/lab'
@@ -13,14 +12,25 @@ import { MoreVert } from '@mui/icons-material'
 import PageItem from '../../ui/PageItem'
 import experience from '../data'
 import { EfTooltip } from '../../ui'
+import AppDialog from '../../ui/AppDialog'
 
-export default function Experience(props) {
+export default function ExperiencePageItem(props) {
   const { id } = props
+
+  const [dialogLabel, setDialogLabel] = React.useState('Your Mom')
+
+  const [expDialogOpen, setExpDialogOpen] = React.useState(false)
+  const handleExpDialogOpen = (label) => {
+    setDialogLabel(label)
+    setExpDialogOpen(true)
+  }
+  const handleExpDialogClose = () => setExpDialogOpen(false)
 
   return (
     <PageItem id={id} label="EXPERIENCE">
-      <Timeline position="alternate" sx={{ m: 'auto', p: 0, display: { xs: 'none', md: 'block' } }}>
-        {
+      <>
+        <Timeline position="alternate" sx={{ m: 'auto', p: 0, display: { xs: 'none', md: 'block' } }}>
+          {
           experience.map((item, index) => (
             <TimelineItem key={item.id}>
               <TimelineOppositeContent sx={{ m: 'auto' }}>
@@ -45,7 +55,7 @@ export default function Experience(props) {
                     subheader={item.title}
                     action={(
                       <EfTooltip title="More Info" placement="right">
-                        <IconButton>
+                        <IconButton onClick={() => handleExpDialogOpen(item.label)}>
                           <MoreVert />
                         </IconButton>
                       </EfTooltip>
@@ -72,11 +82,15 @@ export default function Experience(props) {
             </TimelineItem>
           ))
         }
-      </Timeline>
+        </Timeline>
+        <AppDialog close={() => handleExpDialogClose()} open={expDialogOpen} label={dialogLabel}>
+          <span>your mom</span>
+        </AppDialog>
+      </>
     </PageItem>
   )
 }
-Experience.propTypes = {
+ExperiencePageItem.propTypes = {
   id: PropTypes.string.isRequired,
 }
 

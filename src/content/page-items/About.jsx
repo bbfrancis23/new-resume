@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 import PageItem from '../../ui/PageItem'
 import BrianFrancis from '../../img/portraits/brian-francis.jpg'
 
-export default function About(props) {
+export default function AboutPageItem(props) {
   const theme = useTheme()
 
   const { id } = props
@@ -85,7 +85,7 @@ export default function About(props) {
     </PageItem>
   )
 }
-About.propTypes = {
+AboutPageItem.propTypes = {
   id: PropTypes.string.isRequired,
 }
 

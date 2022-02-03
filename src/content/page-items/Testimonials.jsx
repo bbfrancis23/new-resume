@@ -29,7 +29,7 @@ function FancyQuote() {
   )
 }
 
-export default function Testimonials(props) {
+export default function TestimonialsPageItem(props) {
   const { id } = props
 
   return (
@@ -86,7 +86,7 @@ export default function Testimonials(props) {
     </PageItem>
   )
 }
-Testimonials.propTypes = {
+TestimonialsPageItem.propTypes = {
   id: PropTypes.string.isRequired,
 }
 

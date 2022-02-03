@@ -27,7 +27,7 @@ export default function AppSideNav(props) {
     <Box>
       <SideNavButton open={open}>
         <EfTooltip title="Menu">
-          <Fab onClick={handleToggleSideNav} variant="effects" color="primary" fade>
+          <Fab onClick={handleToggleSideNav} variant="effects" color="primary" fade="true">
             {open ? <CloseIcon /> : <MenuIcon />}
           </Fab>
         </EfTooltip>

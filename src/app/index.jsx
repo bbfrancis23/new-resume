@@ -1,4 +1,4 @@
-import AppDialog from './AppDialog'
+import AppDialog from '../ui/AppDialog'
 import AppFooter from './AppFooter'
 import { AppRoutes } from './AppRoutes'
 import AppSideNav from './sidenav/AppSideNav'

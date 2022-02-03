@@ -32,8 +32,7 @@ export default function AppDialog(props) {
       <DialogTitle style={{ cursor: 'move' }} id="app-settings-dialog-title">
         <Box sx={{ display: 'flex' }}>
           <div>
-            {`${label} `}
-            Settings
+            {`${label}`}
           </div>
           <div style={{ flexGrow: '1' }} />
           <DragHandleIcon />

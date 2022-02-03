@@ -25,7 +25,7 @@ export default function MuiFabVariants(theme) {
       style: getStyle(),
     },
     {
-      props: { variant: 'effects', fade: true },
+      props: { variant: 'effects', fade: 'true' },
       style: getStyle(palette.grey['300'], true),
     },
     {
@@ -33,7 +33,7 @@ export default function MuiFabVariants(theme) {
       style: getStyle(primary.main),
     },
     {
-      props: { variant: 'effects', color: 'primary', fade: true },
+      props: { variant: 'effects', color: 'primary', fade: 'true' },
       style: getStyle(primary.main, true),
     },
     {
@@ -41,7 +41,7 @@ export default function MuiFabVariants(theme) {
       style: getStyle(secondary.main),
     },
     {
-      props: { variant: 'effects', color: 'secondary', fade: true },
+      props: { variant: 'effects', color: 'secondary', fade: 'true' },
       style: getStyle(secondary.main, true),
     },
   ]

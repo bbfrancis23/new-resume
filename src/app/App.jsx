@@ -5,7 +5,7 @@ import {
 } from '@mui/material'
 import SettingsIcon from '@mui/icons-material/Settings'
 import {
-  AppDialog, AppFooter, AppRoutes, AppToolBar, AppSideNav, appConfig,
+  AppFooter, AppRoutes, AppToolBar, AppSideNav, appConfig,
 } from '.'
 import {
   appThemes, createGlobalTheme, themeEffects as effects, palettes,
@@ -13,6 +13,7 @@ import {
 import AppSettingsThemes from './settings/AppSettingsThemes'
 import { EfTooltip, ImageCrossFader } from '../ui'
 import { heroes } from '../content/imgs'
+import AppDialog from '../ui/AppDialog'
 
 const SideNavContainer = styled(Box)(({ theme }) => ({
   position: 'fixed',

@@ -7,18 +7,17 @@ import {
 import IconButton from '@mui/material/IconButton'
 import InfoIcon from '@mui/icons-material/Info'
 
-import AppDialog from '../../ui/AppDialog'
+import DialogBox from '../../ui/DialogBox'
 import PageItem from '../../ui/PageItem'
 
 import experience from '../data'
-import Carousel from '../../ui/Carousel'
 
 export default function Portfolio(props) {
   const { id } = props
 
   const [portfolioDialogOpen, setPortfolioDialogOpen] = React.useState(false)
 
-  const [portIndex, setPortIndex] = React.useState(3)
+  const [setPortIndex] = React.useState(3)
 
   const handlePortfolioDialogOpen = (index) => () => {
     setPortIndex(index)
@@ -56,9 +55,9 @@ export default function Portfolio(props) {
             ))
           }
         </ImageList>
-        <AppDialog close={() => handlePortfolioDialogClose()} open={portfolioDialogOpen} label="App">
-          <Carousel imgs={experience[portIndex].imgs} />
-        </AppDialog>
+        <DialogBox close={() => handlePortfolioDialogClose()} open={portfolioDialogOpen} label="App">
+          <span>yourmom</span>
+        </DialogBox>
       </>
     </PageItem>
 

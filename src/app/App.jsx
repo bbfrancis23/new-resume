@@ -9,11 +9,11 @@ import {
 } from '.'
 import {
   appThemes, createGlobalTheme, themeEffects as effects, palettes,
-} from '../effects/theme'
+} from './theme/theme'
 import AppSettingsThemes from './settings/AppSettingsThemes'
-import { EfTooltip, ImageCrossFader } from '../ui'
+import { ToolTip, ImageCrossFader } from '../ui'
 import { heroes } from '../content/imgs'
-import AppDialog from '../ui/AppDialog'
+import DialogBox from '../ui/DialogBox'
 
 const SideNavContainer = styled(Box)(({ theme }) => ({
   position: 'fixed',
@@ -75,21 +75,21 @@ export default function App() {
       <SideNavContainer sx={{ display: { xs: 'none', md: 'block' } }}>
         <Fade in={useLocation().pathname !== '/settings'} timeout={1000}>
           <span>
-            <EfTooltip title="Settings">
+            <ToolTip title="Settings">
               <Fab onClick={handleSettingsDialogOpen} variant="effects" color="primary" fade="true"><SettingsIcon /></Fab>
-            </EfTooltip>
+            </ToolTip>
           </span>
         </Fade>
         <AppSideNav appConfig={appConfig} />
       </SideNavContainer>
-      <AppDialog
+      <DialogBox
         close={() => handleSettingsDialogClose()}
         open={appSettingsDialogOpen}
         label="App Settings"
         moreLink="/settings"
       >
         <AppSettingsThemes updateTheme={(options) => handleUpdateTheme(options)} />
-      </AppDialog>
+      </DialogBox>
       <AppRoutes updateTheme={(options) => handleUpdateTheme(options)} />
       <AppFooter />
     </ThemeProvider>

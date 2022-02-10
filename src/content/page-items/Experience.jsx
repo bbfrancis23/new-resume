@@ -11,8 +11,8 @@ import PropTypes from 'prop-types'
 import { MoreVert } from '@mui/icons-material'
 import PageItem from '../../ui/PageItem'
 import experience from '../data'
-import { EfTooltip } from '../../ui'
-import AppDialog from '../../ui/AppDialog'
+import { ToolTip } from '../../ui'
+import DialogBox from '../../ui/DialogBox'
 
 export default function ExperiencePageItem(props) {
   const { id } = props
@@ -54,11 +54,11 @@ export default function ExperiencePageItem(props) {
                     title={item.label}
                     subheader={item.title}
                     action={(
-                      <EfTooltip title="More Info" placement="right">
+                      <ToolTip title="More Info" placement="right">
                         <IconButton onClick={() => handleExpDialogOpen(item.label)}>
                           <MoreVert />
                         </IconButton>
-                      </EfTooltip>
+                      </ToolTip>
                     )}
                     sx={{
                       flexDirection: index % 2 === 1 ? 'row-reverse' : 'row',
@@ -83,9 +83,9 @@ export default function ExperiencePageItem(props) {
           ))
         }
         </Timeline>
-        <AppDialog close={() => handleExpDialogClose()} open={expDialogOpen} label={dialogLabel}>
+        <DialogBox close={() => handleExpDialogClose()} open={expDialogOpen} label={dialogLabel}>
           <span>your mom</span>
-        </AppDialog>
+        </DialogBox>
       </>
     </PageItem>
   )

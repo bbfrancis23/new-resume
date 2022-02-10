@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Tooltip } from '@mui/material'
 import { useTheme } from '@emotion/react'
 
-export default function EfTooltip(props) {
+export default function ToolTip(props) {
   const theme = useTheme()
   const { title, children, ...forwardProps } = props
 
@@ -15,7 +15,7 @@ export default function EfTooltip(props) {
     </Tooltip>
   )
 }
-EfTooltip.propTypes = {
+ToolTip.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.element.isRequired,
 }

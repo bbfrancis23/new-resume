@@ -1,4 +1,5 @@
-import * as React from 'react'
+import
+* as React from 'react'
 import Draggable from 'react-draggable'
 import PropTypes from 'prop-types'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
@@ -17,7 +18,7 @@ function PaperComponent(props) {
   )
 }
 
-export default function AppDialog(props) {
+export default function DialogBox(props) {
   const {
     open, close, label, children, moreLink,
   } = props
@@ -28,6 +29,7 @@ export default function AppDialog(props) {
       onClose={close}
       PaperComponent={PaperComponent}
       aria-labelledby="app-settings-dialog-title"
+      sx={{ boxShadow: 20 }}
     >
       <DialogTitle style={{ cursor: 'move' }} id="app-settings-dialog-title">
         <Box sx={{ display: 'flex' }}>
@@ -54,10 +56,10 @@ export default function AppDialog(props) {
     </Dialog>
   )
 }
-AppDialog.defaultProps = {
+DialogBox.defaultProps = {
   moreLink: undefined,
 }
-AppDialog.propTypes = {
+DialogBox.propTypes = {
   open: PropTypes.bool.isRequired,
   close: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,

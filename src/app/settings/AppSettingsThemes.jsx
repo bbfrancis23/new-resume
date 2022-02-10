@@ -6,9 +6,9 @@ import {
 } from '@mui/material'
 import { Star as SelectedIcon } from '@mui/icons-material'
 
-import { appThemes } from '../../effects/theme'
+import { appThemes } from '../theme/theme'
 
-import EfTooltip from '../../effects/EfTooltip'
+import ToolTip from '../../ui/ToolTip'
 
 import { themeHeroes } from '../../content/imgs'
 import SettingsStack from './components/core'
@@ -19,7 +19,7 @@ export default function AppSettingsThemes(props) {
   const { updateTheme } = props
 
   const getThemeButton = (t) => (
-    <EfTooltip key={t.name} title={t.name}>
+    <ToolTip key={t.name} title={t.name}>
       <Fab
         onClick={() => updateTheme({ name: t.name })}
         sx={{
@@ -31,7 +31,7 @@ export default function AppSettingsThemes(props) {
       >
         { t.name === theme.name && <SelectedIcon sx={{ color: 'white' }} /> }
       </Fab>
-    </EfTooltip>
+    </ToolTip>
   )
 
   return (

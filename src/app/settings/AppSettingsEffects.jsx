@@ -4,7 +4,7 @@ import {
 import { Landscape as StainedGlassIcon, Help as HelpIcon, ViewInAr as ThreeDIcon } from '@mui/icons-material'
 import React from 'react'
 import PropTypes from 'prop-types'
-import EfTooltip from '../../effects/EfTooltip'
+import ToolTip from '../../ui/ToolTip'
 import SettingsStack from './components/core'
 
 export default function AppSettingsEffects(props) {
@@ -13,13 +13,13 @@ export default function AppSettingsEffects(props) {
 
   return (
     <Box>
-      <EfTooltip
+      <ToolTip
         title="Toggle Effects Off and On"
         placement="right"
         style={{ cursor: theme.effects.tooltips ? 'help' : 'default' }}
       >
         <span>Effects</span>
-      </EfTooltip>
+      </ToolTip>
       <Box>
         <SettingsStack>
           <Typography variant="caption" sx={{ width: '56px', textAlign: 'center' }}>Stained Glass </Typography>

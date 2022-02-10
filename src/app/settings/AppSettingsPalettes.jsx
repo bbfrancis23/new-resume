@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { Box, Fab, useTheme } from '@mui/material'
 import { NightsStay as DarkModeIcon, WbSunny as LightModeIcon } from '@mui/icons-material'
 
-import { palettes } from '../../effects/theme'
+import { palettes } from '../theme/theme'
 
-import EfTooltip from '../../effects/EfTooltip'
+import ToolTip from '../../ui/ToolTip'
 
 import SettingsStack from './components/core'
 
@@ -31,7 +31,7 @@ export default function AppSettingsPalettes(props) {
   }
 
   const getPaletteButton = (index) => (
-    <EfTooltip key={index} title={getTooltipTitle(index)}>
+    <ToolTip key={index} title={getTooltipTitle(index)}>
       <Fab
         onClick={() => updateThemeOptions(index)}
         sx={{
@@ -53,18 +53,18 @@ export default function AppSettingsPalettes(props) {
               : <LightModeIcon style={{ visibility: theme.palette.name === palettes[index].name ? 'visible' : 'hidden' }} />
           }
       </Fab>
-    </EfTooltip>
+    </ToolTip>
   )
 
   return (
     <Box>
-      <EfTooltip
+      <ToolTip
         title="Select multiple times to toggle between light and dark modes."
         placement="right"
         style={{ cursor: theme.effects.tooltips ? 'help' : 'default' }}
       >
         <span>Palettes</span>
-      </EfTooltip>
+      </ToolTip>
       <SettingsStack>
         { palettes.slice(0, 3).map((t, index) => getPaletteButton(index)) }
       </SettingsStack>

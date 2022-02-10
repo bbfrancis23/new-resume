@@ -8,7 +8,7 @@ import { Menu as MenuIcon, Close as CloseIcon } from '@mui/icons-material'
 import { HashLink } from 'react-router-hash-link'
 import { appConfigPropType } from '../appConfig'
 
-import EfTooltip from '../../effects/EfTooltip'
+import ToolTip from '../../ui/ToolTip'
 import ImageCrossFader from '../../ui/ImageCrossFader'
 
 import { themeSidebarBackgrounds } from '../../content/imgs'
@@ -26,11 +26,11 @@ export default function AppSideNav(props) {
   return (
     <Box>
       <SideNavButton open={open}>
-        <EfTooltip title="Menu">
+        <ToolTip title="Menu">
           <Fab onClick={handleToggleSideNav} variant="effects" color="primary" fade="true">
             {open ? <CloseIcon /> : <MenuIcon />}
           </Fab>
-        </EfTooltip>
+        </ToolTip>
       </SideNavButton>
       <Drawer
         variant="persistent"
@@ -51,7 +51,7 @@ export default function AppSideNav(props) {
             <List sx={{ margin: '8px 16px 0 16px' }}>
               {
                 appConfig.pageItems.map((item) => (
-                  <EfTooltip title={item.description} placement="right" key={item.id}>
+                  <ToolTip title={item.description} placement="right" key={item.id}>
                     <ListItemButton
                       variant="effects"
                       component={HashLink}
@@ -61,7 +61,7 @@ export default function AppSideNav(props) {
                       <ListItemIcon>{item.icon}</ListItemIcon>
                       <ListItemText primary={item.label} />
                     </ListItemButton>
-                  </EfTooltip>
+                  </ToolTip>
                 ))
               }
             </List>

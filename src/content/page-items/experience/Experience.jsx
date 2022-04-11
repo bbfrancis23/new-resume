@@ -1,30 +1,34 @@
 import * as React from 'react'
-import {
-  Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineOppositeContent, TimelineDot,
-} from '@mui/lab'
+
+import PropTypes from 'prop-types'
 
 import {
   Typography, Card, CardContent, CardHeader, Chip, IconButton,
 } from '@mui/material'
 
-import PropTypes from 'prop-types'
 import { MoreVert } from '@mui/icons-material'
-import PageItem from '../../ui/PageItem'
-import experience from '../data'
-import { ToolTip } from '../../ui'
-import DialogBox from '../../ui/DialogBox'
+
+import {
+  Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineOppositeContent, TimelineDot,
+} from '@mui/lab'
+
+import experience from '../../data'
+import ExpCarousel from './ExpCarousel'
+import { PageItem, DialogBox, ToolTip } from '../../../ui'
 
 export default function ExperiencePageItem(props) {
   const { id } = props
 
-  const [dialogLabel, setDialogLabel] = React.useState('Your Mom')
+  const [dialogItem, setDialogItem] = React.useState(experience[0])
+  const [dialogOpen, setDialogOpen] = React.useState(false)
 
-  const [expDialogOpen, setExpDialogOpen] = React.useState(false)
-  const handleExpDialogOpen = (label) => {
-    setDialogLabel(label)
-    setExpDialogOpen(true)
+  const handleDialogOpen = (item) => {
+    setDialogItem(item)
+    setDialogOpen(true)
   }
-  const handleExpDialogClose = () => setExpDialogOpen(false)
+  const handleDialogClose = () => {
+    setDialogOpen(false)
+  }
 
   return (
     <PageItem id={id} label="EXPERIENCE">
@@ -34,18 +38,11 @@ export default function ExperiencePageItem(props) {
           experience.map((item, index) => (
             <TimelineItem key={item.id}>
               <TimelineOppositeContent sx={{ m: 'auto' }}>
-                <Typography
-                  component="span"
-                  sx={{ p: 1 }}
-                >
-                  {item.yearsActive}
-                </Typography>
+                <Typography component="span" sx={{ p: 1 }}>{item.yearsActive}</Typography>
               </TimelineOppositeContent>
               <TimelineSeparator>
                 <TimelineConnector />
-                <TimelineDot variant="outlined">
-                  {item.icon}
-                </TimelineDot>
+                <TimelineDot variant="outlined">{item.icon}</TimelineDot>
                 <TimelineConnector />
               </TimelineSeparator>
               <TimelineContent>
@@ -55,14 +52,10 @@ export default function ExperiencePageItem(props) {
                     subheader={item.title}
                     action={(
                       <ToolTip title="More Info" placement="right">
-                        <IconButton onClick={() => handleExpDialogOpen(item.label)}>
-                          <MoreVert />
-                        </IconButton>
+                        <IconButton onClick={() => handleDialogOpen(item)}><MoreVert /></IconButton>
                       </ToolTip>
                     )}
-                    sx={{
-                      flexDirection: index % 2 === 1 ? 'row-reverse' : 'row',
-                    }}
+                    sx={{ flexDirection: index % 2 === 1 ? 'row-reverse' : 'row' }}
                   />
                   <CardContent>
                     {
@@ -83,8 +76,8 @@ export default function ExperiencePageItem(props) {
           ))
         }
         </Timeline>
-        <DialogBox close={() => handleExpDialogClose()} open={expDialogOpen} label={dialogLabel}>
-          <span>your mom</span>
+        <DialogBox close={() => handleDialogClose()} open={dialogOpen} label={dialogItem.label}>
+          <ExpCarousel expRec={dialogItem} />
         </DialogBox>
       </>
     </PageItem>

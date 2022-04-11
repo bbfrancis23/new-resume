@@ -4,6 +4,7 @@ import BadgeIcon from '@mui/icons-material/Badge'
 import CodeIcon from '@mui/icons-material/Code'
 
 import IboatsIcon from '@mui/icons-material/DirectionsBoatFilled'
+import PropTypes from 'prop-types'
 import {
   PlusOneDash, AZDEQCover, AzdeqStart, PlusOneCover, IboatsCover, IboatsCreateBoat, FreelanceCover, AzdeqForm, AzdeqStepper,
   AzdeqInfo, AzdeqLog, AzdeqReg, FreelanceHome, FreelanceContact, FreelanceProduct, IboatsAd, FreelanceTestimonials,
@@ -68,7 +69,7 @@ const experience = [
     imgs: [
       { img: FreelanceHome, label: 'Home' },
       { img: FreelanceProduct, label: 'Product' },
-      { img: FreelanceTestimonials, label: 'Testimonials' },
+      { img: FreelanceTestimonials, label: 'Testimonials', width: '68%' },
       { img: FreelanceContact, label: 'Contact' },
     ],
   },
@@ -82,23 +83,40 @@ const experience = [
     icon: <IboatsIcon fontSize="large" />,
     cover: IboatsCover,
     imgs: [
-      { img: IboatsHome, label: 'Home' },
+      { img: IboatsHome, label: 'Home', width: '90%' },
       { img: IboatsAccount, label: 'Account Info' },
-      { img: IboatsAd, label: 'Ad' },
+      { img: IboatsAd, label: 'Ad', width: '86%' },
       { img: IboatsSearch, label: 'Advanced Search' },
       { img: IboatsCheckout, label: 'Check Out' },
-      { img: IboatsCreateBoat, label: 'Creat Ad' },
-      { img: IboatsFeatured, label: 'Featured Ad' },
+      { img: IboatsCreateBoat, label: 'Creat Ad', width: '84%' },
+      { img: IboatsFeatured, label: 'Featured Ad', width: '66%' },
       { img: IboatsOptions, label: 'Options' },
       { img: IboatsPromo, label: 'Promo' },
       { img: IboatsRecord, label: 'Research Item' },
       { img: IboatsResearch, label: 'Research' },
-      { img: IboatsType, label: 'Type Listing' },
+      { img: IboatsType, label: 'Type Listing', width: '79%' },
       { img: IboatsResearchType, label: 'Research Type Listing' },
     ],
   },
 ]
 export default experience
-/*
-Quality Checked: Brian Francis - 12/22/2021
- */
+
+// eslint-disable-next-line max-lines
+export const expRecsPropType = {
+  expRec: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    relevantSkills: PropTypes.arrayOf(PropTypes.string).isRequired,
+    otherSkills: PropTypes.arrayOf(PropTypes.string).isRequired,
+    icon: PropTypes.element.isRequired,
+    cover: PropTypes.string.isRequired,
+    imgs: PropTypes.arrayOf(
+      PropTypes.shape({
+        img: PropTypes.string.isRequired,
+        label: PropTypes.string.isRequired,
+        width: PropTypes.string,
+      }),
+    ),
+  }),
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import {
   styled, ThemeProvider, CssBaseline, Box, Fab, Fade,
@@ -23,7 +23,7 @@ const SideNavContainer = styled(Box)(({ theme }) => ({
 }))
 
 export default function App() {
-  const [appSettingsDialogOpen, setAppSettingsDialogOpen] = React.useState(false)
+  const [appSettingsDialogOpen, setAppSettingsDialogOpen] = useState(false)
   const handleSettingsDialogOpen = () => setAppSettingsDialogOpen(true)
   const handleSettingsDialogClose = () => setAppSettingsDialogOpen(false)
 

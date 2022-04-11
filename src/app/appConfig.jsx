@@ -8,7 +8,7 @@ import {
 import AboutPageItem from '../content/page-items/About'
 // import Portfolio from '../content/page-items/Portfolio'
 import TestimonialsPageItem from '../content/page-items/Testimonials'
-import ExperiencePageItem from '../content/page-items/Experience'
+import ExperiencePageItem from '../content/page-items/experience/Experience'
 
 export const appConfig = {
   pageItems: [
@@ -24,7 +24,7 @@ export const appConfig = {
       label: 'Experience',
       icon: <ExperienceIcon />,
       description: 'Work timeline for Brian Francis',
-      pageComponent: <ExperiencePageItem key="experience" id="experience" />,
+      pageComponent: <ExperiencePageItem key="work-experience" id="experience" />,
     },
     // {
     //   id: 'portfolio',

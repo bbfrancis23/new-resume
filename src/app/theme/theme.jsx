@@ -29,9 +29,7 @@ export function createGlobalTheme(themeOptions) {
 
   const globalTheme = {
     contentItems: {
-      width: {
-        xs: '1200px',
-      },
+      width: { xs: '100%', lg: '1200px' },
     },
     components: {
       MuiTooltip: { defaultProps: { enterDelay: 1000 } },

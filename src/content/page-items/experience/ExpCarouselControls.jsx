@@ -80,7 +80,7 @@ export default function ExpCarouselControls(props) {
           sx={{
             position: 'relative',
             bottom: '525px',
-            height: '500',
+            height: '500px',
             background: 'transparent',
             '.MuiMobileStepper-dots': { visibility: 'hidden' },
           }}

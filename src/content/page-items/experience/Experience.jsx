@@ -15,6 +15,7 @@ import {
 import experience from '../../data'
 import ExpCarousel from './ExpCarousel'
 import { PageItem, DialogBox, ToolTip } from '../../../ui'
+import ExpMobile from './ExpMobile'
 
 export default function ExperiencePageItem(props) {
   const { id } = props
@@ -33,6 +34,7 @@ export default function ExperiencePageItem(props) {
   return (
     <PageItem id={id} label="EXPERIENCE">
       <>
+        <ExpMobile />
         <Timeline position="alternate" sx={{ m: 'auto', p: 0, display: { xs: 'none', md: 'block' } }}>
           {
           experience.map((item, index) => (

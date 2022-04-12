@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import * as React from 'react'
 
 import PropTypes from 'prop-types'
@@ -37,10 +39,10 @@ export default function TestimonialsPageItem(props) {
       <>
         <Paper elevation={12}>
           <Grid container>
-            <Grid item xs={5}>
+            <Grid item xs={12} lg={5}>
               <img src={BrianMelinthin} alt="Brian Melinthin" style={{ width: '100%', height: '100%' }} />
             </Grid>
-            <Grid item xs={7}>
+            <Grid item xs={12} lg={7} sx={{ mb: 5}}>
               <FancyQuote />
               <Typography sx={{ margin: 'auto', width: '60%', textAlign: 'center' }}>
                 The quality of his work has allowed us to climb
@@ -61,7 +63,7 @@ export default function TestimonialsPageItem(props) {
         <Paper elevation={12} sx={{ mt: 5 }}>
           <Grid container>
 
-            <Grid item xs={7}>
+            <Grid item xs={12} lg={7} sx={{ mb: 5}}>
               <FancyQuote />
               <Typography sx={{ margin: 'auto', width: '60%', textAlign: 'center' }}>
                 Brian absolutely exceeded all of my expectations in designing my website.
@@ -77,7 +79,7 @@ export default function TestimonialsPageItem(props) {
                 - Owner Magic Healing Hands
               </Typography>
             </Grid>
-            <Grid item xs={5}>
+            <Grid item xs={12} lg={5}>
               <img src={JodyFarnsworthJones} alt="Brian Melinthin" style={{ width: '100%', height: '100%' }} />
             </Grid>
           </Grid>

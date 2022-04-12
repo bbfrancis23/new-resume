@@ -46,7 +46,15 @@ export default function DialogBox(props) {
       <DialogActions disableSpacing={false}>
         {
           moreLink && (
-            <Button color="inherit" onClick={close} sx={{ mr: 1 }} component={Link} to={moreLink}>More</Button>
+            <Button
+              color="inherit"
+              onClick={close}
+              component={Link}
+              to={moreLink}
+              sx={{ mr: 1, display: { xs: 'none', md: 'block' } }}
+            >
+              More
+            </Button>
           )
         }
         <Button autoFocus variant={moreLink ? 'outlined' : 'text'} onClick={close} color={moreLink ? 'success' : 'inherit'}>

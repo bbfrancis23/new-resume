@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import {
@@ -27,7 +28,7 @@ export default function App() {
   const handleSettingsDialogOpen = () => setAppSettingsDialogOpen(true)
   const handleSettingsDialogClose = () => setAppSettingsDialogOpen(false)
 
-  console.log('App is has redeployed')
+  console.log('App is has redeployed more')
 
   const initTheme = () => {
     let themeOptions = localStorage.getItem('themeOptions')

@@ -18,8 +18,10 @@ export const palettes = [
 
 export function createGlobalTheme(themeOptions) {
   let theme = createTheme(themeOptions)
-  const { palette, effects } = theme
+  const { palette } = theme
+  let { effects } = theme
   const { mode } = palette
+  effects ||= themeEffects
   const { threeD, stainedGlass } = effects
 
   const getEffectsCardBackground = (alphaValue = 0.75) => {

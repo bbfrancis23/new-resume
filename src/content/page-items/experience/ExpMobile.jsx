@@ -12,7 +12,7 @@ export default function ExpMobile() {
       {
         experience.map((item, index) => (
 
-          <Card raised sx={{ mt: 5 }}>
+          <Card raised sx={{ mt: 5 }} key={`${item.label}-mobilecard`}>
             <CardHeader
               title={item.label}
               subheader={item.title}

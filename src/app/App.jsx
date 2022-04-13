@@ -31,6 +31,7 @@ export default function App() {
     let themeOptions = localStorage.getItem('themeOptions')
     themeOptions = themeOptions ? (JSON.parse(themeOptions)) : appThemes[0]
     themeOptions.effects ||= effects
+
     return createGlobalTheme(themeOptions)
   }
 
@@ -41,7 +42,13 @@ export default function App() {
 
     if (options) {
       themeOptions = localStorage.getItem('themeOptions')
-      themeOptions = themeOptions ? (JSON.parse(themeOptions)) : { name: 'Hawaii', palette: palettes[0] }
+      themeOptions = themeOptions ? (JSON.parse(themeOptions)) : {
+        name: 'Hawaii',
+        palette: palettes[0],
+        effects: {
+          stainedGlass: true, density: 'normal', threeD: true, tooltips: true,
+        },
+      }
 
       if (options.name) themeOptions.name = options.name
       if (options.palette) themeOptions.palette = options.palette

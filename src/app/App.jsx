@@ -28,8 +28,6 @@ export default function App() {
   const handleSettingsDialogOpen = () => setAppSettingsDialogOpen(true)
   const handleSettingsDialogClose = () => setAppSettingsDialogOpen(false)
 
-  console.log('App is has redeployed more more more')
-
   const initTheme = () => {
     let themeOptions = localStorage.getItem('themeOptions')
     themeOptions = themeOptions ? (JSON.parse(themeOptions)) : appThemes[0]

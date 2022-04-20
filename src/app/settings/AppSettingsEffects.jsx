@@ -1,8 +1,8 @@
+import React from 'react'
 import {
-  Box, Fab, Typography, useTheme,
+  Box, Fab, useTheme,
 } from '@mui/material'
 import { Landscape as StainedGlassIcon, Help as HelpIcon, ViewInAr as ThreeDIcon } from '@mui/icons-material'
-import React from 'react'
 import PropTypes from 'prop-types'
 import ToolTip from '../../ui/ToolTip'
 import SettingsStack from './components/core'
@@ -22,42 +22,48 @@ export default function AppSettingsEffects(props) {
       </ToolTip>
       <Box>
         <SettingsStack>
-          <Typography variant="caption" sx={{ width: '56px', textAlign: 'center' }}>Stained Glass </Typography>
-          <Typography variant="caption" sx={{ width: '56px', textAlign: 'center' }}>Tooltips</Typography>
-          <Typography variant="caption" sx={{ width: '56px', textAlign: 'center' }}>3-D</Typography>
+          <Box>
+            <ToolTip
+              title="Stained Glass"
+              style={{ cursor: theme.effects.tooltips ? 'help' : 'pointer' }}
+            >
+              <Fab
+                color={theme.effects.stainedGlass ? 'primary' : 'default'}
+                onClick={() => updateTheme({ stainedGlass: !theme.effects.stainedGlass })}
+              >
+                <StainedGlassIcon size="large" />
+              </Fab>
+            </ToolTip>
+          </Box>
+          <Box>
+            <ToolTip
+              title="Tool Tips"
+              style={{ cursor: theme.effects.tooltips ? 'help' : 'pointer' }}
+            >
+              <Fab
+                color={theme.effects.tooltips ? 'primary' : 'default'}
+                onClick={() => updateTheme({ tooltips: !theme.effects.tooltips })}
+              >
+                <HelpIcon size="large" />
+              </Fab>
+            </ToolTip>
+
+          </Box>
+          <Box>
+            <ToolTip
+              title="Tool Tips"
+              style={{ cursor: theme.effects.tooltips ? 'help' : 'pointer' }}
+            >
+              <Fab
+                color={theme.effects.threeD ? 'primary' : undefined}
+                onClick={() => updateTheme({ threeD: !theme.effects.threeD })}
+              >
+                <ThreeDIcon size="large" />
+              </Fab>
+            </ToolTip>
+          </Box>
         </SettingsStack>
-        <SettingsStack>
-          <Box>
-
-            <Fab
-              color={theme.effects.stainedGlass ? 'primary' : ''}
-              onClick={() => updateTheme({ stainedGlass: !theme.effects.stainedGlass })}
-            >
-              <StainedGlassIcon size="large" />
-            </Fab>
-          </Box>
-          <Box>
-
-            <Fab
-              color={theme.effects.tooltips ? 'primary' : 'default'}
-              onClick={() => updateTheme({ tooltips: !theme.effects.tooltips })}
-            >
-              <HelpIcon size="large" />
-            </Fab>
-          </Box>
-          <Box>
-            <Fab
-              color={theme.effects.threeD ? 'primary' : undefined}
-              onClick={() => updateTheme({ threeD: !theme.effects.threeD })}
-            >
-              <ThreeDIcon size="large" />
-            </Fab>
-          </Box>
-
-        </SettingsStack>
-
       </Box>
-
     </Box>
   )
 }
@@ -66,6 +72,4 @@ AppSettingsEffects.propTypes = {
   updateTheme: PropTypes.func.isRequired,
 }
 
-/*
-Quality Checked: Brian Francis - 01/09/2021
- */
+/* QA: Brian Francis - 04/19/2022  */

@@ -6,7 +6,6 @@ import {
 } from '@mui/icons-material'
 
 import AboutPageItem from '../content/page-items/About'
-// import Portfolio from '../content/page-items/Portfolio'
 import TestimonialsPageItem from '../content/page-items/Testimonials'
 import ExperiencePageItem from '../content/page-items/experience/Experience'
 
@@ -26,13 +25,6 @@ export const appConfig = {
       description: 'Work timeline for Brian Francis',
       pageComponent: <ExperiencePageItem key="work-experience" id="experience" />,
     },
-    // {
-    //   id: 'portfolio',
-    //   label: 'Portfolio',
-    //   icon: <PortfolioIcon />,
-    //   description: 'Portfolio for Brian Francis',
-    //   pageComponent: <Portfolio key="portfolio" id="portfolio" />,
-    // },
     {
       id: 'testimonials',
       label: 'Testimonials',
@@ -56,6 +48,4 @@ export const appConfigPropType = {
   ),
 }
 
-/*
-Final QA: Brian Francis - 01/14/2022
- */
+/* QA: Brian Francis - 04/20/2022 */

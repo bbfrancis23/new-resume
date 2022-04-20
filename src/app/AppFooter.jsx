@@ -53,6 +53,4 @@ export default function AppFooter() {
   )
 }
 
-/*
-Final QA: Brian Francis - 01/14/2022
- */
+/* Final QA: Brian Francis - 04/20/2022 */

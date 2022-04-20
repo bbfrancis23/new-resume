@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import {
@@ -104,6 +103,4 @@ export default function App() {
   )
 }
 
-/*
-Final R&D : Brian Francis - 01/14/2022
- */
+/* QA: Brian Francis - 04/20/2022  */

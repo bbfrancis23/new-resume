@@ -74,11 +74,7 @@ export default function App() {
           position: 'fixed', width: '100%', height: '370px', zIndex: -1,
         }}
       />
-      <AppToolBar
-        appConfig={appConfig}
-        settingsDialogOpen={handleSettingsDialogOpen}
-        sx={{ display: { xs: 'block', md: 'none' } }}
-      />
+      <AppToolBar appConfig={appConfig} settingsDialogOpen={handleSettingsDialogOpen} />
       <SideNavContainer sx={{ display: { xs: 'none', md: 'block' } }}>
         <Fade in={useLocation().pathname !== '/settings'} timeout={1000}>
           <span>

@@ -8,24 +8,25 @@ import {
 import SettingsIcon from '@mui/icons-material/Settings'
 
 import { appConfigPropType } from './appConfig'
+
 import ToolTip from '../ui/ToolTip'
 
 const ToolbarContent = styled('div')(({ theme }) => (
   { width: '90vw', maxWidth: theme.breakpoints.values.lg, display: 'flex' }))
 
 export default function AppToolBar(props) {
-  const { appConfig, settingsDialogOpen, ...forwardProps } = props
+  const { appConfig, settingsDialogOpen } = props
   const theme = useTheme()
 
   return (
-    <Box sx={{ flexGrow: 1 }} {...forwardProps}>
+    <Box sx={{ flexGrow: 1, display: { xs: 'block', md: 'none' } }}>
       <AppBar position="fixed" color="primary" enableColorOnDark>
         <Toolbar sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
           <ToolbarContent>
             {
               appConfig.pageItems.map((item) => (
                 <a href={`#${item.id}`} style={{ textDecoration: 'none' }} key={item.id}>
-                  <Box sx={{ display: { xs: 'none', sm: 'block' }, paddingRight: theme.spacing(1) }}>
+                  <Box sx={{ display: { xs: 'none', sm: 'block' }, paddingRight: theme.spacing(3) }}>
                     <ToolTip title={item.description} placement="right-end">
                       <Typography
                         variant="h6"
@@ -66,5 +67,6 @@ AppToolBar.propTypes = {
 }
 
 /*
-Quality Checked: Brian Francis - 12/18/2021
+QA: Brian Francis - 4/30/2021
+TODO: Change AppBar Items to Buttons
  */

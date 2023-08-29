@@ -7,6 +7,17 @@ import PirateHero from '../img/theme/heroes/Pirate.jpg'
 import CorporateHero from '../img/theme/heroes/Corporation.jpg'
 import PlusOneCover from '../img/portfolio/plueone/cover.png'
 import AZDEQCover from '../img/portfolio/azdeq/cover.png'
+import StrategyHome from '../img/portfolio/strategy/home.png'
+import StrategySettings from '../img/portfolio/strategy/app-settings.png'
+import StrategyBoard from '../img/portfolio/strategy/board.png'
+import StrategyItem from '../img/portfolio/strategy/file-name-strategy.png'
+import StrategyForgot from '../img/portfolio/strategy/forgot-password.png'
+import StrategyItemEdit from '../img/portfolio/strategy/item-edit-view.png'
+import StrategyLogin from '../img/portfolio/strategy/login.png'
+import StrategyMember from '../img/portfolio/strategy/member-info.png'
+import StrategyProject from '../img/portfolio/strategy/project-page.png'
+import StrategyPublicBoard from '../img/portfolio/strategy/public-board.png'
+import StrategyRegister from '../img/portfolio/strategy/register.png'
 import FreelanceCover from '../img/portfolio/freelance/cover.jpg'
 import FreelanceHome from '../img/portfolio/freelance/home.jpg'
 import FreelanceProduct from '../img/portfolio/freelance/product.jpg'
@@ -62,14 +73,77 @@ import CorporateThemeSidebar from '../img/theme/sidebar-backgrounds/corporation-
 import MidnightThemeSidebar from '../img/theme/sidebar-backgrounds/midnight-theme-sidebar.jpg'
 
 export {
-  MidnightHero, HawaiiHero, ArizonaHero, LushHero, PirateHero, CorporateHero, PlusOneCover, AZDEQCover, FreelanceCover,
-  IboatsCover, FreelanceTestimonials, FreelanceContact, FreelanceHome, FreelanceProduct, IboatsHome, IboatsAccount,
-  IboatsAd, IboatsPromo, IboatsType, IboatsSearch, IboatsFeatured, IboatsRecord, IboatsCheckout, IboatsResearch,
-  IboatsCreateBoat, IboatsOptions, IboatsResearchType, AzdeqReg, AzdeqStepper, AzdeqLog, PlusOneWorkFlow, AzdeqStart,
-  PlusOneTable, AzdeqInfo, PlusOneDate, AzdeqForm, PlusOneLogin, PlusOneStyle, PlusOneDash, ArizonaSedona, ArizonaMountains,
-  ArizonaCathedralRock, CorporateStrategies, CorporateLaptop, CorporateBuildings, LushVegetation, LushLeaves, LushHike,
-  PirateAffects, PirateShips, PirateSkull, MidnightFullMoon, MidnightForest, HawaiiFlower, ArizonaThemeSidebar,
-  LushThemeSidebar, HawaiiThemeSidebar, PirateThemeSidebar, CorporateThemeSidebar, MidnightThemeSidebar,
+  MidnightHero,
+  HawaiiHero,
+  ArizonaHero,
+  LushHero,
+  PirateHero,
+  CorporateHero,
+  PlusOneCover,
+  AZDEQCover,
+  FreelanceCover,
+  IboatsCover,
+  FreelanceTestimonials,
+  FreelanceContact,
+  FreelanceHome,
+  FreelanceProduct,
+  IboatsHome,
+  IboatsAccount,
+  IboatsAd,
+  IboatsPromo,
+  IboatsType,
+  IboatsSearch,
+  IboatsFeatured,
+  IboatsRecord,
+  IboatsCheckout,
+  IboatsResearch,
+  IboatsCreateBoat,
+  IboatsOptions,
+  IboatsResearchType,
+  AzdeqReg,
+  AzdeqStepper,
+  AzdeqLog,
+  PlusOneWorkFlow,
+  AzdeqStart,
+  PlusOneTable,
+  AzdeqInfo,
+  PlusOneDate,
+  AzdeqForm,
+  PlusOneLogin,
+  PlusOneStyle,
+  PlusOneDash,
+  ArizonaSedona,
+  ArizonaMountains,
+  ArizonaCathedralRock,
+  CorporateStrategies,
+  CorporateLaptop,
+  CorporateBuildings,
+  LushVegetation,
+  LushLeaves,
+  LushHike,
+  PirateAffects,
+  PirateShips,
+  PirateSkull,
+  MidnightFullMoon,
+  MidnightForest,
+  HawaiiFlower,
+  ArizonaThemeSidebar,
+  LushThemeSidebar,
+  HawaiiThemeSidebar,
+  PirateThemeSidebar,
+  CorporateThemeSidebar,
+  MidnightThemeSidebar,
+  StrategyHome,
+  StrategySettings,
+  StrategyBoard,
+  StrategyItem,
+  StrategyForgot,
+  StrategyItemEdit,
+  StrategyLogin,
+  StrategyMember,
+  StrategyProject,
+  StrategyPublicBoard,
+  StrategyRegister,
 }
 
 export const themeHeroes = {
@@ -82,12 +156,12 @@ export const themeHeroes = {
 }
 
 export const heroes = [
-  { id: 'Corporate', src: CorporateHero, label: 'Corporate Hero' },
-  { id: 'Midnight', src: MidnightHero, label: 'Midnight Hero' },
-  { id: 'Hawaii', src: HawaiiHero, label: 'Hawaii Hero' },
-  { id: 'Arizona', src: ArizonaHero, label: 'Arizona Hero' },
-  { id: 'Pirate', src: PirateHero, label: 'Pirate Hero' },
-  { id: 'Lush', src: LushHero, label: 'Lush Hero' },
+  {id: 'Corporate', src: CorporateHero, label: 'Corporate Hero'},
+  {id: 'Midnight', src: MidnightHero, label: 'Midnight Hero'},
+  {id: 'Hawaii', src: HawaiiHero, label: 'Hawaii Hero'},
+  {id: 'Arizona', src: ArizonaHero, label: 'Arizona Hero'},
+  {id: 'Pirate', src: PirateHero, label: 'Pirate Hero'},
+  {id: 'Lush', src: LushHero, label: 'Lush Hero'},
 ]
 
 export const themePreviewBackgrounds = {
@@ -100,10 +174,10 @@ export const themePreviewBackgrounds = {
 }
 
 export const themeSidebarBackgrounds = [
-  { id: 'Corporate', src: CorporateThemeSidebar, label: 'Corporate building' },
-  { id: 'Midnight', src: MidnightThemeSidebar, label: 'Midnight Moon' },
-  { id: 'Hawaii', src: HawaiiThemeSidebar, label: 'Beach Hammock' },
-  { id: 'Arizona', src: ArizonaThemeSidebar, label: 'Arizona Home' },
-  { id: 'Pirate', src: PirateThemeSidebar, label: 'Skull in woods' },
-  { id: 'Lush', src: LushThemeSidebar, label: 'Vegetation' },
+  {id: 'Corporate', src: CorporateThemeSidebar, label: 'Corporate building'},
+  {id: 'Midnight', src: MidnightThemeSidebar, label: 'Midnight Moon'},
+  {id: 'Hawaii', src: HawaiiThemeSidebar, label: 'Beach Hammock'},
+  {id: 'Arizona', src: ArizonaThemeSidebar, label: 'Arizona Home'},
+  {id: 'Pirate', src: PirateThemeSidebar, label: 'Skull in woods'},
+  {id: 'Lush', src: LushThemeSidebar, label: 'Vegetation'},
 ]

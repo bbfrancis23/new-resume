@@ -5,8 +5,6 @@ import ArizonaHero from '../img/theme/heroes/Arizona.jpg'
 import LushHero from '../img/theme/heroes/Lush.jpg'
 import PirateHero from '../img/theme/heroes/Pirate.jpg'
 import CorporateHero from '../img/theme/heroes/Corporation.jpg'
-import PlusOneCover from '../img/portfolio/plueone/cover.png'
-import AZDEQCover from '../img/portfolio/azdeq/cover.png'
 import StrategyHome from '../img/portfolio/strategy/home.png'
 import StrategySettings from '../img/portfolio/strategy/app-settings.png'
 import StrategyBoard from '../img/portfolio/strategy/board.png'
@@ -18,12 +16,10 @@ import StrategyMember from '../img/portfolio/strategy/member-info.png'
 import StrategyProject from '../img/portfolio/strategy/project-page.png'
 import StrategyPublicBoard from '../img/portfolio/strategy/public-board.png'
 import StrategyRegister from '../img/portfolio/strategy/register.png'
-import FreelanceCover from '../img/portfolio/freelance/cover.jpg'
 import FreelanceHome from '../img/portfolio/freelance/home.jpg'
 import FreelanceProduct from '../img/portfolio/freelance/product.jpg'
 import FreelanceTestimonials from '../img/portfolio/freelance/testimonials.jpg'
 import FreelanceContact from '../img/portfolio/freelance/contact.jpg'
-import IboatsCover from '../img/portfolio/iboats/cover.jpg'
 import IboatsHome from '../img/portfolio/iboats/home.jpg'
 import IboatsAccount from '../img/portfolio/iboats/account-info.jpg'
 import IboatsAd from '../img/portfolio/iboats/ad.jpg'
@@ -79,10 +75,6 @@ export {
   LushHero,
   PirateHero,
   CorporateHero,
-  PlusOneCover,
-  AZDEQCover,
-  FreelanceCover,
-  IboatsCover,
   FreelanceTestimonials,
   FreelanceContact,
   FreelanceHome,

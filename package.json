@@ -20,9 +20,9 @@
     "react-draggable": "^4.4.4",
     "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.0",
-    "react-swipeable-views": "^0.14.0",
-    "react-swipeable-views-core": "^0.14.0",
-    "react-swipeable-views-utils": "^0.14.0",
+    "react-swipeable-views": "^0.14.2",
+    "react-swipeable-views-core": "^0.14.2",
+    "react-swipeable-views-utils": "^0.14.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

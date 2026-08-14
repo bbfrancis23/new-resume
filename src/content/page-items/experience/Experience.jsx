@@ -69,11 +69,6 @@ export default function ExperiencePageItem(props) {
                   <CardHeader
                     title={item.label}
                     subheader={item.title}
-                    // action={(
-                    //   <ToolTip title="More Info" placement="right">
-                    //     <IconButton onClick={() => handleDialogOpen(item)}><MoreVert /></IconButton>
-                    //   </ToolTip>
-                    // )}
                     sx={{flexDirection: index % 2 === 1 ? 'row-reverse' : 'row'}}
                   />
                   <CardContent>
@@ -105,26 +100,28 @@ export default function ExperiencePageItem(props) {
                       spacing={1}
                       justifyContent="left"
                       sx={{pt: 1, pl: 1}}></Stack>
-                    <CardActions>
-                      <Button
-                        color="primary"
-                        variant="contained"
-                        label="View Samples"
-                        onClick={() => handleDialogOpen(item)}>
-                        View Samples
-                      </Button>
-                      {item.links && (
-                        <>
-                          {item.links.map((link) => (
-                            <a href={link.url} target="_blank" rel="noreferrer">
-                              <Button variant={'contained'} sx={{ml: 1}}>
-                                {link.label}
-                              </Button>
-                            </a>
-                          ))}
-                        </>
-                      )}
-                    </CardActions>
+                    {item.imgs && (
+                      <CardActions>
+                        <Button
+                          color="primary"
+                          variant="contained"
+                          label="View Samples"
+                          onClick={() => handleDialogOpen(item)}>
+                          View Samples
+                        </Button>
+                        {item.links && (
+                          <>
+                            {item.links.map((link) => (
+                              <a href={link.url} target="_blank" rel="noreferrer">
+                                <Button variant={'contained'} sx={{ml: 1}}>
+                                  {link.label}
+                                </Button>
+                              </a>
+                            ))}
+                          </>
+                        )}
+                      </CardActions>
+                    )}
                   </CardContent>
                 </Card>
               </TimelineContent>

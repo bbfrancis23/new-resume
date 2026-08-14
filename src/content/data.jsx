@@ -3,6 +3,7 @@ import AddIcon from '@mui/icons-material/Add'
 import BadgeIcon from '@mui/icons-material/Badge'
 import CodeIcon from '@mui/icons-material/Code'
 import BoxIcon from '@mui/icons-material/CheckBoxOutlineBlank'
+import CarRentalIcon from '@mui/icons-material/CarRental'
 
 import IboatsIcon from '@mui/icons-material/DirectionsBoatFilled'
 import PropTypes from 'prop-types'
@@ -54,8 +55,30 @@ import {
 
 const experience = [
   {
-    id: 'Stragegy-Fx',
-    label: 'Strategy Fx',
+    id: 'Sparq',
+    label: 'Sparq (Enterprise Rental Cars - Contractor)',
+    title: 'React Front End Developer',
+    relevantSkills: [
+      'BitBucket',
+      'CSS',
+      'Cucumber',
+      'Cypress',
+      'JavaScript',
+      'ESLint',
+      'HTML',
+      'NPM',
+      'TypeScript',
+      'Vite',
+      'ViTest',
+      'VSCode',
+    ],
+    yearsActive: '2024 - 2026',
+    otherSkills: ['Material UI', 'React'],
+    icon: <CarRentalIcon fontSize="large" />,
+  },
+  {
+    id: 'Portfolio-Projects',
+    label: 'Portfolio Projects',
     title: 'Full Stack Web Developer',
     relevantSkills: [
       'CSS',
@@ -73,12 +96,6 @@ const experience = [
     yearsActive: '2022 - Present',
     otherSkills: ['NextJS', 'Material UI', 'NodeJS', 'React'],
     icon: <BoxIcon fontSize="large" />,
-    links: [
-      {
-        label: 'Strategy Guide',
-        url: 'https://www.strategy-fx.com/boards/member/64e504767d90844065cd4eb1',
-      },
-    ],
     imgs: [
       {img: StrategyHome, label: 'Home'},
       {img: StrategySettings, label: 'Settings'},
@@ -239,7 +256,7 @@ export const expRecsPropType = {
         img: PropTypes.string.isRequired,
         label: PropTypes.string.isRequired,
         width: PropTypes.string,
-      })
+      }),
     ),
   }),
 }

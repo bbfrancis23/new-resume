@@ -37,30 +37,29 @@ export default function AboutPageItem(props) {
           <Typography variant="h3" sx={{fontSize: '20px'}}>
             Front End Specialist
           </Typography>
+
           <p>
-            I have had 20 years of experience programming. My career in computer programing started
-            at iboats. and I was fully responsible for the “Marine Classifieds” program. This
-            program collects, edits, and displays marine advertisements (mainly boats for sale) on
-            boats.iboats.com as this consisted of boat dealers, brokers, and individual users.
-            Through this program, I also developed “For Sale by Owner”, “New Boat research”, “Dealer
-            Locator” and various backend administration programs. During my tenure at iboats.com,
-            the classified ads went from a few hundred ads to over 50,000 ads.
+            At iboats.com, I owned end-to-end development of the Marine Classifieds platform on
+            boats.iboats.com, a marketplace connecting boat dealers, brokers, and individual sellers
+            with buyers. I scaled the platform from a few hundred to over 50,000 active listings by
+            building the tools that collected, edited, and published marine advertisements, and I
+            designed and built several companion applications, including For Sale by Owner, New Boat
+            Research, and Dealer Locator, along with backend administrative tools supporting the
+            classifieds ecosystem.
           </p>
           <p>
-            After leaving iboats.com, I had transitioned my career to work for Arizona Department of
-            Environmental (AZ DEQ) as the lead Front-End Developer for my team. I started as a
-            contractor and eventually, I was converted to an employee. Through my time at AZ DEQ, I
-            had helped put over 10 apps into production. The apps that I had helped develop included
-            providing exceptions to state car emissions to applicants, submissions and
-            interpretations of ground and water lab testing, along with in and out of compliance
-            tools for various state contractors and permit holders.
+            From there, I moved to Plus One Company, where I designed and built reusable UI
+            components, including an advanced custom date picker, a drag-and-drop dashboard with
+            interchangeable widgets, a login interface, and a workflow management tool. I also
+            created and maintained a UI style guide and component documentation to standardize
+            design patterns across products.
           </p>
           <p>
-            From there I went to work for Plus One Company where I designed various user interface
-            components including a highly advanced date picker. I designed a drag and drop dashboard
-            that has interchangeable items, a login interface, and a workflow tool. I have also
-            implemented a style guide and documentation for various user interface components.
+            Most recently, I worked as a React developer at Enterprise Rental Cars, where I was part
+            of a team building reservation and rental agreement systems used across the Alamo,
+            National, Enterprise, and Enterprise Truck brands.
           </p>
+          <p>I am currently working getting the Claude Architect Certification </p>
           <Chip variant="skill" label="CSS" size="small" color="primary" />
           <Chip variant="skill" label="ES Lint" size="small" color="primary" />
           <Chip variant="skill" label="GIT" size="small" color="primary" />

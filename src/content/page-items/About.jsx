@@ -55,9 +55,11 @@ export default function AboutPageItem(props) {
             design patterns across products.
           </p>
           <p>
-            Most recently, I worked as a React developer at Enterprise Rental Cars, where I was part
-            of a team building reservation and rental agreement systems used across the Alamo,
-            National, Enterprise, and Enterprise Truck brands.
+            Most recently, worked as a React Developer at Enterprise Rental Cars, contributing to a
+            team responsible for building and maintaining reservation and rental agreement systems
+            used across the Alamo, National, Enterprise, and Enterprise Truck brands. Developed
+            automated test coverage using Cypress-Cucumber and Vitest to ensure system reliability
+            and catch regressions before release.
           </p>
           <p>I am currently working getting the Claude Architect Certification </p>
           <Chip variant="skill" label="CSS" size="small" color="primary" />

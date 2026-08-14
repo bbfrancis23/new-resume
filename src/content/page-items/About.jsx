@@ -1,13 +1,12 @@
 /* eslint-disable max-lines */
 import React from 'react'
 import PropTypes from 'prop-types'
-import {useTheme, Typography, Chip, Grid, IconButton, Box} from '@mui/material'
+import {Typography, Chip, Grid, IconButton, Box} from '@mui/material'
 import EmailIcon from '@mui/icons-material/Email'
 import PageItem from '../../ui/PageItem'
 import BrianFrancis from '../../img/portraits/brian-francis.jpg'
 
 export default function AboutPageItem(props) {
-  const theme = useTheme()
   const {id} = props
 
   return (
@@ -19,10 +18,9 @@ export default function AboutPageItem(props) {
             sx={{
               textAlign: 'center',
               fontFamily: 'Montserrat,sans-serif',
-              textShadow: '0 5px 3px #4d4d4d',
               fontWeight: 'bold',
               fontSize: '40px',
-              color: theme.palette.secondary.main,
+              color: 'Navy',
             }}>
             BRIAN DAVID FRANCIS
           </Typography>

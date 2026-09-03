@@ -4,6 +4,7 @@ import BadgeIcon from '@mui/icons-material/Badge'
 import CodeIcon from '@mui/icons-material/Code'
 import BoxIcon from '@mui/icons-material/CheckBoxOutlineBlank'
 import CarRentalIcon from '@mui/icons-material/CarRental'
+import ExploreIcon from '@mui/icons-material/Explore'
 
 import IboatsIcon from '@mui/icons-material/DirectionsBoatFilled'
 import PropTypes from 'prop-types'
@@ -11,6 +12,9 @@ import PropTypes from 'prop-types'
 /* eslint-disable max-lines */
 
 import {
+  CompassCover,
+  CompassFinancial,
+  CompassFitness,
   PlusOneDash,
   AzdeqStart,
   IboatsCreateBoat,
@@ -55,6 +59,27 @@ import {
 
 const experience = [
   {
+    id: 'compass',
+    label: 'Compass Boards (portfolio project)',
+    title: 'Full Stack Web Developer',
+    relevantSkills: [
+      'Auth.js',
+      'Claude API',
+      'Drizzle + Turso',
+      'Github',
+      'TypeScript',
+      'React Grid Layout',
+    ],
+    yearsActive: '2026 Present',
+    otherSkills: ['Mantine UI', 'Next.js', 'React'],
+    icon: <ExploreIcon fontSize="large" />,
+    imgs: [
+      {img: CompassCover, label: 'Home'},
+      {img: CompassFinancial, label: 'Financial'},
+      {img: CompassFitness, label: 'Fitness'},
+    ],
+  },
+  {
     id: 'Sparq',
     label: 'Sparq (Enterprise Rental Cars - Contractor)',
     title: 'React Front End Developer',
@@ -64,10 +89,12 @@ const experience = [
       'Cucumber',
       'Cypress',
       'JavaScript',
+      'Jenkins',
       'ESLint',
       'HTML',
       'NPM',
       'TypeScript',
+      'Sonar',
       'Vite',
       'ViTest',
       'VSCode',
@@ -77,8 +104,8 @@ const experience = [
     icon: <CarRentalIcon fontSize="large" />,
   },
   {
-    id: 'Portfolio-Projects',
-    label: 'Portfolio Projects',
+    id: 'Strategy-fx',
+    label: 'Strategy-fx (portfolio project)',
     title: 'Full Stack Web Developer',
     relevantSkills: [
       'CSS',

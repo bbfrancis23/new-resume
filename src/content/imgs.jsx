@@ -68,7 +68,14 @@ import PirateThemeSidebar from '../img/theme/sidebar-backgrounds/pirate-theme-si
 import CorporateThemeSidebar from '../img/theme/sidebar-backgrounds/corporation-theme-sidebar.jpg'
 import MidnightThemeSidebar from '../img/theme/sidebar-backgrounds/midnight-theme-sidebar.jpg'
 
+import CompassCover from '../img/portfolio/compass/Compass-Cover.png'
+import CompassFinancial from '../img/portfolio/compass/Compass-Financial.png'
+import CompassFitness from '../img/portfolio/compass/Compass-Fitness.png'
+
 export {
+  CompassCover,
+  CompassFinancial,
+  CompassFitness,
   MidnightHero,
   HawaiiHero,
   ArizonaHero,

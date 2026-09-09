@@ -83,6 +83,7 @@ export default function ExpCarousel(props) {
           ))}
         </Swiper>
         <Fab
+          aria-label="Previous image"
           onClick={() => swiperRef.current?.slidePrev()}
           disabled={activeStep === 0}
           variant="effects"

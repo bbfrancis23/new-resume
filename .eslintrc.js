@@ -25,5 +25,6 @@ module.exports = {
     'react/jsx-closing-bracket-location': 'off',
     'no-console': 'off',
     'comma-dangle': 'off',
+    'import/no-unresolved': ['error', {ignore: ['^swiper/']}],
   },
 }

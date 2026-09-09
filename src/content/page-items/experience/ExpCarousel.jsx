@@ -1,10 +1,11 @@
 import React from 'react'
-import {Box, Typography, Fab, Modal} from '@mui/material'
-import {KeyboardArrowLeft, KeyboardArrowRight} from '@mui/icons-material'
+import {Box, Typography, Modal} from '@mui/material'
 import {Swiper, SwiperSlide} from 'swiper/react'
 import {Keyboard} from 'swiper/modules'
 import 'swiper/css'
 import ExpCarouselControls from './ExpCarouselControls'
+import ExpCarouselNavFab from './ExpCarouselNavFab'
+import useHoverFocusVisible from './useHoverFocusVisible'
 import {expRecsPropType} from '../../data'
 
 export default function ExpCarousel(props) {
@@ -14,32 +15,29 @@ export default function ExpCarousel(props) {
 
   const [activeStep, setActiveStep] = React.useState(0)
   const [lightboxImg, setLightboxImg] = React.useState(null)
-  const [showNav, setShowNav] = React.useState(false)
+  const [showNav, navHoverProps] = useHoverFocusVisible()
   const swiperRef = React.useRef(null)
 
-  const handleStepChange = (step) => {
-    setActiveStep(step)
+  const openLightbox = (step) => {
+    swiperRef.current?.keyboard.disable()
+    setLightboxImg(step)
   }
 
-  React.useEffect(() => {
-    if (swiperRef.current && swiperRef.current.activeIndex !== activeStep) {
-      swiperRef.current.slideTo(activeStep)
-    }
-  }, [activeStep])
+  const closeLightbox = () => {
+    swiperRef.current?.keyboard.enable()
+    setLightboxImg(null)
+  }
 
   return (
     <>
-      <Box
-        sx={{position: 'relative'}}
-        onMouseEnter={() => setShowNav(true)}
-        onMouseLeave={() => setShowNav(false)}>
+      <Box sx={{position: 'relative'}} {...navHoverProps}>
         <Swiper
           modules={[Keyboard]}
           keyboard={{enabled: true}}
           onSwiper={(swiper) => {
             swiperRef.current = swiper
           }}
-          onSlideChange={(swiper) => handleStepChange(swiper.activeIndex)}>
+          onSlideChange={(swiper) => setActiveStep(swiper.activeIndex)}>
           {expRec.imgs.map((step) => (
             <SwiperSlide key={`${step.label}-${expRec.label}`}>
               <Box>
@@ -53,7 +51,7 @@ export default function ExpCarousel(props) {
                   }}>
                   <button
                     type="button"
-                    onClick={() => setLightboxImg(step)}
+                    onClick={() => openLightbox(step)}
                     style={{
                       border: 0,
                       padding: 0,
@@ -82,44 +80,36 @@ export default function ExpCarousel(props) {
             </SwiperSlide>
           ))}
         </Swiper>
-        <Fab
-          aria-label="Previous image"
+        <ExpCarouselNavFab
+          direction="prev"
           onClick={() => swiperRef.current?.slidePrev()}
           disabled={activeStep === 0}
-          variant="effects"
-          fade="true"
+          visible={showNav}
           sx={{
-            visibility: showNav ? 'visible' : 'hidden',
-            position: 'absolute',
-            top: '50%',
-            left: 0,
-            transform: 'translateY(-50%)',
-            zIndex: 1,
-          }}>
-          <KeyboardArrowLeft />
-        </Fab>
-        <Fab
+            position: 'absolute', top: '50%', left: 0, transform: 'translateY(-50%)', zIndex: 1,
+          }}
+        />
+        <ExpCarouselNavFab
+          direction="next"
           onClick={() => swiperRef.current?.slideNext()}
           disabled={activeStep === expRec.imgs.length - 1}
-          variant="effects"
-          fade="true"
+          visible={showNav}
           sx={{
-            visibility: showNav ? 'visible' : 'hidden',
-            position: 'absolute',
-            top: '50%',
-            right: 0,
-            transform: 'translateY(-50%)',
-            zIndex: 1,
-          }}>
-          <KeyboardArrowRight />
-        </Fab>
+            position: 'absolute', top: '50%', right: 0, transform: 'translateY(-50%)', zIndex: 1,
+          }}
+        />
+        <ExpCarouselControls
+          expRec={expRec}
+          activeStep={activeStep}
+          onSelectStep={(index) => swiperRef.current?.slideTo(index)}
+        />
       </Box>
       <Modal
         open={Boolean(lightboxImg)}
-        onClose={() => setLightboxImg(null)}
+        onClose={closeLightbox}
         sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <Box
-          onClick={() => setLightboxImg(null)}
+          onClick={closeLightbox}
           sx={{
             outline: 'none',
             maxWidth: '90vw',
@@ -141,11 +131,6 @@ export default function ExpCarousel(props) {
           )}
         </Box>
       </Modal>
-      <ExpCarouselControls
-        expRec={expRec}
-        activeStep={activeStep}
-        setActiveStep={handleStepChange}
-      />
     </>
   )
 }

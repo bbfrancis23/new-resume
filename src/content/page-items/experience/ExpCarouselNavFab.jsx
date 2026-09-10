@@ -4,7 +4,7 @@ import {Fab} from '@mui/material'
 import {KeyboardArrowLeft, KeyboardArrowRight} from '@mui/icons-material'
 
 export default function ExpCarouselNavFab({
-  direction, onClick, disabled, visible, sx,
+  direction, onClick, disabled, visible, sx = {},
 }) {
   const Icon = direction === 'prev' ? KeyboardArrowLeft : KeyboardArrowRight
   const ariaLabel = direction === 'prev' ? 'Previous image' : 'Next image'
@@ -34,7 +34,4 @@ ExpCarouselNavFab.propTypes = {
   visible: PropTypes.bool.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   sx: PropTypes.object,
-}
-ExpCarouselNavFab.defaultProps = {
-  sx: {},
 }

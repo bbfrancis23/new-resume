@@ -4,11 +4,9 @@ import {
   Box, Typography, useTheme, Card,
 } from '@mui/material'
 
-export default function PageItem(props) {
+export default function PageItem({ id, children, label = '' }) {
   const theme = useTheme()
   theme.effects ||= ''
-
-  const { id, children, label } = props
 
   return (
     <Box id={id} sx={{ pt: 1, zIndex: -1 }}>
@@ -37,9 +35,6 @@ export default function PageItem(props) {
     </Box>
 
   )
-}
-PageItem.defaultProps = {
-  label: '',
 }
 PageItem.propTypes = {
   id: PropTypes.string.isRequired,

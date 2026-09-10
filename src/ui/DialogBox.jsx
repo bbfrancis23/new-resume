@@ -18,11 +18,9 @@ function PaperComponent(props) {
   )
 }
 
-export default function DialogBox(props) {
-  const {
-    open, close, label, children, moreLink,
-  } = props
-
+export default function DialogBox({
+  open, close, label, children, moreLink = undefined,
+}) {
   return (
     <Dialog
       open={open}
@@ -63,9 +61,6 @@ export default function DialogBox(props) {
       </DialogActions>
     </Dialog>
   )
-}
-DialogBox.defaultProps = {
-  moreLink: undefined,
 }
 DialogBox.propTypes = {
   open: PropTypes.bool.isRequired,

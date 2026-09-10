@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh issue create --repo bbfrancis23/new-resume --title 'Upgrade react-router-dom v6 -> v7' --body ' *)"
+    ]
+  }
+}

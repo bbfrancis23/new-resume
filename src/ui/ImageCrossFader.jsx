@@ -2,9 +2,7 @@ import React from 'react'
 import { Box } from '@mui/material'
 import PropTypes from 'prop-types'
 
-export default function ImageCrossFader(props) {
-  const { imgs, selectedId, ...forwardProps } = props
-
+export default function ImageCrossFader({ imgs = [], selectedId, ...forwardProps }) {
   return (
     <Box {...forwardProps}>
       {
@@ -24,9 +22,6 @@ export default function ImageCrossFader(props) {
       }
     </Box>
   )
-}
-ImageCrossFader.defaultProps = {
-  imgs: [],
 }
 ImageCrossFader.propTypes = {
   imgs: PropTypes.arrayOf(

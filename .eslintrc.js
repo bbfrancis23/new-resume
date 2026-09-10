@@ -25,5 +25,6 @@ module.exports = {
     'react/jsx-closing-bracket-location': 'off',
     'no-console': 'off',
     'comma-dangle': 'off',
+    'react/require-default-props': ['error', {forbidDefaultForRequired: true, functions: 'defaultArguments'}],
   },
 }

@@ -22,7 +22,7 @@ export default function AboutPageItem(props) {
               fontSize: '40px',
               color: 'Navy',
             }}>
-            BRIAN DAVID FRANCIS
+            BRIAN FRANCIS
           </Typography>
         </Grid>
         <Grid item xs={12} lg={6}>
